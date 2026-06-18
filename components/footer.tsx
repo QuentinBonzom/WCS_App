@@ -52,6 +52,12 @@ export function Footer() {
           >
           Nos Projets
           </Link>
+          <Link
+            href="/blog"
+            className="text-xs text-graphite transition-colors hover:text-ink"
+          >
+            Blog
+          </Link>
         </div>
 
         <div className="flex flex-col gap-2">

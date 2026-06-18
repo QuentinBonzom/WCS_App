@@ -10,6 +10,7 @@ import {
   StaggerItem,
 } from "@/components/motion-primitives";
 import { TiltCard } from "@/components/tilt-card";
+import { ServicesSlideshow } from "@/components/services-slideshow";
 import { JsonLd } from "@/components/json-ld";
 import { buildPageMetadata, seoPages, servicesJsonLd } from "@/lib/seo";
 
@@ -109,6 +110,9 @@ export default function ServicesPage() {
           </Magnetic>
         </Reveal>
       </header>
+
+      {/* INTERACTIVE SERVICES SLIDESHOW (visual intro) */}
+      <ServicesSlideshow />
 
       {/* FEATURE SHOWCASES (light 2-column splits, alternating bands) */}
       <div id="showcases">

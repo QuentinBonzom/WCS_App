@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import type { BlogPost } from "@/lib/blog";
 
 type SeoPage = {
   path: string;
@@ -120,6 +121,21 @@ export const seoPages = {
     priority: 0.85,
     changeFrequency: "monthly",
     ogLabel: "Devis sous 24h",
+  },
+  blog: {
+    path: "/blog",
+    title: "Blog : conseils web, SEO et création de sites",
+    description:
+      "Conseils pratiques sur la création de sites web, le référencement SEO local, la performance et le design pour les entreprises de Montbéliard et d'ailleurs.",
+    keywords: [
+      ...sharedKeywords,
+      "blog création site web",
+      "conseils SEO",
+      "guide site internet",
+    ],
+    priority: 0.7,
+    changeFrequency: "weekly",
+    ogLabel: "Conseils & guides",
   },
   creationSiteWebMontbeliard: {
     path: "/creation-site-web-montbeliard",
@@ -487,6 +503,122 @@ export function serviceLandingJsonLd({
             text: item.answer,
           },
         })),
+      },
+    ],
+  };
+}
+
+export function postPath(post: BlogPost) {
+  return `/blog/${post.slug}`;
+}
+
+export function postOgImage(post: BlogPost) {
+  const params = new URLSearchParams({
+    title: post.title,
+    label: post.category || "Blog",
+  });
+
+  return `/api/og?${params.toString()}`;
+}
+
+export function buildPostMetadata(post: BlogPost) {
+  const path = postPath(post);
+  const ogImage = postOgImage(post);
+
+  return {
+    title: post.title,
+    description: post.description,
+    keywords: post.keywords,
+    alternates: {
+      canonical: path,
+      languages: {
+        fr: path,
+        "x-default": path,
+      },
+    },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: path,
+      siteName: siteConfig.name,
+      locale: siteConfig.locale,
+      type: "article",
+      publishedTime: post.datePublished,
+      modifiedTime: post.dateModified ?? post.datePublished,
+      authors: [siteConfig.name],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} - ${post.title}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: post.title,
+      description: post.description,
+      images: [ogImage],
+    },
+  };
+}
+
+export function blogListingJsonLd(posts: BlogPost[]) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbListJsonLd([
+        { name: "Accueil", path: "/" },
+        { name: "Blog", path: "/blog" },
+      ]),
+      {
+        "@type": "Blog",
+        "@id": absoluteUrl("/blog#blog"),
+        name: seoPages.blog.title,
+        description: seoPages.blog.description,
+        url: absoluteUrl("/blog"),
+        inLanguage: siteConfig.language,
+        publisher: { "@id": absoluteUrl("#organization") },
+        blogPost: posts.map((post) => ({
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.description,
+          url: absoluteUrl(postPath(post)),
+          datePublished: post.datePublished,
+          dateModified: post.dateModified ?? post.datePublished,
+        })),
+      },
+    ],
+  };
+}
+
+export function blogPostingJsonLd(post: BlogPost) {
+  const url = absoluteUrl(postPath(post));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbListJsonLd([
+        { name: "Accueil", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: post.title, path: postPath(post) },
+      ]),
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: post.title,
+        description: post.description,
+        url,
+        mainEntityOfPage: url,
+        datePublished: post.datePublished,
+        dateModified: post.dateModified ?? post.datePublished,
+        inLanguage: siteConfig.language,
+        keywords: post.keywords.join(", "),
+        articleSection: post.category,
+        image: absoluteUrl(postOgImage(post)),
+        author: { "@id": absoluteUrl("#organization") },
+        publisher: { "@id": absoluteUrl("#organization") },
       },
     ],
   };

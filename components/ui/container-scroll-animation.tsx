@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useRef } from "react";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import {
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useSpring,
+  useReducedMotion,
+  motion,
+  MotionValue,
+} from "framer-motion";
 
 export const ContainerScroll = ({
   titleComponent,
@@ -24,7 +32,7 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = (): [number, number] =>
-    isMobile ? [0.7, 0.9] : [1.05, 1];
+    isMobile ? [0.9, 1] : [1.05, 1];
 
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
@@ -32,11 +40,11 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="relative flex h-[60rem] items-center justify-center p-2 md:h-[80rem] md:p-20"
+      className="relative flex h-auto items-center justify-center px-2 pb-10 pt-28 md:h-[80rem] md:p-20"
       ref={containerRef}
     >
       <div
-        className="relative w-full py-10 md:py-40"
+        className="relative w-full md:py-40"
         style={{ perspective: "1000px" }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
@@ -83,16 +91,52 @@ export const Card = ({
   backContent?: React.ReactNode;
 }) => {
   const isInteractive = Boolean(backContent);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+
+  // Cursor-reactive 3D tilt. Raw pointer offsets are smoothed by springs so the
+  // device follows the mouse with a soft, premium feel.
+  const tiltXRaw = useMotionValue(0);
+  const tiltYRaw = useMotionValue(0);
+  const tiltX = useSpring(tiltXRaw, { stiffness: 150, damping: 18, mass: 0.6 });
+  const tiltY = useSpring(tiltYRaw, { stiffness: 150, damping: 18, mass: 0.6 });
+
+  // Combine the scroll-driven rotateX with the cursor tilt.
+  const rotateX = useTransform(
+    [rotate, tiltX] as MotionValue<number>[],
+    ([scrollRot, mouseTilt]: number[]) => scrollRot + mouseTilt
+  );
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (reduceMotion || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 → 0.5
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    tiltYRaw.set(px * 16); // horizontal mouse → rotateY
+    tiltXRaw.set(-py * 10); // vertical mouse → rotateX
+  };
+
+  const handlePointerLeave = () => {
+    tiltXRaw.set(0);
+    tiltYRaw.set(0);
+  };
 
   return (
     <motion.div
+      ref={cardRef}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
       style={{
-        rotateX: rotate,
+        rotateX,
+        rotateY: tiltY,
         scale,
+        transformStyle: "preserve-3d",
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="mx-auto mt-8 h-[30rem] w-full max-w-5xl md:mt-10 md:h-[40rem]"
+      animate={reduceMotion ? undefined : { y: [0, -14, 0] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      className="mx-auto mt-8 h-[30rem] w-full max-w-5xl rounded-[30px] md:mt-10 md:h-[40rem]"
     >
       <div className="relative h-full w-full">
         {isInteractive ? (

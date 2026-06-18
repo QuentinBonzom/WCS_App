@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal, Magnetic } from "@/components/motion-primitives";
 import { TiltCard } from "@/components/tilt-card";
@@ -73,13 +74,13 @@ export default function ProjetsPage() {
           {projects.map((p, i) => (
             <Reveal key={p.title} dir="zoom" delay={i * 0.1}>
               <TiltCard className="group h-full overflow-hidden rounded-[28px] bg-snow">
-                <div className="aspect-[16/10] overflow-hidden bg-silver">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="relative aspect-[16/10] overflow-hidden bg-silver">
+                  <Image
                     src={p.img}
                     alt={`Page d'accueil du site ${p.title}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-7">

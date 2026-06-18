@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { Reveal, StaggerGroup, StaggerItem, Magnetic } from "@/components/motion-primitives";
+import { Reveal, Magnetic } from "@/components/motion-primitives";
 import { TiltCard } from "@/components/tilt-card";
 import { Counter } from "@/components/counter";
 import { JsonLd } from "@/components/json-ld";
@@ -41,15 +41,8 @@ const services = [
   },
 ];
 
-const stats = [
-  { v: "100%", l: "Clients satisfaits" },
-  { v: "24h", l: "Délai de réponse" },
-];
-
 const counters = [
   { target: 2, suffix: "+", l: "Pays" },
-  { target: 100, suffix: "%", l: "Satisfaction" },
-  { target: 5, suffix: "/5", decimals: 1, l: "Note moyenne" },
 ];
 
 export default function Home() {
@@ -87,10 +80,6 @@ export default function Home() {
               Découvrir nos services ›
             </Link>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-sm text-graphite">
-              <span className="flex items-center gap-2">
-                <span className="text-[#f5a623]">★★★★★</span> 5/5 — Clients satisfaits
-              </span>
-              <span className="hidden h-4 w-px bg-black/15 sm:block" />
               <span>◷&nbsp; Réponse sous 24h</span>
             </div>
           </div>
@@ -98,20 +87,6 @@ export default function Home() {
       >
         <ProjectCockpit />
       </ContainerScroll>
-
-      {/* STAT BAND */}
-      <section className="bg-snow py-20">
-        <StaggerGroup className="mx-auto flex max-w-[1200px] flex-wrap justify-center gap-20 px-6 text-center">
-          {stats.map((s) => (
-            <StaggerItem key={s.l}>
-              <span className="block text-[56px] font-bold leading-none tracking-[-0.016em]">
-                {s.v}
-              </span>
-              <span className="mt-2 block text-[17px] text-graphite">{s.l}</span>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </section>
 
       {/* SERVICES TEASER */}
       <section className="bg-fog px-6 py-32">
@@ -184,11 +159,11 @@ export default function Home() {
 
           <Reveal dir="right">
             <div className="rounded-[28px] bg-fog p-12">
-              <div className="grid grid-cols-1 gap-10 text-center sm:grid-cols-3">
+              <div className="grid grid-cols-1 gap-10 text-center">
                 {counters.map((c) => (
                   <div key={c.l}>
                     <span className="block text-[40px] font-bold tracking-[-0.6px]">
-                      <Counter target={c.target} suffix={c.suffix} decimals={c.decimals ?? 0} />
+                      <Counter target={c.target} suffix={c.suffix} />
                     </span>
                     <span className="mt-1 block text-sm text-graphite">{c.l}</span>
                   </div>
