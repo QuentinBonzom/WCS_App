@@ -30,8 +30,13 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    overflow-x: hidden;
+    overflow-x: clip;
   }
   body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
     background: var(--color-fog);
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
