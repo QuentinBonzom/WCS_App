@@ -7,6 +7,12 @@ type SeoSection = {
   text: string;
 };
 
+type RelatedLink = {
+  href: string;
+  label: string;
+  description: string;
+};
+
 type SeoServicePageProps = {
   eyebrow: string;
   title: React.ReactNode;
@@ -16,6 +22,8 @@ type SeoServicePageProps = {
   sections: SeoSection[];
   outcomes: string[];
   faq: FaqItem[];
+  serviceAreas?: string[];
+  relatedLinks?: RelatedLink[];
 };
 
 export function SeoServicePage({
@@ -27,6 +35,8 @@ export function SeoServicePage({
   sections,
   outcomes,
   faq,
+  serviceAreas,
+  relatedLinks,
 }: SeoServicePageProps) {
   return (
     <main>
@@ -95,6 +105,70 @@ export function SeoServicePage({
           </div>
         </div>
       </section>
+
+      {(serviceAreas?.length || relatedLinks?.length) && (
+        <section className="bg-snow px-6 py-28">
+          <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+            <Reveal>
+              <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
+                Maillage local
+              </span>
+              <h2 className="text-[clamp(32px,4.5vw,48px)] font-bold leading-[1.1] tracking-[-0.016em]">
+                Des signaux cohérents autour de {primaryKeyword}.
+              </h2>
+              <p className="mt-5 text-xl font-light leading-relaxed text-graphite">
+                Google doit comprendre la zone visée, les pages importantes et
+                le lien entre votre site, vos services et votre présence locale.
+              </p>
+            </Reveal>
+
+            <div className="grid grid-cols-1 gap-4">
+              {serviceAreas?.length ? (
+                <Reveal dir="zoom">
+                  <article className="rounded-[28px] bg-fog p-8">
+                    <h3 className="mb-5 text-2xl font-semibold tracking-tight">
+                      Zone travaillée
+                    </h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {serviceAreas.map((area) => (
+                        <li
+                          key={area}
+                          className="rounded-full border border-silver bg-snow px-4 py-2 text-sm text-slate"
+                        >
+                          {area}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </Reveal>
+              ) : null}
+
+              {relatedLinks?.length ? (
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {relatedLinks.map((link, index) => (
+                    <Reveal key={link.href} dir="zoom" delay={index * 0.06}>
+                      <Link
+                        href={link.href}
+                        className="block h-full rounded-[28px] bg-fog p-7 transition-colors hover:bg-silver/60"
+                      >
+                        <h3 className="text-xl font-semibold tracking-tight">
+                          {link.label}
+                        </h3>
+                        <p className="mt-3 text-[15px] leading-relaxed text-graphite">
+                          {link.description}
+                        </p>
+                        <span className="mt-5 inline-block text-[17px] text-cobalt">
+                          Lire la page ›
+                        </span>
+                      </Link>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-snow px-6 py-28">
         <div className="mx-auto max-w-[1200px]">

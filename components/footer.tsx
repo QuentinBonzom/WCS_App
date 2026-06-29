@@ -29,10 +29,10 @@ export function Footer() {
             Expertises
           </h4>
           <Link
-            href="/creation-site-vitrine"
+            href="/creation-site-web-montbeliard"
             className="text-xs text-graphite transition-colors hover:text-ink"
           >
-            Sites Web Premium
+            Création de site web
           </Link>
           <Link
             href="/services"
@@ -47,10 +47,16 @@ export function Footer() {
             Design UI/UX
           </Link>
           <Link
+            href="/repere-audit"
+            className="text-xs text-graphite transition-colors hover:text-ink"
+          >
+            Accessibilité RGAA
+          </Link>
+          <Link
             href="/projets"
             className="text-xs text-graphite transition-colors hover:text-ink"
           >
-          Nos Projets
+            Nos Projets
           </Link>
           <Link
             href="/blog"
@@ -68,7 +74,7 @@ export function Footer() {
             href="/creation-site-web-montbeliard"
             className="text-xs text-graphite transition-colors hover:text-ink"
           >
-            Création site web Montbéliard
+            Création de site web Montbéliard
           </Link>
           <Link
             href="/agence-web-montbeliard"
@@ -82,13 +88,19 @@ export function Footer() {
           >
             Création site vitrine
           </Link>
+          <Link
+            href="/repere-audit"
+            className="text-xs text-graphite transition-colors hover:text-ink"
+          >
+            Audit accessibilité RGAA
+          </Link>
         </div>
 
         <div className="flex flex-col gap-2">
           <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink">
             Contact
           </h4>
-          <span className="text-xs text-graphite">🌍 Clients internationaux</span>
+          <span className="text-xs text-graphite">Clients internationaux</span>
           <a
             href="mailto:contact@webcodestudio.fr"
             className="text-xs text-graphite transition-colors hover:text-ink"

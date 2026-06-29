@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/motion-primitives";
 import { ContactForm } from "@/components/contact-form";
 import { JsonLd } from "@/components/json-ld";
@@ -22,7 +23,6 @@ export default function ContactPage() {
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-xl font-light">
             Prêt à créer votre site internet, application mobile ou refonte SEO ?
-            Écrivez-nous pour recevoir une réponse claire sous 24h.
           </p>
         </Reveal>
       </header>
@@ -55,9 +55,15 @@ export default function ContactPage() {
                 Localisation & expertise
               </h3>
               <p className="text-[17px] text-graphite">
-                📍 Basé à Montbéliard, France — au cœur du territoire de
-                Belfort-Montbéliard, à la frontière de l&apos;innovation
-                franco-suisse.
+                Basé à Montbéliard, France - au cœur du territoire de
+                Belfort-Montbéliard, avec une expertise dédiée à la{" "}
+                <Link
+                  href="/creation-site-web-montbeliard"
+                  className="text-cobalt hover:underline"
+                >
+                  création de site web à Montbéliard
+                </Link>
+                .
               </p>
             </div>
 

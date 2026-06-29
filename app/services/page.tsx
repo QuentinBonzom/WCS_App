@@ -79,6 +79,11 @@ const targetedPages = [
     desc: "Le format idéal pour présenter votre activité, rassurer vos prospects et générer plus de demandes.",
     href: "/creation-site-vitrine",
   },
+  {
+    title: "Repère · conformité accessibilité",
+    desc: "Audit, remédiation et documentation pour rendre votre site conforme à l'European Accessibility Act et au RGAA.",
+    href: "/repere-audit",
+  },
 ];
 
 export default function ServicesPage() {
@@ -92,13 +97,14 @@ export default function ServicesPage() {
             Nos services
           </span>
           <h1 className="text-[clamp(48px,9vw,96px)] font-bold leading-[1.04] tracking-[-0.022em]">
-            Sites web, apps
+            Sites web, apps, SEO
             <br />
-            et SEO premium.
+            et accessibilité.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-xl font-light text-graphite">
             Création de sites internet, applications mobiles, design UI/UX et
-            optimisation SEO pour construire une présence digitale qui convertit.
+            conformité accessibilité pour construire une présence digitale qui
+            convertit et reste solide dans le temps.
           </p>
           <Magnetic className="mt-8">
             <Link
@@ -161,6 +167,45 @@ export default function ServicesPage() {
             src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=70"
             alt="Aperçu d'un design system"
           />
+        </FeatureShowcase>
+
+        <FeatureShowcase
+          index="04 / Accessibilité"
+          band="fog"
+          eyebrow="Repère"
+          title={<>Votre conformité EAA / RGAA.</>}
+          sub="Audit, remédiation et documentation réglementaire pour rendre votre site ou application accessible, conforme et défendable."
+          tags={["Audit RGAA", "Corrections", "Déclaration d'accessibilité"]}
+          href="/repere-audit"
+          linkLabel="Découvrir Repère"
+          reverse
+        >
+          <div className="w-full max-w-[420px] rounded-[24px] bg-ink p-5 text-snow shadow-[0_24px_60px_-32px_rgba(29,29,31,0.65)]">
+            <div className="flex items-center justify-between border-b border-white/15 pb-4">
+              <span className="text-sm text-white/70">repere.audit</span>
+              <span className="rounded-full bg-azure/20 px-3 py-1 text-xs font-semibold text-[#8ec5ff]">
+                RGAA
+              </span>
+            </div>
+            <div className="mt-5 space-y-3">
+              {[
+                { label: "Contrastes et lisibilité", state: "À vérifier" },
+                { label: "Navigation clavier", state: "À tester" },
+                { label: "Formulaires et erreurs", state: "À corriger" },
+                { label: "Documents de conformité", state: "À publier" },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center justify-between gap-4 rounded-2xl bg-white/[0.08] px-4 py-3"
+                >
+                  <span className="text-[15px] text-white/90">{item.label}</span>
+                  <span className="text-sm font-medium text-[#8ec5ff]">
+                    {item.state}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </FeatureShowcase>
       </div>
 
@@ -262,7 +307,7 @@ export default function ServicesPage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
             {targetedPages.map((page) => (
               <Reveal key={page.href} dir="zoom">
                 <Link

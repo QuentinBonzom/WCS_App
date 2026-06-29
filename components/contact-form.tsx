@@ -112,9 +112,7 @@ export function ContactForm() {
             ? "Message envoyé ✓"
             : "Envoyer le message"}
       </button>
-      <p className="mt-4 text-center text-sm text-graphite">
-        ⚡ Réponse sous 24h garantie
-      </p>
+      
       {status === "sent" && (
         <p className="mt-4 rounded-xl bg-silver p-4 text-center text-sm text-ink">
           Merci ! Votre message a bien été envoyé. Nous vous répondrons sous 24h.

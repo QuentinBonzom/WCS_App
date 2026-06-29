@@ -5,6 +5,7 @@ import {
   buildPageMetadata,
   serviceLandingJsonLd,
   seoPages,
+  siteConfig,
   type FaqItem,
 } from "@/lib/seo";
 
@@ -29,6 +30,16 @@ const faq: FaqItem[] = [
       "Oui. La structure technique, les balises SEO, la performance, les contenus principaux, le sitemap et les données structurées sont pensés dès la conception pour faciliter l'indexation et la compréhension par Google.",
   },
   {
+    question: "Ma fiche Google Business Profile peut-elle aider mon référencement ?",
+    answer:
+      "Oui, si elle est cohérente avec le site : même nom d'entreprise, même zone d'intervention, lien vers la bonne page, description claire des services, photos, avis clients et publications régulières. La page du site et la fiche Google Business Profile doivent se renforcer mutuellement.",
+  },
+  {
+    question: "Pourquoi mon site n'apparaît pas encore sur la recherche création de site web Montbéliard ?",
+    answer:
+      "Il faut généralement combiner plusieurs signaux : une page locale complète, un maillage interne clair, une fiche Google Business Profile active, des avis, des liens entrants locaux et du temps d'indexation. Une page publiée ne suffit pas toujours à apparaître vite sur une requête concurrentielle.",
+  },
+  {
     question: "Est-ce que je pourrai demander des évolutions après la mise en ligne ?",
     answer:
       "Oui. Le site peut évoluer avec de nouvelles pages, des sections, du suivi SEO, de la maintenance ou des optimisations de conversion selon vos priorités.",
@@ -44,47 +55,96 @@ export default function CreationSiteWebMontbeliardPage() {
           serviceName: "Création de site web à Montbéliard",
           serviceType: "Web development",
           faq,
+          areaServed: siteConfig.localAreas,
+          keywords: [
+            "création de site web Montbéliard",
+            "creation de site web montbeliard",
+            "création site internet Montbéliard",
+            "développeur web Montbéliard",
+            "agence web Montbéliard",
+            "SEO local Montbéliard",
+          ],
         })}
       />
       <SeoServicePage
-        eyebrow="Création site web Montbéliard"
+        eyebrow="Création de site web Montbéliard"
         title={
           <>
-            Un site web local,
+            Création de site web
             <br />
-            rapide et visible.
+            à Montbéliard.
           </>
         }
-        intro="WebCode Studio crée des sites internet sur mesure pour les entreprises, artisans, indépendants et commerces de Montbéliard. L'objectif : présenter clairement votre activité, rassurer vos prospects et générer plus de demandes qualifiées."
-        primaryKeyword="création site web Montbéliard"
+        intro="WebCode Studio crée des sites internet sur mesure pour les entreprises, artisans, indépendants et commerces de Montbéliard. L'objectif : être trouvé sur Google, rassurer vos prospects locaux et transformer les visites en demandes de devis."
+        primaryKeyword="création de site web Montbéliard"
         proofPoints={[
-          "Un site responsive pensé pour mobile, tablette et desktop, avec une expérience fluide sur chaque écran.",
-          "Une base SEO propre : titres, descriptions, structure de contenu, sitemap, données enrichies et performance.",
-          "Un accompagnement clair, du cadrage à la mise en ligne, avec un devis personnalisé et une réponse sous 24h.",
+          "Une landing locale dédiée à la requête création de site web Montbéliard, avec une structure claire et des contenus utiles.",
+          "Une base SEO propre : balises, maillage interne, sitemap, données enrichies, performance et suivi Search Console.",
+          "Une cohérence avec votre fiche Google Business Profile : services, zone d'intervention, avis, photos et lien vers le site.",
         ]}
         sections={[
           {
-            title: "Un site aligné avec votre marché local",
-            text: "Un prospect qui cherche une entreprise à Montbéliard doit comprendre rapidement qui vous êtes, ce que vous proposez et pourquoi vous contacter. La page d'accueil, les services, les preuves de confiance et les appels à l'action sont structurés pour rendre la prise de contact évidente.",
+            title: "Une page locale conçue pour Montbéliard",
+            text: "Un prospect qui tape création de site web Montbéliard cherche un prestataire proche, crédible et capable de comprendre son marché. La page présente clairement votre offre, vos services, vos preuves et vos appels à l'action pour transformer cette recherche locale en contact.",
+          },
+          {
+            title: "Un site relié à votre fiche Google Business Profile",
+            text: "Votre fiche Google Business Profile validée est un bon départ. Le site doit ensuite confirmer les mêmes signaux : nom de marque, zone de service, description des prestations, lien clair, pages locales et contenus qui expliquent précisément ce que vous proposez à Montbéliard.",
+          },
+          {
+            title: "Une zone locale explicite",
+            text: "La stratégie vise Montbéliard et les recherches proches : Pays de Montbéliard, Belfort, Audincourt, Sochaux, Valentigney, Exincourt, Bethoncourt et Héricourt. Ces zones sont intégrées naturellement dans le contenu et les données structurées, sans bourrage de mots-clés.",
           },
           {
             title: "Une architecture prête pour le référencement",
-            text: "Le site est construit avec des pages lisibles par Google, des URLs propres, des balises cohérentes, des contenus ciblés et une hiérarchie claire. Cette base technique ne remplace pas le travail de contenu sur la durée, mais elle évite de partir avec un handicap.",
+            text: "Le site est construit avec des pages lisibles par Google, des URLs propres, des titres cohérents, une hiérarchie Hn claire, des contenus ciblés et un maillage interne entre l'accueil, les services, les projets, le blog et les pages locales.",
           },
           {
-            title: "Un design professionnel sans perdre la conversion",
-            text: "Un beau site ne suffit pas. Les sections doivent guider le visiteur : comprendre l'offre, voir des preuves, comparer les bénéfices, puis demander un devis. Chaque choix visuel sert l'expérience et la crédibilité de votre entreprise.",
-          },
-          {
-            title: "Une mise en ligne propre et mesurable",
-            text: "Le projet peut inclure la configuration du domaine, les redirections, le formulaire de contact, la Search Console, les analytics et les premiers contrôles après publication. Vous savez ce qui fonctionne et ce qu'il faut améliorer ensuite.",
+            title: "Une mise en ligne suivie dans Search Console",
+            text: "Le projet peut inclure la configuration du domaine, les redirections, le sitemap, l'inspection d'URL, les analytics et les premiers contrôles après publication. Vous savez si Google découvre la page, quels mots-clés progressent et ce qu'il faut améliorer ensuite.",
           },
         ]}
         outcomes={[
-          "Être trouvé plus facilement par les clients qui recherchent une activité locale à Montbéliard ou dans le secteur Belfort-Montbéliard.",
+          "Aider Google à identifier clairement la page comme réponse à la recherche création de site web Montbéliard.",
           "Donner une image plus professionnelle que les pages sociales seules ou les anciens sites non responsive.",
-          "Transformer les visites en demandes de devis grâce à une structure claire et des appels à l'action visibles.",
-          "Disposer d'une base évolutive pour ajouter des pages SEO, des cas clients ou des contenus ciblés.",
+          "Transformer les visites issues de Google et de votre fiche Business Profile en demandes de devis.",
+          "Disposer d'une base évolutive pour ajouter des pages SEO, des cas clients, des avis ou des contenus ciblés.",
+        ]}
+        serviceAreas={[
+          "Montbéliard",
+          "Pays de Montbéliard",
+          "Belfort",
+          "Audincourt",
+          "Sochaux",
+          "Valentigney",
+          "Exincourt",
+          "Héricourt",
+        ]}
+        relatedLinks={[
+          {
+            href: "/agence-web-montbeliard",
+            label: "Agence web Montbéliard",
+            description:
+              "La page pilier pour comprendre l'accompagnement complet : stratégie, design, développement, SEO et suivi.",
+          },
+          {
+            href: "/creation-site-vitrine",
+            label: "Création site vitrine",
+            description:
+              "Le format le plus adapté pour présenter une activité locale et générer des demandes qualifiées.",
+          },
+          {
+            href: "/blog/creation-site-web-montbeliard-guide-2026",
+            label: "Guide création de site web",
+            description:
+              "Un contenu éditorial pour renforcer la pertinence sur les recherches locales liées à Montbéliard.",
+          },
+          {
+            href: "/projets",
+            label: "Réalisations WebCode Studio",
+            description:
+              "Des exemples de sites, expériences digitales et applications déjà livrés pour rassurer les prospects.",
+          },
         ]}
         faq={faq}
       />

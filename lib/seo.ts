@@ -43,6 +43,18 @@ export const siteConfig = {
     country: "FR",
   },
   areas: ["France", "États-Unis", "Suisse", "Belfort", "Montbéliard"],
+  localAreas: [
+    "Montbéliard",
+    "Pays de Montbéliard",
+    "Belfort",
+    "Audincourt",
+    "Sochaux",
+    "Valentigney",
+    "Exincourt",
+    "Bethoncourt",
+    "Héricourt",
+    "Bourgogne-Franche-Comté",
+  ],
 };
 
 export function absoluteUrl(path = "/") {
@@ -139,16 +151,22 @@ export const seoPages = {
   },
   creationSiteWebMontbeliard: {
     path: "/creation-site-web-montbeliard",
-    title: "Création de site web à Montbéliard",
+    title: "Création site web Montbéliard",
     description:
-      "Création de site web à Montbéliard pour artisans, PME, indépendants et commerces : site rapide, responsive, optimisé SEO et pensé pour générer des demandes de devis.",
+      "Création de site web à Montbéliard pour artisans, PME, indépendants et commerces : site internet rapide, SEO local, Google Business Profile et demandes de devis.",
     keywords: [
       ...sharedKeywords,
+      "creation de site web montbeliard",
       "création site web Montbéliard",
+      "création de site web Montbéliard",
       "création site internet Montbéliard",
+      "création de site internet Montbéliard",
       "site web professionnel Montbéliard",
       "développeur web Montbéliard",
+      "agence création site web Montbéliard",
       "site internet Belfort Montbéliard",
+      "SEO local Montbéliard",
+      "Google Business Profile Montbéliard",
     ],
     priority: 0.95,
     changeFrequency: "monthly",
@@ -187,6 +205,25 @@ export const seoPages = {
     priority: 0.9,
     changeFrequency: "monthly",
     ogLabel: "Site vitrine",
+  },
+  repereAudit: {
+    path: "/repere-audit",
+    title: "Repère — mise en conformité accessibilité (EAA / RGAA)",
+    description:
+      "Audit, remédiation et documentation réglementaire pour rendre votre site et votre application conformes à l'European Accessibility Act et au RGAA. Sécurisez-vous contre les sanctions de non-conformité.",
+    keywords: [
+      ...sharedKeywords,
+      "mise en conformité accessibilité",
+      "accessibilité numérique",
+      "audit accessibilité RGAA",
+      "European Accessibility Act",
+      "conformité RGAA",
+      "déclaration d'accessibilité",
+      "audit accessibilité site web",
+    ],
+    priority: 0.9,
+    changeFrequency: "monthly",
+    ogLabel: "Accessibilité & conformité",
   },
 } satisfies Record<string, SeoPage>;
 
@@ -270,6 +307,12 @@ export const seoServices = [
       "Optimisation technique, structure de contenu, performance et données enrichies pour améliorer la visibilité organique.",
     serviceType: "Search engine optimization",
   },
+  {
+    name: "Repère — accessibilité numérique",
+    description:
+      "Audit RGAA, remédiation et documentation réglementaire pour rendre les sites et applications conformes à l'EAA.",
+    serviceType: "Accessibility compliance audit",
+  },
 ];
 
 export const seoProjects = [
@@ -329,7 +372,7 @@ export function baseJsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "ProfessionalService"],
+        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
         "@id": organizationId,
         name: siteConfig.name,
         url: siteConfig.url,
@@ -348,6 +391,19 @@ export function baseJsonLd() {
           "@type": "Place",
           name,
         })),
+        serviceArea: siteConfig.localAreas.map((name) => ({
+          "@type": "Place",
+          name,
+        })),
+        knowsAbout: [
+          "création de site web",
+          "création de site internet",
+          "SEO local",
+          "Google Business Profile",
+          "développement web",
+          "site vitrine",
+          "accessibilité numérique",
+        ],
         contactPoint: [
           {
             "@type": "ContactPoint",
@@ -467,11 +523,15 @@ export function serviceLandingJsonLd({
   serviceName,
   serviceType,
   faq,
+  areaServed = siteConfig.areas,
+  keywords,
 }: {
   page: SeoPage;
   serviceName: string;
   serviceType: string;
   faq: FaqItem[];
+  areaServed?: string[];
+  keywords?: string[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -489,8 +549,12 @@ export function serviceLandingJsonLd({
         provider: {
           "@id": absoluteUrl("#organization"),
         },
-        areaServed: siteConfig.areas,
+        areaServed: areaServed.map((name) => ({
+          "@type": "Place",
+          name,
+        })),
         url: absoluteUrl(page.path),
+        keywords: (keywords ?? page.keywords).join(", "),
       },
       {
         "@type": "FAQPage",
