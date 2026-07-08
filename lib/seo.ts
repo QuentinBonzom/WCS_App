@@ -23,9 +23,28 @@ function stripTrailingSlash(value: string) {
   return value.replace(/\/+$/, "");
 }
 
-const siteUrl = stripTrailingSlash(
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.webcodestudio.fr",
-);
+const canonicalSiteUrl = "https://www.webcodestudio.fr";
+
+function normalizeSiteUrl(value?: string) {
+  try {
+    const url = new URL(value || canonicalSiteUrl);
+
+    url.protocol = "https:";
+    url.hostname =
+      url.hostname === "webcodestudio.fr"
+        ? "www.webcodestudio.fr"
+        : url.hostname;
+    url.pathname = "";
+    url.search = "";
+    url.hash = "";
+
+    return stripTrailingSlash(url.toString());
+  } catch {
+    return canonicalSiteUrl;
+  }
+}
+
+const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 
 export const siteConfig = {
   name: "WebCode Studio",
@@ -251,22 +270,22 @@ export function buildPageMetadata(page: SeoPage) {
     description: page.description,
     keywords: page.keywords,
     alternates: {
-      canonical: page.path,
+      canonical: absoluteUrl(page.path),
       languages: {
-        fr: page.path,
-        "x-default": page.path,
+        fr: absoluteUrl(page.path),
+        "x-default": absoluteUrl(page.path),
       },
     },
     openGraph: {
       title: page.title,
       description: page.description,
-      url: page.path,
+      url: absoluteUrl(page.path),
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "website",
       images: [
         {
-          url: ogImage,
+          url: absoluteUrl(ogImage),
           width: 1200,
           height: 630,
           alt: `${siteConfig.name} - ${page.title}`,
@@ -277,7 +296,7 @@ export function buildPageMetadata(page: SeoPage) {
       card: "summary_large_image",
       title: page.title,
       description: page.description,
-      images: [ogImage],
+      images: [absoluteUrl(ogImage)],
     },
   };
 }
@@ -334,7 +353,7 @@ export const seoProjects = [
     name: "Barber Industrie",
     description:
       "Écosystème web et mobile pour un salon de coiffure avec actualités et prise de rendez-vous.",
-    url: "https://barber-industrie.vercel.app",
+    url: "https://barberindustrie.fr",
     image: "/projects/barber-industrie.jpg",
   },
   {
@@ -594,16 +613,16 @@ export function buildPostMetadata(post: BlogPost) {
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl(path),
       languages: {
-        fr: path,
-        "x-default": path,
+        fr: absoluteUrl(path),
+        "x-default": absoluteUrl(path),
       },
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: path,
+      url: absoluteUrl(path),
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "article",
@@ -612,7 +631,7 @@ export function buildPostMetadata(post: BlogPost) {
       authors: [siteConfig.name],
       images: [
         {
-          url: ogImage,
+          url: absoluteUrl(ogImage),
           width: 1200,
           height: 630,
           alt: `${siteConfig.name} - ${post.title}`,
@@ -623,7 +642,7 @@ export function buildPostMetadata(post: BlogPost) {
       card: "summary_large_image" as const,
       title: post.title,
       description: post.description,
-      images: [ogImage],
+      images: [absoluteUrl(ogImage)],
     },
   };
 }

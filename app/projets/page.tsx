@@ -33,8 +33,8 @@ const projects = [
     title: "Barber Industrie",
     desc: "Un écosystème web et mobile pour présenter l'équipe, partager les actualités du salon et simplifier la prise de rendez-vous.",
     img: "/projects/barber-industrie.jpg",
-    href: "https://barber-industrie.vercel.app",
-    temporary: true,
+    href: "https://barberindustrie.fr",
+    temporary: false,
   },
   {
     cat: "Site industriel",

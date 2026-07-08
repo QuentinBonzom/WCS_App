@@ -51,10 +51,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/",
+    canonical: absoluteUrl("/"),
     languages: {
-      fr: "/",
-      "x-default": "/",
+      fr: absoluteUrl("/"),
+      "x-default": absoluteUrl("/"),
     },
   },
   openGraph: {
