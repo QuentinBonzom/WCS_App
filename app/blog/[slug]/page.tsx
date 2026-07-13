@@ -10,6 +10,11 @@ import {
   formatPostDate,
   type ContentBlock,
 } from "@/lib/blog";
+import {
+  getDictionary,
+  localizeHref,
+  type Locale,
+} from "@/lib/i18n";
 
 type Params = { slug: string };
 
@@ -25,7 +30,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return buildPostMetadata(post);
+  return buildPostMetadata(post, "fr");
 }
 
 function Block({ block, lead = false }: { block: ContentBlock; lead?: boolean }) {
@@ -80,37 +85,51 @@ function Block({ block, lead = false }: { block: ContentBlock; lead?: boolean })
   }
 }
 
-export default async function BlogPostPage({
-  params,
+const postCopy = {
+  fr: {
+    back: "‹ Tous les articles",
+    ctaTitle: "Un projet de site web ?",
+  },
+  en: {
+    back: "‹ All articles",
+    ctaTitle: "Planning a website project?",
+  },
+} as const satisfies Record<Locale, object>;
+
+export function BlogPostPageContent({
+  slug,
+  locale = "fr",
 }: {
-  params: Promise<Params>;
+  slug: string;
+  locale?: Locale;
 }) {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, locale);
   if (!post) notFound();
+  const t = postCopy[locale];
+  const common = getDictionary(locale).common;
 
   return (
     <main>
-      <JsonLd data={blogPostingJsonLd(post)} />
+      <JsonLd data={blogPostingJsonLd(post, locale)} />
 
       {/* ARTICLE HEADER */}
       <header className="bg-fog px-6 pb-16 pt-40">
         <div className="mx-auto max-w-3xl">
           <Link
-            href="/blog"
+            href={localizeHref("/blog", locale)}
             className="text-[15px] text-cobalt hover:underline"
           >
-            ‹ Tous les articles
+            {t.back}
           </Link>
           <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide">
             <span className="text-azure">{post.category}</span>
             <span className="h-1 w-1 rounded-full bg-silver" />
             <time dateTime={post.datePublished} className="text-graphite">
-              {formatPostDate(post.datePublished)}
+              {formatPostDate(post.datePublished, locale)}
             </time>
             <span className="h-1 w-1 rounded-full bg-silver" />
             <span className="text-graphite">
-              {post.readingMinutes} min de lecture
+              {post.readingMinutes} {common.minutesRead}
             </span>
           </div>
           <h1 className="mt-4 text-[clamp(34px,6vw,60px)] font-bold leading-[1.06] tracking-[-0.02em] text-balance">
@@ -132,21 +151,30 @@ export default async function BlogPostPage({
       <section className="bg-fog px-6 py-28 text-center">
         <Reveal>
           <h2 className="text-[clamp(32px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.016em]">
-            Un projet de site web&nbsp;?
+            {t.ctaTitle}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-xl font-light text-graphite">
-            Consultation gratuite • Devis personnalisé • Réponse sous 24h
+            {common.freeConsultation} • {common.customQuote} • {common.response24}
           </p>
           <Magnetic className="mt-8">
             <Link
-              href="/contact"
+              href={localizeHref("/contact", locale)}
               className="inline-flex rounded-full bg-azure px-6 py-3 text-xl text-white transition-colors hover:bg-[#0077ed]"
             >
-              Démarrer mon projet
+              {common.startProject}
             </Link>
           </Magnetic>
         </Reveal>
       </section>
     </main>
   );
+}
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
+  return <BlogPostPageContent slug={slug} locale="fr" />;
 }

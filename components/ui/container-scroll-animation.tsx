@@ -15,10 +15,24 @@ export const ContainerScroll = ({
   titleComponent,
   children,
   backContent,
+  labels = {
+    toggle: "Basculer entre le frontend et le backend du projet",
+    front: "Cliquer pour voir le backend",
+    back: "Retour au frontend",
+    frontShort: "Frontend",
+    backShort: "Backend",
+  },
 }: {
   titleComponent: string | React.ReactNode;
   children: React.ReactNode;
   backContent?: React.ReactNode;
+  labels?: {
+    toggle: string;
+    front: string;
+    back: string;
+    frontShort: string;
+    backShort: string;
+  };
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
@@ -53,6 +67,7 @@ export const ContainerScroll = ({
           translate={translate}
           scale={scale}
           backContent={backContent}
+          labels={labels}
         >
           {children}
         </Card>
@@ -83,12 +98,20 @@ export const Card = ({
   scale,
   children,
   backContent,
+  labels,
 }: {
   rotate: MotionValue<number>;
   scale: MotionValue<number>;
   translate: MotionValue<number>;
   children: React.ReactNode;
   backContent?: React.ReactNode;
+  labels: {
+    toggle: string;
+    front: string;
+    back: string;
+    frontShort: string;
+    backShort: string;
+  };
 }) => {
   const isInteractive = Boolean(backContent);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -142,16 +165,16 @@ export const Card = ({
         {isInteractive ? (
           <input
             type="checkbox"
-            aria-label="Basculer entre le frontend et le backend du projet"
+            aria-label={labels.toggle}
             className="peer absolute inset-0 z-40 h-full w-full cursor-pointer appearance-none rounded-[30px] outline-none"
           />
         ) : null}
         <div className="relative h-full w-full [transform-style:preserve-3d] transition-transform duration-700 ease-[cubic-bezier(.22,.61,.36,1)] peer-checked:[transform:rotateY(180deg)] peer-focus-visible:ring-4 peer-focus-visible:ring-azure/30 motion-reduce:transition-none">
-          <TabletFace label="Cliquer pour voir le backend">
+          <TabletFace label={labels.front} shortLabel={labels.backShort}>
           {children}
           </TabletFace>
           {backContent ? (
-            <TabletFace back label="Retour au frontend">
+            <TabletFace back label={labels.back} shortLabel={labels.frontShort}>
               {backContent}
             </TabletFace>
           ) : null}
@@ -164,10 +187,12 @@ export const Card = ({
 function TabletFace({
   children,
   label,
+  shortLabel,
   back = false,
 }: {
   children: React.ReactNode;
   label: string;
+  shortLabel: string;
   back?: boolean;
 }) {
   return (
@@ -184,7 +209,7 @@ function TabletFace({
         <span className="pointer-events-none absolute bottom-3 right-3 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-[#0d1628]/90 px-3 py-1.5 text-[9px] font-semibold text-white shadow-lg backdrop-blur sm:text-[10px]">
           <span aria-hidden="true">↻</span>
           <span className="hidden sm:inline">{label}</span>
-          <span className="sm:hidden">{back ? "Frontend" : "Backend"}</span>
+          <span className="sm:hidden">{shortLabel}</span>
         </span>
       </div>
     </div>

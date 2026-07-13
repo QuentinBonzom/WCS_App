@@ -1,11 +1,88 @@
-const navItems = ["Vue d'ensemble", "Analytics", "Livrables", "Planning"];
+import type { Locale } from "@/lib/i18n";
 
-const tasks = [
-  ["Design responsive", "Validé hier", true],
-  ["Paiement sécurisé", "Validé aujourd'hui", true],
-  ["Optimisation SEO", "Terminé", true],
-  ["Mise en production", "Prévue vendredi", false],
-] as const;
+const projectCopy = {
+  fr: {
+    navItems: ["Vue d'ensemble", "Analytics", "Livrables", "Planning"],
+    tasks: [
+      ["Design responsive", "Validé hier", true],
+      ["Paiement sécurisé", "Validé aujourd'hui", true],
+      ["Optimisation SEO", "Terminé", true],
+      ["Mise en production", "Prévue vendredi", false],
+    ],
+    aria: "Aperçu d'un espace client de suivi de projet",
+    navAria: "Navigation de l'aperçu",
+    admin: "Administrateur",
+    breadcrumb: "Projets / ",
+    online: "Projet en ligne",
+    type: "REFONTE E-COMMERCE",
+    hello: "Bonjour, Maison Noma.",
+    intro: "Votre projet avance comme prévu. Voici l'essentiel.",
+    updated: "Mise à jour aujourd'hui, 09:42",
+    progress: "Avancement global",
+    performance: "Performance",
+    performanceDelta: "+12 points",
+    conversion: "Conversion",
+    conversionDelta: "+31% ce mois",
+    visits: "Visites qualifiées",
+    last30: "30 derniers jours",
+    chartAria: "Courbe de progression des visites",
+    sprint: "Sprint actuel",
+    sprintValue: "Finalisation",
+  },
+  en: {
+    navItems: ["Overview", "Analytics", "Deliverables", "Planning"],
+    tasks: [
+      ["Responsive design", "Approved yesterday", true],
+      ["Secure payment", "Approved today", true],
+      ["SEO optimization", "Done", true],
+      ["Go-live", "Planned Friday", false],
+    ],
+    aria: "Preview of a client project dashboard",
+    navAria: "Preview navigation",
+    admin: "Administrator",
+    breadcrumb: "Projects / ",
+    online: "Project online",
+    type: "E-COMMERCE REDESIGN",
+    hello: "Hello, Maison Noma.",
+    intro: "Your project is progressing as planned. Here are the essentials.",
+    updated: "Updated today, 09:42",
+    progress: "Overall progress",
+    performance: "Performance",
+    performanceDelta: "+12 points",
+    conversion: "Conversion",
+    conversionDelta: "+31% this month",
+    visits: "Qualified visits",
+    last30: "Last 30 days",
+    chartAria: "Visit growth chart",
+    sprint: "Current sprint",
+    sprintValue: "Finalization",
+  },
+} satisfies Record<
+  Locale,
+  {
+    navItems: string[];
+    tasks: Array<readonly [string, string, boolean]>;
+    aria: string;
+    navAria: string;
+    admin: string;
+    breadcrumb: string;
+    online: string;
+    type: string;
+    hello: string;
+    intro: string;
+    updated: string;
+    progress: string;
+    performance: string;
+    performanceDelta: string;
+    conversion: string;
+    conversionDelta: string;
+    visits: string;
+    last30: string;
+    chartAria: string;
+    sprint: string;
+    sprintValue: string;
+  }
+>;
 
 function GridIcon() {
   return (
@@ -18,11 +95,13 @@ function GridIcon() {
   );
 }
 
-export function ProjectCockpit() {
+export function ProjectCockpit({ locale = "fr" }: { locale?: Locale }) {
+  const t = projectCopy[locale];
+
   return (
     <div
       className="grid h-full w-full grid-cols-[52px_minmax(0,1fr)] bg-[#f7f9fc] text-left text-[#172033] sm:grid-cols-[180px_minmax(0,1fr)]"
-      aria-label="Aperçu d'un espace client de suivi de projet"
+      aria-label={t.aria}
     >
       <aside className="flex min-w-0 flex-col bg-[#0d1628] px-2 py-4 text-white sm:px-3 sm:py-5">
         <div className="flex items-center justify-center gap-2 px-1 pb-5 text-sm font-bold sm:justify-start">
@@ -32,8 +111,8 @@ export function ProjectCockpit() {
           <span className="hidden sm:inline">WebCode</span>
         </div>
 
-        <nav className="grid gap-1" aria-label="Navigation de l'aperçu">
-          {navItems.map((item, index) => (
+        <nav className="grid gap-1" aria-label={t.navAria}>
+          {t.navItems.map((item, index) => (
             <span
               key={item}
               className={`flex items-center justify-center gap-2 rounded-lg px-2 py-2 text-[10px] font-medium sm:justify-start ${
@@ -55,7 +134,7 @@ export function ProjectCockpit() {
           <span className="hidden sm:block">
             <strong className="block text-[10px]">Quentin</strong>
             <small className="block text-[8px] text-[#7f8da6]">
-              Administrateur
+              {t.admin}
             </small>
           </span>
         </div>
@@ -64,10 +143,10 @@ export function ProjectCockpit() {
       <section className="min-w-0 overflow-hidden">
         <div className="flex h-11 items-center justify-between border-b border-[#e6eaf0] bg-white/90 px-3 sm:px-5">
           <div className="text-[9px] font-semibold sm:text-[10px]">
-            <span className="text-[#9099a8]">Projets / </span>Maison Noma
+            <span className="text-[#9099a8]">{t.breadcrumb}</span>Maison Noma
           </div>
           <span className="hidden items-center gap-1.5 rounded-full border border-[#d8eee0] bg-[#f0fbf4] px-2 py-1 text-[8px] font-semibold text-[#27824a] sm:inline-flex">
-            <i className="h-1.5 w-1.5 rounded-full bg-[#31b866]" /> Projet en ligne
+            <i className="h-1.5 w-1.5 rounded-full bg-[#31b866]" /> {t.online}
           </span>
         </div>
 
@@ -75,24 +154,24 @@ export function ProjectCockpit() {
           <div className="flex items-end justify-between gap-3">
             <div>
               <span className="text-[8px] font-bold tracking-[0.08em] text-[#1677ff]">
-                REFONTE E-COMMERCE
+                {t.type}
               </span>
               <h2 className="mt-1 text-base font-bold leading-tight tracking-[-0.035em] sm:text-xl">
-                Bonjour, Maison Noma.
+                {t.hello}
               </h2>
               <p className="mt-1 hidden text-[9px] text-[#7a8494] sm:block">
-                Votre projet avance comme prévu. Voici l&apos;essentiel.
+                {t.intro}
               </p>
             </div>
             <span className="hidden text-[8px] text-[#919aaa] md:block">
-              Mise à jour aujourd&apos;hui, 09:42
+              {t.updated}
             </span>
           </div>
 
           <div className="mt-3 grid grid-cols-3 gap-1.5 sm:gap-2.5">
             <article className="rounded-xl border border-[#e5e9ef] bg-white p-2 shadow-sm sm:p-3">
               <span className="block text-[7px] text-[#7f8999] sm:text-[8px]">
-                Avancement global
+                {t.progress}
               </span>
               <strong className="mt-1 block text-sm leading-none tracking-[-0.04em] sm:text-lg">
                 86%
@@ -103,24 +182,24 @@ export function ProjectCockpit() {
             </article>
             <article className="rounded-xl border border-[#e5e9ef] bg-white p-2 shadow-sm sm:p-3">
               <span className="block text-[7px] text-[#7f8999] sm:text-[8px]">
-                Performance
+                {t.performance}
               </span>
               <strong className="mt-1 block text-sm leading-none tracking-[-0.04em] sm:text-lg">
                 98<small className="text-[8px] font-medium text-[#9aa2af]">/100</small>
               </strong>
               <em className="mt-2 hidden text-[7px] not-italic text-[#29945a] sm:block">
-                +12 points
+                {t.performanceDelta}
               </em>
             </article>
             <article className="rounded-xl border border-[#e5e9ef] bg-white p-2 shadow-sm sm:p-3">
               <span className="block text-[7px] text-[#7f8999] sm:text-[8px]">
-                Conversion
+                {t.conversion}
               </span>
               <strong className="mt-1 block text-sm leading-none tracking-[-0.04em] sm:text-lg">
-                4,8%
+                {locale === "fr" ? "4,8%" : "4.8%"}
               </strong>
               <em className="mt-2 hidden text-[7px] not-italic text-[#29945a] sm:block">
-                +31% ce mois
+                {t.conversionDelta}
               </em>
             </article>
           </div>
@@ -130,12 +209,12 @@ export function ProjectCockpit() {
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <span className="block text-[8px] text-[#7f8999]">
-                    Visites qualifiées
+                    {t.visits}
                   </span>
                   <strong className="mt-0.5 block text-sm">24 680</strong>
                 </div>
                 <span className="hidden rounded-md border border-[#e6eaf0] bg-[#fafbfc] px-2 py-1 text-[7px] text-[#697386] sm:block">
-                  30 derniers jours
+                  {t.last30}
                 </span>
               </div>
               <svg
@@ -143,7 +222,7 @@ export function ProjectCockpit() {
                 preserveAspectRatio="none"
                 className="mt-2 h-28 w-full overflow-visible"
                 role="img"
-                aria-label="Courbe de progression des visites"
+                aria-label={t.chartAria}
               >
                 <defs>
                   <linearGradient id="cockpit-chart-fill" x1="0" y1="0" x2="0" y2="1">
@@ -170,15 +249,15 @@ export function ProjectCockpit() {
             <article className="hidden rounded-xl border border-[#e5e9ef] bg-white p-3 shadow-sm md:block">
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="block text-[8px] text-[#7f8999]">Sprint actuel</span>
-                  <strong className="mt-0.5 block text-sm">Finalisation</strong>
+                  <span className="block text-[8px] text-[#7f8999]">{t.sprint}</span>
+                  <strong className="mt-0.5 block text-sm">{t.sprintValue}</strong>
                 </div>
                 <span className="grid h-6 w-7 place-items-center rounded-md bg-[#edf5ff] text-[8px] font-bold text-[#1677ff]">
                   3/4
                 </span>
               </div>
               <ul className="mt-3 grid gap-2">
-                {tasks.map(([title, detail, done]) => (
+                {t.tasks.map(([title, detail, done]) => (
                   <li key={title} className="flex items-center gap-2">
                     <i
                       className={`grid h-4 w-4 shrink-0 place-items-center rounded-full border text-[8px] not-italic ${
@@ -211,20 +290,87 @@ const endpoints = [
   ["PATCH", "/api/customers/:id", "200", "91 ms"],
 ] as const;
 
-const pipeline = [
-  ["Tests unitaires", "1m 08s"],
-  ["Build production", "42s"],
-  ["Migration database", "12s"],
-  ["Déploiement", "28s"],
-] as const;
+const backendCopy = {
+  fr: {
+    navItems: ["Dashboard", "API", "Base de données", "Déploiements"],
+    pipeline: [
+      ["Tests unitaires", "1m 08s"],
+      ["Build production", "42s"],
+      ["Migration database", "12s"],
+      ["Déploiement", "28s"],
+    ],
+    aria: "Aperçu du backend et de l'infrastructure du projet",
+    navAria: "Navigation backend",
+    status: "Tous les systèmes opérationnels",
+    eyebrow: "BACKEND & INFRASTRUCTURE",
+    title: "Système en bonne santé.",
+    intro: "API, base de données et déploiements supervisés en temps réel.",
+    metrics: [
+      ["Disponibilité API", "99,99%", "+0,02%"],
+      ["Temps de réponse", "84 ms", "-18 ms"],
+      ["Requêtes / jour", "12,4k", "+8,6%"],
+    ],
+    activity: "Activité API",
+    latestRequests: "Dernières requêtes",
+    realtime: "temps réel",
+    deployment: "Dernier déploiement",
+    success: "SUCCÈS",
+    ago: "il y a 18 min",
+  },
+  en: {
+    navItems: ["Dashboard", "API", "Database", "Deployments"],
+    pipeline: [
+      ["Unit tests", "1m 08s"],
+      ["Production build", "42s"],
+      ["Database migration", "12s"],
+      ["Deployment", "28s"],
+    ],
+    aria: "Preview of the project backend and infrastructure",
+    navAria: "Backend navigation",
+    status: "All systems operational",
+    eyebrow: "BACKEND & INFRASTRUCTURE",
+    title: "System health is good.",
+    intro: "API, database and deployments monitored in real time.",
+    metrics: [
+      ["API availability", "99.99%", "+0.02%"],
+      ["Response time", "84 ms", "-18 ms"],
+      ["Requests / day", "12.4k", "+8.6%"],
+    ],
+    activity: "API activity",
+    latestRequests: "Latest requests",
+    realtime: "real time",
+    deployment: "Latest deployment",
+    success: "SUCCESS",
+    ago: "18 min ago",
+  },
+} satisfies Record<
+  Locale,
+  {
+    navItems: string[];
+    pipeline: Array<readonly [string, string]>;
+    aria: string;
+    navAria: string;
+    status: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    metrics: Array<readonly [string, string, string]>;
+    activity: string;
+    latestRequests: string;
+    realtime: string;
+    deployment: string;
+    success: string;
+    ago: string;
+  }
+>;
 
-export function BackendCockpit() {
-  const backendNav = ["Dashboard", "API", "Base de données", "Déploiements"];
+export function BackendCockpit({ locale = "fr" }: { locale?: Locale }) {
+  const t = backendCopy[locale];
 
   return (
     <div
       className="grid h-full w-full grid-cols-[52px_minmax(0,1fr)] bg-[#0d111b] text-left text-[#e8edf5] sm:grid-cols-[180px_minmax(0,1fr)]"
-      aria-label="Aperçu du backend et de l'infrastructure du projet"
+      aria-label={t.aria}
     >
       <aside className="flex min-w-0 flex-col border-r border-white/5 bg-[#080b12] px-2 py-4 sm:px-3 sm:py-5">
         <div className="flex items-center justify-center gap-2 px-1 pb-5 text-sm font-bold sm:justify-start">
@@ -234,8 +380,8 @@ export function BackendCockpit() {
           <span className="hidden sm:inline">WebCode API</span>
         </div>
 
-        <nav className="grid gap-1" aria-label="Navigation backend">
-          {backendNav.map((item, index) => (
+        <nav className="grid gap-1" aria-label={t.navAria}>
+          {t.navItems.map((item, index) => (
             <span
               key={item}
               className={`flex items-center justify-center gap-2 rounded-lg px-2 py-2 text-[10px] font-medium sm:justify-start ${
@@ -255,7 +401,7 @@ export function BackendCockpit() {
             <i className="h-2 w-2 rounded-full bg-[#31d17c] shadow-[0_0_10px_rgba(49,209,124,.65)]" />
             <span className="hidden sm:block">
               <strong className="block text-[9px] text-[#d9e1ee]">Production</strong>
-              <small className="block text-[7px] text-[#667085]">Tous les systèmes opérationnels</small>
+              <small className="block text-[7px] text-[#667085]">{t.status}</small>
             </span>
           </span>
         </div>
@@ -275,13 +421,13 @@ export function BackendCockpit() {
           <div className="flex items-end justify-between gap-3">
             <div>
               <span className="text-[8px] font-bold tracking-[0.1em] text-[#9d7bff]">
-                BACKEND & INFRASTRUCTURE
+                {t.eyebrow}
               </span>
               <h2 className="mt-1 text-base font-bold leading-tight tracking-[-0.025em] sm:text-xl">
-                Système en bonne santé.
+                {t.title}
               </h2>
               <p className="mt-1 hidden text-[9px] text-[#788399] sm:block">
-                API, base de données et déploiements supervisés en temps réel.
+                {t.intro}
               </p>
             </div>
             <span className="hidden font-mono text-[8px] text-[#556176] md:block">
@@ -290,11 +436,7 @@ export function BackendCockpit() {
           </div>
 
           <div className="mt-3 grid grid-cols-3 gap-1.5 sm:gap-2.5">
-            {[
-              ["Disponibilité API", "99,99%", "+0,02%"],
-              ["Temps de réponse", "84 ms", "-18 ms"],
-              ["Requêtes / jour", "12,4k", "+8,6%"],
-            ].map(([label, value, delta]) => (
+            {t.metrics.map(([label, value, delta]) => (
               <article key={label} className="rounded-xl border border-white/5 bg-[#141a28] p-2 shadow-sm sm:p-3">
                 <span className="block text-[7px] text-[#758096] sm:text-[8px]">{label}</span>
                 <strong className="mt-1 block text-sm leading-none tracking-[-0.03em] text-white sm:text-lg">
@@ -309,11 +451,11 @@ export function BackendCockpit() {
             <article className="min-w-0 rounded-xl border border-white/5 bg-[#141a28] p-3 shadow-sm">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="block text-[8px] text-[#758096]">Activité API</span>
-                  <strong className="mt-0.5 block text-sm text-white">Dernières requêtes</strong>
+                  <span className="block text-[8px] text-[#758096]">{t.activity}</span>
+                  <strong className="mt-0.5 block text-sm text-white">{t.latestRequests}</strong>
                 </div>
                 <span className="rounded-md border border-white/5 bg-[#0e131e] px-2 py-1 font-mono text-[7px] text-[#7c899e]">
-                  temps réel
+                  {t.realtime}
                 </span>
               </div>
 
@@ -343,14 +485,14 @@ export function BackendCockpit() {
             <article className="hidden rounded-xl border border-white/5 bg-[#141a28] p-3 shadow-sm md:block">
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="block text-[8px] text-[#758096]">Dernier déploiement</span>
+                  <span className="block text-[8px] text-[#758096]">{t.deployment}</span>
                   <strong className="mt-0.5 block text-sm text-white">v2.8.4</strong>
                 </div>
-                <span className="rounded-md bg-[#123a2b] px-2 py-1 text-[7px] font-bold text-[#65e6a7]">SUCCÈS</span>
+                <span className="rounded-md bg-[#123a2b] px-2 py-1 text-[7px] font-bold text-[#65e6a7]">{t.success}</span>
               </div>
-              <p className="mt-2 font-mono text-[7px] text-[#667085]">a91c4e2 · main · il y a 18 min</p>
+              <p className="mt-2 font-mono text-[7px] text-[#667085]">a91c4e2 · main · {t.ago}</p>
               <ul className="mt-3 grid gap-2">
-                {pipeline.map(([label, duration]) => (
+                {t.pipeline.map(([label, duration]) => (
                   <li key={label} className="flex items-center gap-2">
                     <i className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#1f6b49] text-[8px] not-italic text-[#84efbc]">✓</i>
                     <span className="min-w-0 flex-1">

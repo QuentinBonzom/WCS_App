@@ -33,6 +33,8 @@ export interface HamburgerMenuOverlayProps {
   buttonRight?: string;
   /** Color of the hamburger lines (closed state). */
   buttonColor?: string;
+  openLabel?: string;
+  closeLabel?: string;
   className?: string;
   onOpen?: () => void;
   onClose?: () => void;
@@ -66,6 +68,8 @@ export function HamburgerMenuOverlay({
   buttonLeft,
   buttonRight = "1rem",
   buttonColor = "#1d1d1f",
+  openLabel = "Ouvrir le menu",
+  closeLabel = "Fermer le menu",
   className,
   onOpen,
   onClose,
@@ -115,7 +119,7 @@ export function HamburgerMenuOverlay({
       <button
         type="button"
         onClick={toggle}
-        aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+        aria-label={open ? closeLabel : openLabel}
         aria-expanded={open}
         className="fixed z-[80] flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 shadow-[0_6px_24px_rgba(0,0,0,0.08)] backdrop-blur-lg backdrop-saturate-150"
         style={{ top: buttonTop, left: buttonLeft, right: buttonLeft ? undefined : buttonRight }}

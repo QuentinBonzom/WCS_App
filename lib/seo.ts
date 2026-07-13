@@ -1,7 +1,12 @@
 import type { MetadataRoute } from "next";
 import type { BlogPost } from "@/lib/blog";
+import {
+  defaultLocale,
+  localizedPath,
+  type Locale,
+} from "@/lib/i18n";
 
-type SeoPage = {
+export type SeoPage = {
   path: string;
   title: string;
   description: string;
@@ -74,6 +79,11 @@ export const siteConfig = {
     "Héricourt",
     "Bourgogne-Franche-Comté",
   ],
+};
+
+const siteDescriptions: Record<Locale, string> = {
+  fr: siteConfig.description,
+  en: "Web studio in Montbéliard specializing in fast websites, mobile applications, UI/UX design and SEO.",
 };
 
 export function absoluteUrl(path = "/") {
@@ -246,6 +256,157 @@ export const seoPages = {
   },
 } satisfies Record<string, SeoPage>;
 
+export const seoPagesByLocale = {
+  fr: seoPages,
+  en: {
+    home: {
+      path: "/",
+      title: "Custom websites and apps in Montbéliard",
+      description:
+        "WebCode Studio designs fast websites, mobile applications and premium interfaces that turn visitors into customers. Based in Montbéliard, available in France and internationally.",
+      keywords: [
+        "website creation",
+        "web development",
+        "mobile application",
+        "UI UX design",
+        "SEO",
+        "web agency Montbéliard",
+        "professional website",
+      ],
+      priority: 1,
+      changeFrequency: "weekly",
+      ogLabel: "Web & mobile creation",
+    },
+    services: {
+      path: "/services",
+      title: "Web, mobile, UI/UX and SEO services",
+      description:
+        "High-performing websites, iOS and Android mobile apps, UI/UX design, SEO optimization, maintenance and complete digital support.",
+      keywords: [
+        "web services",
+        "mobile app development",
+        "UI UX design",
+        "SEO optimization",
+        "website maintenance",
+      ],
+      priority: 0.9,
+      changeFrequency: "monthly",
+      ogLabel: "Digital services",
+    },
+    projects: {
+      path: "/projets",
+      title: "Client websites and app projects",
+      description:
+        "Explore websites, digital experiences and applications created by WebCode Studio for clients in France and the United States.",
+      keywords: [
+        "website portfolio",
+        "client projects",
+        "professional website examples",
+      ],
+      priority: 0.8,
+      changeFrequency: "monthly",
+      ogLabel: "Client work",
+      images: seoPages.projects.images,
+    },
+    contact: {
+      path: "/contact",
+      title: "Contact and quote for your web project",
+      description:
+        "Contact WebCode Studio to create your website, mobile app or digital redesign. Free consultation, custom quote and reply within 24h.",
+      keywords: [
+        "website quote",
+        "contact web agency",
+        "digital project consultation",
+      ],
+      priority: 0.85,
+      changeFrequency: "monthly",
+      ogLabel: "Quote within 24h",
+    },
+    blog: {
+      path: "/blog",
+      title: "Blog: web, SEO and website creation guides",
+      description:
+        "Practical advice on website creation, local SEO, performance and design for businesses in Montbéliard and beyond.",
+      keywords: [
+        "website creation blog",
+        "SEO advice",
+        "website guide",
+      ],
+      priority: 0.7,
+      changeFrequency: "weekly",
+      ogLabel: "Guides & advice",
+    },
+    creationSiteWebMontbeliard: {
+      path: "/creation-site-web-montbeliard",
+      title: "Website creation in Montbéliard",
+      description:
+        "Website creation in Montbéliard for artisans, SMEs, independents and shops: fast websites, local SEO, Google Business Profile and quote requests.",
+      keywords: [
+        "website creation Montbéliard",
+        "web design Montbéliard",
+        "website development Montbéliard",
+        "web agency Montbéliard",
+        "local SEO Montbéliard",
+      ],
+      priority: 0.95,
+      changeFrequency: "monthly",
+      ogLabel: "Website in Montbéliard",
+    },
+    agenceWebMontbeliard: {
+      path: "/agence-web-montbeliard",
+      title: "Web agency in Montbéliard",
+      description:
+        "Web agency in Montbéliard specialized in custom websites, redesigns, SEO, UI/UX design and digital support for local businesses.",
+      keywords: [
+        "web agency Montbéliard",
+        "digital agency Montbéliard",
+        "website redesign Montbéliard",
+        "local SEO Montbéliard",
+      ],
+      priority: 0.95,
+      changeFrequency: "monthly",
+      ogLabel: "Local web agency",
+    },
+    creationSiteVitrine: {
+      path: "/creation-site-vitrine",
+      title: "Professional showcase website creation",
+      description:
+        "Professional showcase website creation to present your business, reassure prospects and generate qualified contacts with a fast SEO-ready site.",
+      keywords: [
+        "showcase website creation",
+        "professional website",
+        "small business website",
+        "website quote",
+      ],
+      priority: 0.9,
+      changeFrequency: "monthly",
+      ogLabel: "Showcase website",
+    },
+    repereAudit: {
+      path: "/repere-audit",
+      title: "Repère - accessibility compliance (EAA / RGAA)",
+      description:
+        "Audit, remediation and regulatory documentation to make your website or app compliant with the European Accessibility Act and RGAA.",
+      keywords: [
+        "accessibility compliance",
+        "digital accessibility",
+        "RGAA audit",
+        "European Accessibility Act",
+        "accessibility statement",
+      ],
+      priority: 0.9,
+      changeFrequency: "monthly",
+      ogLabel: "Accessibility & compliance",
+    },
+  },
+} satisfies Record<Locale, Record<keyof typeof seoPages, SeoPage>>;
+
+export type SeoPageKey = keyof typeof seoPages;
+
+export function getSeoPage(key: SeoPageKey, locale: Locale = defaultLocale) {
+  return seoPagesByLocale[locale][key];
+}
+
 export const sitemapPages: SeoPage[] = Object.values(seoPages);
 
 export function pageOgImage(page: SeoPage) {
@@ -257,8 +418,9 @@ export function pageOgImage(page: SeoPage) {
   return `/api/og?${params.toString()}`;
 }
 
-export function buildPageMetadata(page: SeoPage) {
+export function buildPageMetadata(page: SeoPage, locale: Locale = defaultLocale) {
   const ogImage = pageOgImage(page);
+  const canonicalPath = localizedPath(page.path, locale);
 
   return {
     title:
@@ -270,18 +432,19 @@ export function buildPageMetadata(page: SeoPage) {
     description: page.description,
     keywords: page.keywords,
     alternates: {
-      canonical: absoluteUrl(page.path),
+      canonical: absoluteUrl(canonicalPath),
       languages: {
         fr: absoluteUrl(page.path),
+        en: absoluteUrl(localizedPath(page.path, "en")),
         "x-default": absoluteUrl(page.path),
       },
     },
     openGraph: {
       title: page.title,
       description: page.description,
-      url: absoluteUrl(page.path),
+      url: absoluteUrl(canonicalPath),
       siteName: siteConfig.name,
-      locale: siteConfig.locale,
+      locale: locale === "fr" ? siteConfig.locale : "en_US",
       type: "website",
       images: [
         {
@@ -334,6 +497,42 @@ export const seoServices = [
   },
 ];
 
+const seoServicesByLocale: Record<Locale, typeof seoServices> = {
+  fr: seoServices,
+  en: [
+    {
+      name: "Web development",
+      description:
+        "Creation of fast, responsive showcase websites, landing pages and platforms optimized for organic visibility.",
+      serviceType: "Web development",
+    },
+    {
+      name: "Mobile applications",
+      description:
+        "Design and development of iOS and Android applications for smooth user experiences.",
+      serviceType: "Mobile app development",
+    },
+    {
+      name: "UI/UX design",
+      description:
+        "Clear interfaces, efficient user journeys, prototypes and design systems aligned with business goals.",
+      serviceType: "UI/UX design",
+    },
+    {
+      name: "SEO",
+      description:
+        "Technical optimization, content structure, performance and structured data to improve organic visibility.",
+      serviceType: "Search engine optimization",
+    },
+    {
+      name: "Repère - digital accessibility",
+      description:
+        "RGAA audit, remediation and regulatory documentation to make websites and apps compliant with the EAA.",
+      serviceType: "Accessibility compliance audit",
+    },
+  ],
+};
+
 export const seoProjects = [
   {
     name: "RSCustom",
@@ -365,27 +564,68 @@ export const seoProjects = [
   },
 ];
 
-export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
+const seoProjectsByLocale: Record<Locale, typeof seoProjects> = {
+  fr: seoProjects,
+  en: [
+    {
+      name: "RSCustom",
+      description:
+        "Automotive showcase website for CarPlay installations, rear cameras, lighting and detailing.",
+      url: "https://www.rscustom.fr",
+      image: "/projects/rscustom.jpg",
+    },
+    {
+      name: "Garage à la Carte",
+      description:
+        "Premium bilingual website for a garage transformation studio in Orlando.",
+      url: "https://www.garagealacarte.com",
+      image: "/projects/garage-a-la-carte.jpg",
+    },
+    {
+      name: "Barber Industrie",
+      description:
+        "Web and mobile ecosystem for a barber shop with news and appointment booking.",
+      url: "https://barberindustrie.fr",
+      image: "/projects/barber-industrie.jpg",
+    },
+    {
+      name: "ERPI",
+      description:
+        "Industrial website for an engineering office specialized in industrial processes and robotic welding.",
+      url: "https://erpi-tawny.vercel.app",
+      image: "/projects/erpi.jpg",
+    },
+  ],
+};
+
+export function breadcrumbJsonLd(
+  items: Array<{ name: string; path: string }>,
+  locale: Locale = defaultLocale,
+) {
   return {
     "@context": "https://schema.org",
-    ...breadcrumbListJsonLd(items),
+    ...breadcrumbListJsonLd(items, locale),
   };
 }
 
-function breadcrumbListJsonLd(items: Array<{ name: string; path: string }>) {
+function breadcrumbListJsonLd(
+  items: Array<{ name: string; path: string }>,
+  locale: Locale = defaultLocale,
+) {
   return {
     "@type": "BreadcrumbList",
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: absoluteUrl(item.path),
+      item: absoluteUrl(localizedPath(item.path, locale)),
     })),
   };
 }
 
-export function baseJsonLd() {
+export function baseJsonLd(locale: Locale = defaultLocale) {
   const organizationId = absoluteUrl("#organization");
+  const services = seoServicesByLocale[locale];
 
   return {
     "@context": "https://schema.org",
@@ -398,7 +638,7 @@ export function baseJsonLd() {
         logo: absoluteUrl(siteConfig.logoPath),
         image: absoluteUrl(pageOgImage(seoPages.home)),
         email: siteConfig.email,
-        description: siteConfig.description,
+        description: siteDescriptions[locale],
         priceRange: "€€",
         address: {
           "@type": "PostalAddress",
@@ -432,7 +672,7 @@ export function baseJsonLd() {
             availableLanguage: ["fr", "en"],
           },
         ],
-        makesOffer: seoServices.map((service) => ({
+        makesOffer: services.map((service) => ({
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
@@ -447,7 +687,7 @@ export function baseJsonLd() {
         "@id": absoluteUrl("#website"),
         name: siteConfig.name,
         url: siteConfig.url,
-        inLanguage: siteConfig.language,
+        inLanguage: locale,
         publisher: {
           "@id": organizationId,
         },
@@ -456,19 +696,25 @@ export function baseJsonLd() {
   };
 }
 
-export function servicesJsonLd() {
+export function servicesJsonLd(locale: Locale = defaultLocale) {
+  const page = getSeoPage("services", locale);
+  const services = seoServicesByLocale[locale];
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       breadcrumbListJsonLd([
-        { name: "Accueil", path: "/" },
+        { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
         { name: "Services", path: "/services" },
-      ]),
+      ], locale),
       {
         "@type": "ItemList",
-        "@id": absoluteUrl("/services#services"),
-        name: "Services digitaux WebCode Studio",
-        itemListElement: seoServices.map((service, index) => ({
+        "@id": absoluteUrl(localizedPath("/services#services", locale)),
+        name:
+          locale === "fr"
+            ? "Services digitaux WebCode Studio"
+            : "WebCode Studio digital services",
+        itemListElement: services.map((service, index) => ({
           "@type": "ListItem",
           position: index + 1,
           item: {
@@ -480,6 +726,7 @@ export function servicesJsonLd() {
               "@id": absoluteUrl("#organization"),
             },
             areaServed: siteConfig.areas,
+            url: absoluteUrl(localizedPath(page.path, locale)),
           },
         })),
       },
@@ -487,20 +734,23 @@ export function servicesJsonLd() {
   };
 }
 
-export function projectsJsonLd() {
+export function projectsJsonLd(locale: Locale = defaultLocale) {
+  const page = getSeoPage("projects", locale);
+  const projects = seoProjectsByLocale[locale];
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       breadcrumbListJsonLd([
-        { name: "Accueil", path: "/" },
-        { name: "Projets", path: "/projets" },
-      ]),
+        { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
+        { name: locale === "fr" ? "Projets" : "Projects", path: "/projets" },
+      ], locale),
       {
         "@type": "CollectionPage",
-        "@id": absoluteUrl("/projets#portfolio"),
-        name: seoPages.projects.title,
-        description: seoPages.projects.description,
-        hasPart: seoProjects.map((project) => ({
+        "@id": absoluteUrl(localizedPath("/projets#portfolio", locale)),
+        name: page.title,
+        description: page.description,
+        hasPart: projects.map((project) => ({
           "@type": "CreativeWork",
           name: project.name,
           description: project.description,
@@ -515,20 +765,22 @@ export function projectsJsonLd() {
   };
 }
 
-export function contactJsonLd() {
+export function contactJsonLd(locale: Locale = defaultLocale) {
+  const page = getSeoPage("contact", locale);
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       breadcrumbListJsonLd([
-        { name: "Accueil", path: "/" },
+        { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
         { name: "Contact", path: "/contact" },
-      ]),
+      ], locale),
       {
         "@type": "ContactPage",
-        "@id": absoluteUrl("/contact#contact"),
-        name: seoPages.contact.title,
-        description: seoPages.contact.description,
-        url: absoluteUrl("/contact"),
+        "@id": absoluteUrl(localizedPath("/contact#contact", locale)),
+        name: page.title,
+        description: page.description,
+        url: absoluteUrl(localizedPath("/contact", locale)),
         mainEntity: {
           "@id": absoluteUrl("#organization"),
         },
@@ -544,6 +796,7 @@ export function serviceLandingJsonLd({
   faq,
   areaServed = siteConfig.areas,
   keywords,
+  locale = defaultLocale,
 }: {
   page: SeoPage;
   serviceName: string;
@@ -551,17 +804,18 @@ export function serviceLandingJsonLd({
   faq: FaqItem[];
   areaServed?: string[];
   keywords?: string[];
+  locale?: Locale;
 }) {
   return {
     "@context": "https://schema.org",
     "@graph": [
       breadcrumbListJsonLd([
-        { name: "Accueil", path: "/" },
+        { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
         { name: serviceName, path: page.path },
-      ]),
+      ], locale),
       {
         "@type": "Service",
-        "@id": absoluteUrl(`${page.path}#service`),
+        "@id": absoluteUrl(localizedPath(`${page.path}#service`, locale)),
         name: serviceName,
         description: page.description,
         serviceType,
@@ -572,12 +826,12 @@ export function serviceLandingJsonLd({
           "@type": "Place",
           name,
         })),
-        url: absoluteUrl(page.path),
+        url: absoluteUrl(localizedPath(page.path, locale)),
         keywords: (keywords ?? page.keywords).join(", "),
       },
       {
         "@type": "FAQPage",
-        "@id": absoluteUrl(`${page.path}#faq`),
+        "@id": absoluteUrl(localizedPath(`${page.path}#faq`, locale)),
         mainEntity: faq.map((item) => ({
           "@type": "Question",
           name: item.question,
@@ -604,27 +858,29 @@ export function postOgImage(post: BlogPost) {
   return `/api/og?${params.toString()}`;
 }
 
-export function buildPostMetadata(post: BlogPost) {
+export function buildPostMetadata(post: BlogPost, locale: Locale = defaultLocale) {
   const path = postPath(post);
   const ogImage = postOgImage(post);
+  const canonicalPath = localizedPath(path, locale);
 
   return {
     title: post.title,
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: absoluteUrl(path),
+      canonical: absoluteUrl(canonicalPath),
       languages: {
         fr: absoluteUrl(path),
+        en: absoluteUrl(localizedPath(path, "en")),
         "x-default": absoluteUrl(path),
       },
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: absoluteUrl(path),
+      url: absoluteUrl(canonicalPath),
       siteName: siteConfig.name,
-      locale: siteConfig.locale,
+      locale: locale === "fr" ? siteConfig.locale : "en_US",
       type: "article",
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified ?? post.datePublished,
@@ -647,27 +903,32 @@ export function buildPostMetadata(post: BlogPost) {
   };
 }
 
-export function blogListingJsonLd(posts: BlogPost[]) {
+export function blogListingJsonLd(
+  posts: BlogPost[],
+  locale: Locale = defaultLocale,
+) {
+  const page = getSeoPage("blog", locale);
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       breadcrumbListJsonLd([
-        { name: "Accueil", path: "/" },
+        { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
         { name: "Blog", path: "/blog" },
-      ]),
+      ], locale),
       {
         "@type": "Blog",
-        "@id": absoluteUrl("/blog#blog"),
-        name: seoPages.blog.title,
-        description: seoPages.blog.description,
-        url: absoluteUrl("/blog"),
-        inLanguage: siteConfig.language,
+        "@id": absoluteUrl(localizedPath("/blog#blog", locale)),
+        name: page.title,
+        description: page.description,
+        url: absoluteUrl(localizedPath("/blog", locale)),
+        inLanguage: locale,
         publisher: { "@id": absoluteUrl("#organization") },
         blogPost: posts.map((post) => ({
           "@type": "BlogPosting",
           headline: post.title,
           description: post.description,
-          url: absoluteUrl(postPath(post)),
+          url: absoluteUrl(localizedPath(postPath(post), locale)),
           datePublished: post.datePublished,
           dateModified: post.dateModified ?? post.datePublished,
         })),
@@ -676,17 +937,21 @@ export function blogListingJsonLd(posts: BlogPost[]) {
   };
 }
 
-export function blogPostingJsonLd(post: BlogPost) {
-  const url = absoluteUrl(postPath(post));
+export function blogPostingJsonLd(
+  post: BlogPost,
+  locale: Locale = defaultLocale,
+) {
+  const path = localizedPath(postPath(post), locale);
+  const url = absoluteUrl(path);
 
   return {
     "@context": "https://schema.org",
     "@graph": [
       breadcrumbListJsonLd([
-        { name: "Accueil", path: "/" },
+        { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
         { name: "Blog", path: "/blog" },
         { name: post.title, path: postPath(post) },
-      ]),
+      ], locale),
       {
         "@type": "BlogPosting",
         "@id": `${url}#article`,
@@ -696,7 +961,7 @@ export function blogPostingJsonLd(post: BlogPost) {
         mainEntityOfPage: url,
         datePublished: post.datePublished,
         dateModified: post.dateModified ?? post.datePublished,
-        inLanguage: siteConfig.language,
+        inLanguage: locale,
         keywords: post.keywords.join(", "),
         articleSection: post.category,
         image: absoluteUrl(postOgImage(post)),

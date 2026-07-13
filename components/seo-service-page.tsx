@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { Magnetic, Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 import type { FaqItem } from "@/lib/seo";
+import {
+  getDictionary,
+  localizeHref,
+  type Locale,
+} from "@/lib/i18n";
 
 type SeoSection = {
   title: string;
@@ -24,6 +29,7 @@ type SeoServicePageProps = {
   faq: FaqItem[];
   serviceAreas?: string[];
   relatedLinks?: RelatedLink[];
+  locale?: Locale;
 };
 
 export function SeoServicePage({
@@ -37,7 +43,38 @@ export function SeoServicePage({
   faq,
   serviceAreas,
   relatedLinks,
+  locale = "fr",
 }: SeoServicePageProps) {
+  const common = getDictionary(locale).common;
+  const copy = {
+    fr: {
+      localSeo: "Référencement local",
+      searchPage: `Une page conçue pour la recherche “${primaryKeyword}”.`,
+      searchText:
+        "Le contenu explique clairement l’offre, le périmètre, les livrables et les bénéfices. C’est ce que Google et vos prospects doivent comprendre rapidement.",
+      localMesh: "Maillage local",
+      localSignals: `Des signaux cohérents autour de ${primaryKeyword}.`,
+      localText:
+        "Google doit comprendre la zone visée, les pages importantes et le lien entre votre site, vos services et votre présence locale.",
+      area: "Zone travaillée",
+      expected: "Résultats attendus",
+      usefulBeforeBeautiful: "Un site utile avant d’être simplement beau.",
+    },
+    en: {
+      localSeo: "Local SEO",
+      searchPage: `A page designed for the search “${primaryKeyword}”.`,
+      searchText:
+        "The content clearly explains the offer, scope, deliverables and benefits. This is what Google and your prospects need to understand quickly.",
+      localMesh: "Local linking",
+      localSignals: `Consistent signals around ${primaryKeyword}.`,
+      localText:
+        "Google needs to understand the target area, key pages and the link between your website, services and local presence.",
+      area: "Target area",
+      expected: "Expected results",
+      usefulBeforeBeautiful: "A useful website before a simply beautiful one.",
+    },
+  }[locale];
+
   return (
     <main>
       <header className="bg-fog px-6 pb-24 pt-40 text-center">
@@ -53,10 +90,10 @@ export function SeoServicePage({
           </p>
           <Magnetic className="mt-8">
             <Link
-              href="/contact"
+              href={localizeHref("/contact", locale)}
               className="inline-flex rounded-full bg-azure px-6 py-3 text-xl text-white transition-colors hover:bg-[#0077ed]"
             >
-              Demander un devis
+              {common.requestQuote}
             </Link>
           </Magnetic>
         </Reveal>
@@ -77,15 +114,13 @@ export function SeoServicePage({
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="lg:sticky lg:top-32 lg:self-start">
             <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
-              Référencement local
+              {copy.localSeo}
             </span>
             <h2 className="text-[clamp(32px,4.5vw,48px)] font-bold leading-[1.1] tracking-[-0.016em]">
-              Une page conçue pour la recherche “{primaryKeyword}”.
+              {copy.searchPage}
             </h2>
             <p className="mt-5 text-xl font-light leading-relaxed text-graphite">
-              Le contenu explique clairement l’offre, le périmètre, les livrables
-              et les bénéfices. C’est ce que Google et vos prospects doivent
-              comprendre rapidement.
+              {copy.searchText}
             </p>
           </Reveal>
 
@@ -111,14 +146,13 @@ export function SeoServicePage({
           <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-14 lg:grid-cols-[0.9fr_1.1fr]">
             <Reveal>
               <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
-                Maillage local
+                {copy.localMesh}
               </span>
               <h2 className="text-[clamp(32px,4.5vw,48px)] font-bold leading-[1.1] tracking-[-0.016em]">
-                Des signaux cohérents autour de {primaryKeyword}.
+                {copy.localSignals}
               </h2>
               <p className="mt-5 text-xl font-light leading-relaxed text-graphite">
-                Google doit comprendre la zone visée, les pages importantes et
-                le lien entre votre site, vos services et votre présence locale.
+                {copy.localText}
               </p>
             </Reveal>
 
@@ -127,7 +161,7 @@ export function SeoServicePage({
                 <Reveal dir="zoom">
                   <article className="rounded-[28px] bg-fog p-8">
                     <h3 className="mb-5 text-2xl font-semibold tracking-tight">
-                      Zone travaillée
+                      {copy.area}
                     </h3>
                     <ul className="flex flex-wrap gap-2">
                       {serviceAreas.map((area) => (
@@ -148,7 +182,7 @@ export function SeoServicePage({
                   {relatedLinks.map((link, index) => (
                     <Reveal key={link.href} dir="zoom" delay={index * 0.06}>
                       <Link
-                        href={link.href}
+                        href={localizeHref(link.href, locale)}
                         className="block h-full rounded-[28px] bg-fog p-7 transition-colors hover:bg-silver/60"
                       >
                         <h3 className="text-xl font-semibold tracking-tight">
@@ -158,7 +192,7 @@ export function SeoServicePage({
                           {link.description}
                         </p>
                         <span className="mt-5 inline-block text-[17px] text-cobalt">
-                          Lire la page ›
+                          {common.readPage} ›
                         </span>
                       </Link>
                     </Reveal>
@@ -174,10 +208,10 @@ export function SeoServicePage({
         <div className="mx-auto max-w-[1200px]">
           <Reveal className="mb-12 max-w-3xl">
             <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
-              Résultats attendus
+              {copy.expected}
             </span>
             <h2 className="text-[clamp(32px,4.5vw,48px)] font-bold leading-[1.1] tracking-[-0.016em]">
-              Un site utile avant d’être simplement beau.
+              {copy.usefulBeforeBeautiful}
             </h2>
           </Reveal>
 
@@ -200,10 +234,10 @@ export function SeoServicePage({
         <div className="mx-auto max-w-[900px]">
           <Reveal className="mb-12 text-center">
             <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
-              FAQ
+              {common.faq}
             </span>
             <h2 className="text-[clamp(32px,4.5vw,48px)] font-bold leading-[1.1] tracking-[-0.016em]">
-              Questions fréquentes.
+              {common.frequentQuestions}
             </h2>
           </Reveal>
 
@@ -227,20 +261,20 @@ export function SeoServicePage({
       <section className="bg-snow px-6 py-32 text-center">
         <Reveal>
           <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
-            Projet concret
+            {common.projectCtaEyebrow}
           </span>
           <h2 className="text-[clamp(48px,9vw,88px)] font-bold leading-[1.04] tracking-[-0.022em]">
-            Parlons de votre site.
+            {common.projectCtaTitle}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-xl font-light text-graphite">
-            Consultation gratuite, cadrage clair et réponse sous 24h.
+            {common.projectCtaText}
           </p>
           <Magnetic className="mt-8">
             <Link
-              href="/contact"
+              href={localizeHref("/contact", locale)}
               className="inline-flex rounded-full bg-azure px-6 py-3 text-xl text-white transition-colors hover:bg-[#0077ed]"
             >
-              Démarrer mon projet
+              {common.startProject}
             </Link>
           </Magnetic>
         </Reveal>

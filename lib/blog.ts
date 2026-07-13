@@ -1,6 +1,8 @@
 // Blog content source. Articles are authored as structured blocks so we can
 // render semantic HTML (h2 / p / ul) and derive SEO metadata + JSON-LD.
 
+import type { Locale } from "@/lib/i18n";
+
 export type ContentBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
@@ -292,19 +294,299 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export function getAllPosts(): BlogPost[] {
-  return [...blogPosts].sort(
+const blogPostsEn: BlogPost[] = [
+  {
+    slug: "creation-site-web-montbeliard-guide-2026",
+    title: "Website creation in Montbeliard: the complete 2026 guide",
+    description:
+      "Everything a Montbeliard business should know before creating an effective website in 2026: goals, budget, local SEO, performance and mistakes to avoid.",
+    excerpt:
+      "Goals, budget, local SEO, performance and mistakes to avoid: a practical guide to creating a successful website in Montbeliard and the surrounding area.",
+    keywords: [
+      "website creation Montbeliard",
+      "website Montbeliard",
+      "local SEO Montbeliard",
+      "website price",
+      "web agency Montbeliard",
+    ],
+    category: "Guide",
+    datePublished: "2026-06-16",
+    readingMinutes: 7,
+    content: [
+      {
+        type: "p",
+        text: "In Montbeliard, as everywhere else, a website is no longer optional: it is often the first contact between your business and a potential customer. Before calling you, a prospect searches for you on Google, visits your site and judges your credibility in a few seconds. This guide explains, step by step, how to create a local, high-performing website in 2026.",
+      },
+      {
+        type: "h2",
+        text: "1. Define the goal before the design",
+      },
+      {
+        type: "p",
+        text: "A website only has value if it serves a clear goal. Before discussing colors or animations, ask the real question: what should the visitor do? Most local business websites aim to achieve one of these goals:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Generate quote requests, which is the most common case for artisans and SMEs.",
+          "Present an activity and reassure prospects before a meeting or call.",
+          "Sell online or take bookings.",
+          "Recruit and strengthen an employer brand.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Everything else - page structure, content and calls to action - comes from that goal. A beautiful website that does not convert is a failed website.",
+      },
+      {
+        type: "h2",
+        text: "2. Local SEO, your best ally in Montbeliard",
+      },
+      {
+        type: "p",
+        text: "Local SEO helps you appear when someone in the Montbeliard area searches for terms like plumber Montbeliard, hairdresser Audincourt or website creation Montbeliard. Three levers matter most:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A complete and up-to-date Google Business Profile: this is the number one local SEO factor.",
+          "Dedicated pages for your services and geographic area, with precise and useful content.",
+          "Real, regular and authentic customer reviews, which strengthen trust and ranking.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A technically clean website, with structured headings, rich data, a sitemap and careful metadata, helps Google index your pages. But it does not replace useful content and an active local presence.",
+      },
+      {
+        type: "h2",
+        text: "3. Performance is not a luxury",
+      },
+      {
+        type: "p",
+        text: "For years, Google has included speed and visual stability, known as Core Web Vitals, in its ranking signals. A slow site loses visitors before it has convinced them. In practice, a modern site should:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Automatically optimize images with AVIF/WebP formats and progressive loading.",
+          "Limit unnecessary code and prioritize what is visible first.",
+          "Stay smooth and readable on mobile, where most visits now happen.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "4. How much does a website cost in 2026?",
+      },
+      {
+        type: "p",
+        text: "The price mostly depends on the ambition of the project. A well-designed professional showcase website is a reasonable investment compared with the leads it can generate over time. Instead of looking for the cheapest option, compare what is included: custom design, content, SEO, performance, responsive design, maintenance and support.",
+      },
+      {
+        type: "h2",
+        text: "5. Mistakes to avoid",
+      },
+      {
+        type: "ul",
+        items: [
+          "Copying a competitor without thinking about your own positioning.",
+          "Neglecting content: a beautiful design with vague text does not convert.",
+          "Forgetting mobile, even though it represents most traffic.",
+          "Launching the site and abandoning it: a website must live, evolve and grow.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "In short",
+      },
+      {
+        type: "p",
+        text: "Creating a successful website in Montbeliard in 2026 means starting with a clear goal, taking local SEO seriously, guaranteeing performance, investing wisely and keeping the site alive over time. This is exactly the method we use at WebCode Studio. Have a project? Let's talk: the consultation is free and the quote is personalized.",
+      },
+    ],
+  },
+  {
+    slug: "combien-coute-un-site-web-2026",
+    title: "How much does a website cost in 2026? Price, factors and budget",
+    description:
+      "What budget should you plan for a website in 2026? We explain the factors that influence price, market ranges by project type and how to invest wisely.",
+    excerpt:
+      "Showcase website, e-commerce, application: the factors that influence website pricing, market ranges and how to avoid the cheapest-option trap.",
+    keywords: [
+      "website price",
+      "how much does a website cost",
+      "website creation rate",
+      "showcase website budget",
+      "website quote",
+    ],
+    category: "Advice",
+    datePublished: "2026-06-12",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "How much does a website cost? This is the first question almost every prospect asks. The honest answer is: it depends. A website does not have one fixed price, just as a house does not have one fixed price. What matters is understanding what changes the budget so you can invest in the right place.",
+      },
+      {
+        type: "h2",
+        text: "What really changes the price",
+      },
+      {
+        type: "p",
+        text: "A website's price depends on a few concrete factors, much more than on the number of pages:",
+      },
+      {
+        type: "ul",
+        items: [
+          "The type of project: a showcase website is more accessible than an e-commerce store or a custom application.",
+          "The design: a standard theme costs less than a fully custom design created for your brand.",
+          "The content: ready-to-use text, photos and logos change the workload significantly.",
+          "The features: online payment, booking, member areas, multilingual content and integrations.",
+          "SEO and performance: a site built to be found and fast requires more care than a simple launch.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Typical market ranges",
+      },
+      {
+        type: "p",
+        text: "As a guideline, here are the broad ranges seen on the French market in 2026. They are benchmarks, not quotes: only a clear scope can produce an accurate price.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Custom professional showcase website: the most common investment for an SME, artisan or independent business.",
+          "E-commerce website: higher, because it includes catalog, payment, order management and logistics.",
+          "Custom web or mobile application: the largest budget, proportional to functional complexity.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The cheapest-option trap",
+      },
+      {
+        type: "p",
+        text: "A very cheap website can become expensive later: invisible on Google, slow, hard to update and unsupported. You pay twice - once for the initial site, then again to rebuild it. Compare what is actually included instead of focusing only on the displayed price.",
+      },
+      {
+        type: "h2",
+        text: "Investing wisely",
+      },
+      {
+        type: "p",
+        text: "The right reflex is not to search for the lowest rate, but for the best return on investment. A site that regularly generates quote requests can pay for itself quickly. Ask the question differently: how much is a new customer worth, and how many customers should the site bring to be profitable?",
+      },
+      {
+        type: "p",
+        text: "At WebCode Studio, the quote is free and personalized. We start from your goal and budget to recommend the most relevant solution, without unnecessary layers. Let's talk about your project.",
+      },
+    ],
+  },
+  {
+    slug: "seo-local-par-ou-commencer",
+    title: "Local SEO: where should you start to be visible on Google?",
+    description:
+      "A practical local SEO guide for businesses: Google Business Profile, location-based keywords, customer reviews and content. The first actions that matter.",
+    excerpt:
+      "Google Business Profile, location-based keywords, customer reviews and dedicated pages: the first concrete actions to appear when people search nearby.",
+    keywords: [
+      "local SEO",
+      "Google Business Profile",
+      "be visible on Google",
+      "Montbeliard SEO",
+      "local ranking",
+    ],
+    category: "Guide",
+    datePublished: "2026-06-15",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "When a customer searches for restaurant near me or electrician Montbeliard, Google highlights the most relevant local businesses. Local SEO is the art of being one of them. The good news: the first actions are accessible to any business, without a huge budget.",
+      },
+      {
+        type: "h2",
+        text: "1. Take care of your Google Business Profile",
+      },
+      {
+        type: "p",
+        text: "This is the starting point and the most important local SEO factor. It is free, but often neglected. To make it work for you:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Fill in every field: precise category, opening hours, service area, phone number and website.",
+          "Add real photos of your activity, premises or completed work.",
+          "Regularly publish updates, offers or news directly on the profile.",
+          "Reply to every question and every review, positive or negative.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "2. Target location-based keywords",
+      },
+      {
+        type: "p",
+        text: "Think like your customer. They do not always type your brand name; they describe a need with a place: plumber Audincourt, website creation Montbeliard, hairdresser Pays de Montbeliard. Identify these phrases and use them naturally in titles, copy and metadata.",
+      },
+      {
+        type: "h2",
+        text: "3. Create dedicated pages",
+      },
+      {
+        type: "p",
+        text: "A single homepage cannot cover everything. Create one page per important service and, when justified, per geographic area. Each page must provide useful content: what you offer, for whom, with which benefits and which proof. Avoid duplicating the same text by only changing the city name.",
+      },
+      {
+        type: "h2",
+        text: "4. Collect authentic customer reviews",
+      },
+      {
+        type: "p",
+        text: "Reviews influence both ranking and customer decisions. Get used to asking after each successful service, simply, with a direct link to your profile. Regularity and authenticity matter more than volume: real and steady reviews beat bought reviews, which damage trust.",
+      },
+      {
+        type: "h2",
+        text: "5. Secure the technical base",
+      },
+      {
+        type: "p",
+        text: "Finally, your site must be fast, mobile-readable and well structured. Rich data, a sitemap and clean metadata help search engines understand and present your business properly.",
+      },
+      {
+        type: "h2",
+        text: "What to start with concretely",
+      },
+      {
+        type: "p",
+        text: "If you could only do one thing this week, complete and optimize your Google Business Profile. Then work on your website pages and reviews. Local SEO is long-term work, but the first results often arrive quickly. Need help structuring it all? That is exactly what we do.",
+      },
+    ],
+  },
+];
+
+const blogPostsByLocale: Record<Locale, BlogPost[]> = {
+  fr: blogPosts,
+  en: blogPostsEn,
+};
+
+export function getAllPosts(locale: Locale = "fr"): BlogPost[] {
+  return [...blogPostsByLocale[locale]].sort(
     (a, b) =>
       new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
   );
 }
 
-export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((post) => post.slug === slug);
+export function getPostBySlug(
+  slug: string,
+  locale: Locale = "fr",
+): BlogPost | undefined {
+  return blogPostsByLocale[locale].find((post) => post.slug === slug);
 }
 
-export function formatPostDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("fr-FR", {
+export function formatPostDate(iso: string, locale: Locale = "fr"): string {
+  return new Date(iso).toLocaleDateString(locale === "fr" ? "fr-FR" : "en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",

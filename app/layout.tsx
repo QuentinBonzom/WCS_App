@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteNav } from "@/components/site-chrome";
 import { Footer } from "@/components/footer";
+import { HtmlLang } from "@/components/html-lang";
 import { JsonLd } from "@/components/json-ld";
 import { ScrollProgress } from "@/components/motion-primitives";
 import {
@@ -78,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={inter.variable}>
       <body className="font-sans">
+        <HtmlLang />
         <ScrollProgress />
         <JsonLd data={baseJsonLd()} />
         <SiteNav />
