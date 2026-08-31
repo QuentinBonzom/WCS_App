@@ -43,8 +43,8 @@ const projects = [
     title: "ERPI",
     desc: "Une présence digitale technique pour un bureau d'études spécialisé dans les process industriels, l'assemblage et la soudure robotisée.",
     img: "/projects/erpi.jpg",
-    href: "https://erpi-tawny.vercel.app",
-    temporary: true,
+    href: "https://erpi-sasu.fr",
+    temporary: false,
   },
 ];
 

@@ -63,11 +63,6 @@ export const metadata: Metadata = {
     url: absoluteUrl("/"),
   },
   twitter: buildPageMetadata(seoPages.home).twitter,
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
-  },
   manifest: "/manifest.webmanifest",
 };
 

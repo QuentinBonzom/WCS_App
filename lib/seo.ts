@@ -559,7 +559,7 @@ export const seoProjects = [
     name: "ERPI",
     description:
       "Site industriel pour un bureau d'études spécialisé dans les process industriels et la soudure robotisée.",
-    url: "https://erpi-tawny.vercel.app",
+    url: "https://erpi-sasu.fr",
     image: "/projects/erpi.jpg",
   },
 ];
@@ -592,7 +592,7 @@ const seoProjectsByLocale: Record<Locale, typeof seoProjects> = {
       name: "ERPI",
       description:
         "Industrial website for an engineering office specialized in industrial processes and robotic welding.",
-      url: "https://erpi-tawny.vercel.app",
+      url: "https://erpi-sasu.fr",
       image: "/projects/erpi.jpg",
     },
   ],

@@ -93,7 +93,6 @@ const counters = [
 
 const homeCopy = {
   fr: {
-    available: "Disponible pour de nouveaux projets",
     heroDesktopBefore: "Création de sites web",
     heroDesktopMiddle: "et apps qui",
     heroMobileFirst: "Création de",
@@ -166,7 +165,6 @@ const homeCopy = {
     ctaTitle: "Démarrer mon projet.",
   },
   en: {
-    available: "Available for new projects",
     heroDesktopBefore: "Custom websites",
     heroDesktopMiddle: "and apps that",
     heroMobileFirst: "Custom",
@@ -261,11 +259,7 @@ export function HomePage({ locale = "fr" }: { locale?: Locale }) {
         labels={t.heroMockLabels}
         titleComponent={
           <div className="mx-auto mb-4 w-full max-w-[760px] px-4 sm:px-0">
-            <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-sm font-medium text-slate backdrop-blur">
-              <i className="h-2 w-2 rounded-full bg-[#30d158] shadow-[0_0_0_5px_rgba(48,209,88,0.12)]" />
-              {t.available}
-            </span>
-            <h1 className="mt-2 text-[clamp(32px,8.2vw,72px)] font-bold leading-[1.04] tracking-[-0.022em] text-ink">
+            <h1 className="text-[clamp(32px,8.2vw,72px)] font-bold leading-[1.04] tracking-[-0.022em] text-ink">
               <span className="hidden sm:inline">
                 {t.heroDesktopBefore}
                 <br />

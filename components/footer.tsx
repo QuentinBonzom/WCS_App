@@ -28,9 +28,6 @@ export function Footer() {
           <p className="my-3 max-w-[40ch] text-xs leading-relaxed text-graphite">
             {t.description}
           </p>
-          <span className="inline-flex items-center gap-2 rounded-full bg-silver px-4 py-2 text-sm text-slate">
-            <span className="h-2 w-2 rounded-full bg-[#34c759]" /> {t.available}
-          </span>
         </div>
 
         <div className="flex flex-col gap-2">
