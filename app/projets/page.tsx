@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Reveal, Magnetic } from "@/components/motion-primitives";
-import { TiltCard } from "@/components/tilt-card";
-import { JsonLd } from "@/components/json-ld";
+import { Reveal, Magnetic } from "@/components/motion";
+import { TiltCard } from "@/components/ui/tilt-card";
+import { JsonLd } from "@/components/ui/json-ld";
 import { buildPageMetadata, getSeoPage, projectsJsonLd } from "@/lib/seo";
 import { getDictionary, localizeHref, type Locale } from "@/lib/i18n";
 

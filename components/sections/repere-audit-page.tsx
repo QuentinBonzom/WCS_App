@@ -5,9 +5,9 @@ import {
   Reveal,
   StaggerGroup,
   StaggerItem,
-} from "@/components/motion-primitives";
-import { TiltCard } from "@/components/tilt-card";
-import { JsonLd } from "@/components/json-ld";
+} from "@/components/motion";
+import { TiltCard } from "@/components/ui/tilt-card";
+import { JsonLd } from "@/components/ui/json-ld";
 import { getSeoPage, serviceLandingJsonLd } from "@/lib/seo";
 import { defaultLocale, localizeHref, type Locale } from "@/lib/i18n";
 import { repereAuditContent } from "@/content/pages/repere-audit";

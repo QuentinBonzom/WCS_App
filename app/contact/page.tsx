@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Reveal } from "@/components/motion-primitives";
-import { ContactForm } from "@/components/contact-form";
-import { JsonLd } from "@/components/json-ld";
+import { Reveal } from "@/components/motion";
+import { ContactForm } from "@/components/ui/contact-form";
+import { JsonLd } from "@/components/ui/json-ld";
 import { buildPageMetadata, contactJsonLd, getSeoPage } from "@/lib/seo";
 import { localizeHref, type Locale } from "@/lib/i18n";
 

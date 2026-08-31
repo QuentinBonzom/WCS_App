@@ -1,5 +1,5 @@
-import { JsonLd } from "@/components/json-ld";
-import { SeoServicePage } from "@/components/seo-service-page";
+import { JsonLd } from "@/components/ui/json-ld";
+import { SeoServicePage } from "@/components/sections/seo-service-page";
 import { buildPageMetadata, getSeoPage, serviceLandingJsonLd } from "@/lib/seo";
 import { defaultLocale, type Locale } from "@/lib/i18n";
 import {

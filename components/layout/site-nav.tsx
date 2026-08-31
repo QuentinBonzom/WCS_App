@@ -12,7 +12,7 @@ import {
   Languages,
 } from "lucide-react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
-import { HamburgerMenuOverlay } from "@/components/lightswind/HamburgerMenuOverlay";
+import { HamburgerMenuOverlay } from "@/components/ui/hamburger-menu-overlay";
 import {
   getDictionary,
   getLocaleFromPathname,

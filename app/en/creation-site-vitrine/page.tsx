@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {
   ServiceLandingPage,
   serviceLandingMetadata,
-} from "@/components/service-landing-page";
+} from "@/components/sections/service-landing-page";
 
 export const metadata: Metadata = serviceLandingMetadata(
   "creationSiteVitrine",

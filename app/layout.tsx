@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SiteNav } from "@/components/site-chrome";
-import { Footer } from "@/components/footer";
-import { HtmlLang } from "@/components/html-lang";
-import { JsonLd } from "@/components/json-ld";
-import { ScrollProgress } from "@/components/motion-primitives";
+import { SiteNav } from "@/components/layout/site-nav";
+import { Footer } from "@/components/layout/footer";
+import { HtmlLang } from "@/components/layout/html-lang";
+import { JsonLd } from "@/components/ui/json-ld";
+import { ScrollProgress } from "@/components/motion";
 import {
   absoluteUrl,
   baseJsonLd,

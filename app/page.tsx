@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { Reveal, Magnetic } from "@/components/motion-primitives";
-import { TiltCard } from "@/components/tilt-card";
-import { Counter } from "@/components/counter";
-import { JsonLd } from "@/components/json-ld";
-import { BackendCockpit, ProjectCockpit } from "@/components/project-cockpit";
+import { Reveal, Magnetic } from "@/components/motion";
+import { TiltCard } from "@/components/ui/tilt-card";
+import { Counter } from "@/components/ui/counter";
+import { JsonLd } from "@/components/ui/json-ld";
+import { BackendCockpit, ProjectCockpit } from "@/components/sections/project-cockpit";
 import {
   breadcrumbJsonLd,
   buildPageMetadata,

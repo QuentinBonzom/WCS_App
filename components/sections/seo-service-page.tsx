@@ -5,7 +5,7 @@ import {
   Reveal,
   StaggerGroup,
   StaggerItem,
-} from "@/components/motion-primitives";
+} from "@/components/motion";
 import { getDictionary, localizeHref, type Locale } from "@/lib/i18n";
 import type { ServiceLandingContent } from "@/content/pages/types";
 

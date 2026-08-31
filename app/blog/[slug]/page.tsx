@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Magnetic, Reveal } from "@/components/motion-primitives";
-import { JsonLd } from "@/components/json-ld";
+import { Magnetic, Reveal } from "@/components/motion";
+import { JsonLd } from "@/components/ui/json-ld";
 import { buildPostMetadata, blogPostingJsonLd } from "@/lib/seo";
 import {
   blogPosts,

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Reveal } from "@/components/motion-primitives";
-import { TiltCard } from "@/components/tilt-card";
-import { JsonLd } from "@/components/json-ld";
+import { Reveal } from "@/components/motion";
+import { TiltCard } from "@/components/ui/tilt-card";
+import { JsonLd } from "@/components/ui/json-ld";
 import { buildPageMetadata, blogListingJsonLd, getSeoPage } from "@/lib/seo";
 import { getAllPosts, formatPostDate } from "@/lib/blog";
 import { getDictionary, localizeHref, type Locale } from "@/lib/i18n";

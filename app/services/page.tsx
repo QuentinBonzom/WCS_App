@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FeatureShowcase } from "@/components/gradient-scene";
-import { BrowserMock, PhoneMock } from "@/components/device-mock";
+import { FeatureShowcase } from "@/components/sections/feature-showcase";
+import { BrowserMock, PhoneMock } from "@/components/ui/device-mock";
 import {
   Reveal,
   Marquee,
   Magnetic,
   StaggerGroup,
   StaggerItem,
-} from "@/components/motion-primitives";
-import { TiltCard } from "@/components/tilt-card";
-import { ServicesSlideshow } from "@/components/services-slideshow";
-import { JsonLd } from "@/components/json-ld";
+} from "@/components/motion";
+import { TiltCard } from "@/components/ui/tilt-card";
+import { ServicesSlideshow } from "@/components/sections/services-slideshow";
+import { JsonLd } from "@/components/ui/json-ld";
 import { buildPageMetadata, getSeoPage, servicesJsonLd } from "@/lib/seo";
 import { getDictionary, localizeHref, type Locale } from "@/lib/i18n";
 
