@@ -1,63 +1,17 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Reveal } from "@/components/motion-primitives";
-import { ContactForm } from "@/components/contact-form";
-import { JsonLd } from "@/components/json-ld";
+import { Reveal } from "@/components/motion";
+import { ContactForm } from "@/components/ui/contact-form";
+import { JsonLd } from "@/components/ui/json-ld";
 import { buildPageMetadata, contactJsonLd, getSeoPage } from "@/lib/seo";
 import { localizeHref, type Locale } from "@/lib/i18n";
+import { contactContent } from "@/content/pages/contact";
 
 export const metadata: Metadata = buildPageMetadata(getSeoPage("contact"), "fr");
 
-const contactCopy = {
-  fr: {
-    eyebrow: "Contact",
-    title: (
-      <>
-        Devis site web
-        <br />
-        sur mesure.
-      </>
-    ),
-    intro:
-      "Prêt à créer votre site internet, application mobile ou refonte SEO ?",
-    infoTitle: "Informations de contact",
-    infoText:
-      "Nous travaillons avec des clients du monde entier et garantissons une réponse rapide.",
-    locationTitle: "Localisation & expertise",
-    locationTextBefore:
-      "Basé à Montbéliard, France - au cœur du territoire de Belfort-Montbéliard, avec une expertise dédiée à la",
-    locationLink: "création de site web à Montbéliard",
-    areasTitle: "Zones d'intervention",
-    areasText:
-      "Services digitaux disponibles dans toute la France et aux États-Unis. Collaboration à distance optimisée.",
-    available: "Disponible · Monde entier",
-  },
-  en: {
-    eyebrow: "Contact",
-    title: (
-      <>
-        Custom website
-        <br />
-        quote.
-      </>
-    ),
-    intro: "Ready to create your website, mobile app or SEO redesign?",
-    infoTitle: "Contact information",
-    infoText:
-      "We work with clients worldwide and guarantee a fast response.",
-    locationTitle: "Location & expertise",
-    locationTextBefore:
-      "Based in Montbéliard, France - in the Belfort-Montbéliard area, with dedicated expertise in",
-    locationLink: "website creation in Montbéliard",
-    areasTitle: "Service areas",
-    areasText:
-      "Digital services available across France and the United States. Remote collaboration is fully optimized.",
-    available: "Available · Worldwide",
-  },
-} as const satisfies Record<Locale, object>;
-
 export function ContactPage({ locale = "fr" }: { locale?: Locale }) {
-  const t = contactCopy[locale];
+  const t = contactContent[locale];
 
   return (
     <main>
@@ -68,7 +22,12 @@ export function ContactPage({ locale = "fr" }: { locale?: Locale }) {
             {t.eyebrow}
           </span>
           <h1 className="text-[clamp(48px,9vw,96px)] font-bold leading-[1.04] tracking-[-0.022em]">
-            {t.title}
+            {t.titleLines.map((line, index) => (
+              <Fragment key={line}>
+                {index > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-xl font-light">
             {t.intro}

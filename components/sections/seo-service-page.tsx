@@ -1,50 +1,36 @@
+import { Fragment } from "react";
 import Link from "next/link";
-import { Magnetic, Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
-import type { FaqItem } from "@/lib/seo";
 import {
-  getDictionary,
-  localizeHref,
-  type Locale,
-} from "@/lib/i18n";
-
-type SeoSection = {
-  title: string;
-  text: string;
-};
-
-type RelatedLink = {
-  href: string;
-  label: string;
-  description: string;
-};
+  Magnetic,
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+} from "@/components/motion";
+import { getDictionary, localizeHref, type Locale } from "@/lib/i18n";
+import type { ServiceLandingContent } from "@/content/pages/types";
 
 type SeoServicePageProps = {
-  eyebrow: string;
-  title: React.ReactNode;
-  intro: string;
-  primaryKeyword: string;
-  proofPoints: string[];
-  sections: SeoSection[];
-  outcomes: string[];
-  faq: FaqItem[];
-  serviceAreas?: string[];
-  relatedLinks?: RelatedLink[];
+  content: ServiceLandingContent;
   locale?: Locale;
 };
 
-export function SeoServicePage({
-  eyebrow,
-  title,
-  intro,
-  primaryKeyword,
-  proofPoints,
-  sections,
-  outcomes,
-  faq,
-  serviceAreas,
-  relatedLinks,
-  locale = "fr",
-}: SeoServicePageProps) {
+/**
+ * Presentational layout for a "SEO service landing" page.
+ * All copy comes from {@link ServiceLandingContent}; see `content/pages/`.
+ */
+export function SeoServicePage({ content, locale = "fr" }: SeoServicePageProps) {
+  const {
+    eyebrow,
+    titleLines,
+    intro,
+    primaryKeyword,
+    proofPoints,
+    sections,
+    outcomes,
+    serviceAreas,
+    relatedLinks,
+    faq,
+  } = content;
   const common = getDictionary(locale).common;
   const copy = {
     fr: {
@@ -83,7 +69,12 @@ export function SeoServicePage({
             {eyebrow}
           </span>
           <h1 className="mx-auto max-w-5xl text-[clamp(44px,8vw,88px)] font-bold leading-[1.04] tracking-[-0.022em]">
-            {title}
+            {titleLines.map((line, index) => (
+              <Fragment key={line}>
+                {index > 0 && <br />}
+                {line}
+              </Fragment>
+            ))}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl font-light leading-relaxed text-graphite">
             {intro}

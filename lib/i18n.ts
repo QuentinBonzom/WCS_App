@@ -74,7 +74,6 @@ export const dictionary = {
     footer: {
       description:
         "Agence digitale premium spécialisée dans la création d'expériences web exceptionnelles. Nous transformons vos ambitions en réalités numériques performantes.",
-      available: "Disponible pour nouveaux projets",
       expertise: "Expertises",
       searches: "Recherches",
       contact: "Contact",
@@ -122,7 +121,6 @@ export const dictionary = {
     footer: {
       description:
         "A premium digital studio specialized in exceptional web experiences. We turn your ambitions into high-performing digital products.",
-      available: "Available for new projects",
       expertise: "Expertise",
       searches: "Searches",
       contact: "Contact",
