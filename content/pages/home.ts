@@ -6,23 +6,14 @@ import type { Locale } from "@/lib/i18n";
  */
 export const homeContent = {
   fr: {
-    heroDesktopBefore: "Création de sites web",
-    heroDesktopMiddle: "et apps qui",
-    heroMobileFirst: "Création de",
-    heroMobileSecond: "sites web",
-    heroMobileThird: "et apps qui",
-    heroHighlight: "convertissent",
-    heroMobileText:
-      "Studio web à Montbéliard : sites rapides, apps et interfaces sur mesure pour convertir.",
-    heroText:
-      "Studio web à Montbéliard, nous concevons des sites rapides, des applications mobiles et des interfaces sur mesure pour transformer vos visiteurs en clients.",
-    heroLink: "Découvrir nos services",
-    heroMockLabels: {
-      toggle: "Basculer entre le frontend et le backend du projet",
-      front: "Cliquer pour voir le backend",
-      back: "Retour au frontend",
-      frontShort: "Frontend",
-      backShort: "Backend",
+    heroParallax: {
+      titleLines: ["Sites web et apps", "qui convertissent."],
+      highlight: "convertissent",
+      intro:
+        "Studio web à Montbéliard, nous concevons des sites rapides, des applications mobiles et des interfaces sur mesure pour transformer vos visiteurs en clients.",
+      primaryCta: { label: "Démarrer mon projet", href: "/contact" },
+      secondaryCta: { label: "Découvrir nos services", href: "/services" },
+      visitLabel: "Visiter le site",
     },
     servicesEyebrow: "Nos services",
     servicesTitle: "Pensés pour convertir.",
@@ -78,23 +69,14 @@ export const homeContent = {
     ctaTitle: "Démarrer mon projet.",
   },
   en: {
-    heroDesktopBefore: "Custom websites",
-    heroDesktopMiddle: "and apps that",
-    heroMobileFirst: "Custom",
-    heroMobileSecond: "websites",
-    heroMobileThird: "and apps that",
-    heroHighlight: "convert",
-    heroMobileText:
-      "Web studio in Montbéliard: fast websites, apps and custom interfaces built to convert.",
-    heroText:
-      "Based in Montbéliard, we design fast websites, mobile applications and custom interfaces that turn visitors into customers.",
-    heroLink: "Discover our services",
-    heroMockLabels: {
-      toggle: "Switch between the project frontend and backend",
-      front: "Click to view the backend",
-      back: "Back to the frontend",
-      frontShort: "Frontend",
-      backShort: "Backend",
+    heroParallax: {
+      titleLines: ["Websites and apps", "that convert."],
+      highlight: "convert",
+      intro:
+        "Based in Montbéliard, we design fast websites, mobile applications and custom interfaces that turn visitors into customers.",
+      primaryCta: { label: "Start my project", href: "/contact" },
+      secondaryCta: { label: "Discover our services", href: "/services" },
+      visitLabel: "Visit website",
     },
     servicesEyebrow: "Our services",
     servicesTitle: "Built to convert.",
