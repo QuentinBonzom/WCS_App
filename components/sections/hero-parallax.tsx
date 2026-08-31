@@ -135,9 +135,7 @@ function Header({ copy }: { copy: HeroParallaxCopy }) {
             {copy.highlight && line.includes(copy.highlight) ? (
               <>
                 {line.split(copy.highlight)[0]}
-                <span className="bg-gradient-to-r from-azure to-[#57b0ff] bg-clip-text text-transparent">
-                  {copy.highlight}
-                </span>
+                <span className="text-azure">{copy.highlight}</span>
                 {line.split(copy.highlight)[1]}
               </>
             ) : (
