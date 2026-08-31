@@ -6,27 +6,13 @@ import { JsonLd } from "@/components/ui/json-ld";
 import { buildPageMetadata, blogListingJsonLd, getSeoPage } from "@/lib/seo";
 import { getAllPosts, formatPostDate } from "@/lib/blog";
 import { getDictionary, localizeHref, type Locale } from "@/lib/i18n";
+import { blogListingContent } from "@/content/pages/blog";
 
 export const metadata: Metadata = buildPageMetadata(getSeoPage("blog"), "fr");
 
-const blogCopy = {
-  fr: {
-    eyebrow: "Blog",
-    title: "Conseils & guides.",
-    intro:
-      "Nos articles sur la création de sites web, le référencement SEO local, la performance et le design — pour les entreprises de Montbéliard et d'ailleurs.",
-  },
-  en: {
-    eyebrow: "Blog",
-    title: "Advice & guides.",
-    intro:
-      "Our articles on website creation, local SEO, performance and design - for businesses in Montbéliard and beyond.",
-  },
-} as const satisfies Record<Locale, object>;
-
 export function BlogPage({ locale = "fr" }: { locale?: Locale }) {
   const posts = getAllPosts(locale);
-  const t = blogCopy[locale];
+  const t = blogListingContent[locale];
   const common = getDictionary(locale).common;
 
   return (
