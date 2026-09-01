@@ -102,7 +102,7 @@ export function ServicesPage({ locale = "fr" }: { locale?: Locale }) {
           title={t.showcases[0].title}
           sub={t.showcases[0].sub}
           tags={[...t.showcases[0].tags]}
-          href={localizeHref("/creation-site-web-montbeliard", locale)}
+          href={localizeHref("/creation-site-internet-montbeliard", locale)}
           linkLabel={t.showcases[0].linkLabel}
         >
           <BrowserMock

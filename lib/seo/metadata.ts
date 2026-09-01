@@ -2,6 +2,11 @@ import type { BlogPost } from "@/lib/blog";
 import { defaultLocale, localizedPath, type Locale } from "@/lib/i18n";
 import { absoluteUrl, siteConfig, type SeoPage } from "./site";
 
+/** Absolute URL without a lone trailing slash, so canonical/hreflang stay consistent. */
+function canonical(path: string) {
+  return absoluteUrl(path).replace(/\/$/, "");
+}
+
 export function pageOgImage(page: SeoPage) {
   const params = new URLSearchParams({
     title: page.title,
@@ -25,17 +30,17 @@ export function buildPageMetadata(page: SeoPage, locale: Locale = defaultLocale)
     description: page.description,
     keywords: page.keywords,
     alternates: {
-      canonical: absoluteUrl(canonicalPath),
+      canonical: canonical(canonicalPath),
       languages: {
-        fr: absoluteUrl(page.path),
-        en: absoluteUrl(localizedPath(page.path, "en")),
-        "x-default": absoluteUrl(page.path),
+        fr: canonical(page.path),
+        en: canonical(localizedPath(page.path, "en")),
+        "x-default": canonical(page.path),
       },
     },
     openGraph: {
       title: page.title,
       description: page.description,
-      url: absoluteUrl(canonicalPath),
+      url: canonical(canonicalPath),
       siteName: siteConfig.name,
       locale: locale === "fr" ? siteConfig.locale : "en_US",
       type: "website",
@@ -80,17 +85,17 @@ export function buildPostMetadata(post: BlogPost, locale: Locale = defaultLocale
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: absoluteUrl(canonicalPath),
+      canonical: canonical(canonicalPath),
       languages: {
-        fr: absoluteUrl(path),
-        en: absoluteUrl(localizedPath(path, "en")),
-        "x-default": absoluteUrl(path),
+        fr: canonical(path),
+        en: canonical(localizedPath(path, "en")),
+        "x-default": canonical(path),
       },
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: absoluteUrl(canonicalPath),
+      url: canonical(canonicalPath),
       siteName: siteConfig.name,
       locale: locale === "fr" ? siteConfig.locale : "en_US",
       type: "article",

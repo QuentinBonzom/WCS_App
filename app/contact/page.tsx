@@ -64,7 +64,7 @@ export function ContactPage({ locale = "fr" }: { locale?: Locale }) {
               <p className="text-[17px] text-graphite">
                 {t.locationTextBefore}{" "}
                 <Link
-                  href={localizeHref("/creation-site-web-montbeliard", locale)}
+                  href={localizeHref("/creation-site-internet-montbeliard", locale)}
                   className="text-cobalt hover:underline"
                 >
                   {t.locationLink}

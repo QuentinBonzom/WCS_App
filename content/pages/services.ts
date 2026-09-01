@@ -137,9 +137,9 @@ export const servicesContent: Localized<ServicesContent> = {
     targetedTitle: "Des offres pensées pour vos recherches.",
     targetedPages: [
       {
-        title: "Création site web Montbéliard",
-        desc: "Une page dédiée aux entreprises locales qui cherchent un site rapide, crédible et optimisé pour Google.",
-        href: "/creation-site-web-montbeliard",
+        title: "Création site internet Montbéliard",
+        desc: "La landing locale dédiée : types de sites, processus, zone d'intervention et approche tarifaire pour les entreprises du Pays de Montbéliard.",
+        href: "/creation-site-internet-montbeliard",
       },
       {
         title: "Agence web Montbéliard",
@@ -267,7 +267,7 @@ export const servicesContent: Localized<ServicesContent> = {
       {
         title: "Website creation in Montbéliard",
         desc: "A page for local companies looking for a fast, credible website optimized for Google.",
-        href: "/creation-site-web-montbeliard",
+        href: "/creation-site-internet-montbeliard",
       },
       {
         title: "Web agency in Montbéliard",

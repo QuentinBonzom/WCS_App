@@ -59,21 +59,29 @@ export const siteConfig = {
     "Studio web à Montbéliard spécialisé dans la création de sites internet rapides, applications mobiles, design UI/UX et référencement SEO.",
   location: {
     city: "Montbéliard",
+    department: "Doubs",
     region: "Bourgogne-Franche-Comté",
     country: "FR",
+    /** Approximate coordinates of Montbéliard — no personal address is exposed. */
+    geo: { latitude: 47.5108, longitude: 6.7985 },
   },
-  areas: ["France", "États-Unis", "Suisse", "Belfort", "Montbéliard"],
+  /** Broad served areas (international remote work) — used for Organization schema. */
+  areas: ["France", "Suisse", "États-Unis"],
+  /** Primary local service area around Montbéliard — used for local pages & schema. */
   localAreas: [
     "Montbéliard",
     "Pays de Montbéliard",
-    "Belfort",
     "Audincourt",
     "Sochaux",
     "Valentigney",
-    "Exincourt",
     "Bethoncourt",
+    "Grand-Charmont",
+    "Bavans",
+    "Voujeaucourt",
     "Héricourt",
-    "Bourgogne-Franche-Comté",
+    "Belfort",
+    "Doubs",
+    "Nord Franche-Comté",
   ],
 };
 

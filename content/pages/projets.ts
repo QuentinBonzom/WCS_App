@@ -20,6 +20,11 @@ export type ProjetsContent = {
   visitButton: string;
   imageAlt: string;
   projects: ProjectCard[];
+  similar: {
+    heading: string;
+    text: string;
+    links: { label: string; href: string }[];
+  };
   ctaEyebrow: string;
   ctaTitle: string;
   ctaText: string;
@@ -69,29 +74,53 @@ export const projects = baseProjects;
 
 export const projetsContent: Localized<ProjetsContent> = {
   fr: {
-    headerEyebrow: "Nos projets",
-    titleLines: ["Sites web", "sur mesure."],
+    headerEyebrow: "Nos réalisations",
+    titleLines: ["Sites internet", "sur mesure."],
     headerText:
-      "Une sélection de réalisations digitales — sites vitrines, interfaces premium et applications web ou mobiles conçues pour des clients en France et aux États-Unis.",
+      "Une sélection de réalisations WebCode Studio — sites vitrines, écosystèmes web et mobile et présences digitales techniques, conçus pour des clients en France et à l'étranger.",
     temporary: "Lien provisoire",
     temporaryButton: "Voir la version provisoire",
     visitButton: "Visiter le site",
     imageAlt: "Page d'accueil du site",
     projects: baseProjects,
+    similar: {
+      heading: "Un projet similaire ?",
+      text: "Que vous soyez à Montbéliard, dans le Doubs ou ailleurs, on cadre votre projet et on vous répond sous 24h.",
+      links: [
+        {
+          label: "Création de site internet à Montbéliard",
+          href: "/creation-site-internet-montbeliard",
+        },
+        { label: "Nos services", href: "/services" },
+        { label: "Demander un devis", href: "/contact" },
+      ],
+    },
     ctaEyebrow: "Votre projet, ensuite",
     ctaTitle: "À vous de jouer.",
     ctaText:
       "Parlons de votre prochaine réalisation. Consultation gratuite, réponse sous 24h.",
   },
   en: {
-    headerEyebrow: "Our projects",
+    headerEyebrow: "Our work",
     titleLines: ["Custom", "websites."],
     headerText:
-      "A selection of digital work - showcase websites, premium interfaces and web or mobile applications created for clients in France and the United States.",
+      "A selection of WebCode Studio work - showcase websites, web and mobile ecosystems and technical digital presences, created for clients in France and abroad.",
     temporary: "Temporary link",
     temporaryButton: "View temporary version",
     visitButton: "Visit website",
     imageAlt: "Homepage preview for",
+    similar: {
+      heading: "A similar project?",
+      text: "Whether you're in Montbéliard, the Doubs or elsewhere, we scope your project and reply within 24h.",
+      links: [
+        {
+          label: "Website creation in Montbéliard",
+          href: "/creation-site-internet-montbeliard",
+        },
+        { label: "Our services", href: "/services" },
+        { label: "Request a quote", href: "/contact" },
+      ],
+    },
     projects: [
       {
         ...baseProjects[0],

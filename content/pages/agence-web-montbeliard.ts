@@ -4,8 +4,8 @@ export const agenceWebMontbeliardContent: Localized<ServiceLandingContent> = {
   fr: {
     serviceName: "Agence web à Montbéliard",
     serviceType: "Digital agency",
-    eyebrow: "Agence web Montbéliard",
-    titleLines: ["Une agence web", "orientée résultats."],
+    eyebrow: "Agence web · Montbéliard (Doubs)",
+    titleLines: ["Agence web", "à Montbéliard."],
     intro:
       "WebCode Studio accompagne les entreprises de Montbéliard et du secteur Belfort-Montbéliard dans la création, la refonte et l'optimisation de leur présence digitale : site internet, application mobile, UI/UX et SEO.",
     primaryKeyword: "agence web Montbéliard",
@@ -38,6 +38,26 @@ export const agenceWebMontbeliardContent: Localized<ServiceLandingContent> = {
       "Réduire la friction entre la visite du site et la prise de contact avec des messages et CTA mieux placés.",
       "Garder un partenaire technique disponible pour faire évoluer le site après le lancement.",
     ],
+    relatedLinks: [
+      {
+        href: "/creation-site-internet-montbeliard",
+        label: "Création de site internet à Montbéliard",
+        description:
+          "La page détaillée du service : types de sites, processus, zone d'intervention et approche tarifaire.",
+      },
+      {
+        href: "/creation-site-vitrine",
+        label: "Création de site vitrine",
+        description:
+          "Le format le plus adapté pour présenter une activité locale et générer des demandes qualifiées.",
+      },
+      {
+        href: "/projets",
+        label: "Nos réalisations",
+        description:
+          "Des exemples de sites et d'applications déjà livrés pour des clients en France et à l'étranger.",
+      },
+    ],
     faq: [
       {
         question: "Pourquoi choisir une agence web à Montbéliard ?",
@@ -64,8 +84,8 @@ export const agenceWebMontbeliardContent: Localized<ServiceLandingContent> = {
   en: {
     serviceName: "Web agency in Montbéliard",
     serviceType: "Digital agency",
-    eyebrow: "Web agency in Montbéliard",
-    titleLines: ["A result-driven", "web agency."],
+    eyebrow: "Web agency · Montbéliard (Doubs)",
+    titleLines: ["Web agency", "in Montbéliard."],
     intro:
       "WebCode Studio supports companies in Montbéliard and the Belfort-Montbéliard area with the creation, redesign and optimization of their digital presence: website, mobile application, UI/UX and SEO.",
     primaryKeyword: "web agency Montbéliard",
@@ -97,6 +117,26 @@ export const agenceWebMontbeliardContent: Localized<ServiceLandingContent> = {
       "Improve local visibility on searches linked to Montbéliard, Belfort and your service area.",
       "Reduce friction between visiting the site and contacting you with better messages and CTAs.",
       "Keep an available technical partner to evolve the site after launch.",
+    ],
+    relatedLinks: [
+      {
+        href: "/creation-site-internet-montbeliard",
+        label: "Website creation in Montbéliard",
+        description:
+          "The detailed service page: site types, process, service area and pricing approach.",
+      },
+      {
+        href: "/creation-site-vitrine",
+        label: "Showcase website creation",
+        description:
+          "The most suitable format to present a local activity and generate qualified requests.",
+      },
+      {
+        href: "/projets",
+        label: "Our work",
+        description:
+          "Examples of websites and apps already delivered for clients in France and abroad.",
+      },
     ],
     faq: [
       {

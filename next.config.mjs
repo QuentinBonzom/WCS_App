@@ -18,6 +18,18 @@ const nextConfig = {
         destination: "https://www.webcodestudio.fr/:path*",
         permanent: true,
       },
+      // The local landing page was consolidated under a single URL targeting
+      // "création site internet Montbéliard" (its strongest query).
+      {
+        source: "/creation-site-web-montbeliard",
+        destination: "/creation-site-internet-montbeliard",
+        permanent: true,
+      },
+      {
+        source: "/en/creation-site-web-montbeliard",
+        destination: "/en/creation-site-internet-montbeliard",
+        permanent: true,
+      },
     ];
   },
   turbopack: {

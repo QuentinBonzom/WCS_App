@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/seo";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -82,7 +82,7 @@ export async function GET(request: Request) {
             fontWeight: 600,
           }}
         >
-          <span>Montbéliard · France · International</span>
+          <span>Montbéliard · Doubs · France</span>
           <span>{siteConfig.url.replace(/^https?:\/\//, "")}</span>
         </div>
       </div>

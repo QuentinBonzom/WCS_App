@@ -85,7 +85,31 @@ export function ProjetsPage({ locale = "fr" }: { locale?: Locale }) {
         </div>
       </section>
 
-      <section className="bg-snow px-6 py-32 text-center">
+      <section className="bg-snow px-6 py-24">
+        <div className="mx-auto max-w-[1200px]">
+          <Reveal>
+            <h2 className="text-[clamp(28px,4vw,40px)] font-bold leading-[1.15] tracking-[-0.015em]">
+              {t.similar.heading}
+            </h2>
+            <p className="mt-4 max-w-xl text-xl font-light text-graphite">
+              {t.similar.text}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[17px]">
+              {t.similar.links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={localizeHref(link.href, locale)}
+                  className="text-cobalt hover:underline"
+                >
+                  {link.label} ›
+                </Link>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-fog px-6 py-32 text-center">
         <Reveal>
           <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
             {t.ctaEyebrow}

@@ -195,7 +195,11 @@ function ProjectCard({
           height={600}
           width={600}
           className="absolute inset-0 h-full w-full object-cover object-left-top"
-          alt={project.title}
+          alt={
+            project.tagline
+              ? `Site réalisé pour ${project.title} — ${project.tagline}`
+              : `Site réalisé pour ${project.title}`
+          }
           sizes="(max-width: 640px) 22rem, 30rem"
         />
         <div className="absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover/product:bg-ink/70" />

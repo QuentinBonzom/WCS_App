@@ -35,7 +35,7 @@ export function Footer() {
             {t.expertise}
           </h4>
           <Link
-            href={localizedPath("/creation-site-web-montbeliard", locale)}
+            href={localizedPath("/creation-site-internet-montbeliard", locale)}
             className="text-xs text-white/70 transition-colors hover:text-white"
           >
             {t.webCreation}
@@ -77,7 +77,7 @@ export function Footer() {
             {t.searches}
           </h4>
           <Link
-            href={localizedPath("/creation-site-web-montbeliard", locale)}
+            href={localizedPath("/creation-site-internet-montbeliard", locale)}
             className="text-xs text-white/70 transition-colors hover:text-white"
           >
             {t.localWebCreation}

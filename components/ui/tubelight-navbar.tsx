@@ -20,13 +20,23 @@ interface NavBarProps {
 
 export function NavBar({ items, className }: NavBarProps) {
   const pathname = usePathname();
-  const initial =
-    items.find((i) => i.url === pathname)?.name ?? items[0].name;
-  const [activeTab, setActiveTab] = useState(initial);
+  // Match the deepest nav item that prefixes the current path, so landing pages
+  // outside the nav simply highlight nothing rather than defaulting to "Home".
+  const matchName = (path: string) => {
+    const home = items.find((i) => i.url === path);
+    if (home) return home.name;
+    return (
+      [...items]
+        .filter((i) => i.url !== "/" && i.url !== "/en")
+        .sort((a, b) => b.url.length - a.url.length)
+        .find((i) => path === i.url || path.startsWith(`${i.url}/`))?.name ?? ""
+    );
+  };
+  const [activeTab, setActiveTab] = useState(() => matchName(pathname));
 
   useEffect(() => {
-    const match = items.find((i) => i.url === pathname);
-    if (match) setActiveTab(match.name);
+    setActiveTab(matchName(pathname));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, items]);
 
   return (

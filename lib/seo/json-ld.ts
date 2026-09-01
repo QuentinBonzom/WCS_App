@@ -47,7 +47,7 @@ export function baseJsonLd(locale: Locale = defaultLocale) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+        "@type": ["Organization", "ProfessionalService"],
         "@id": organizationId,
         name: siteConfig.name,
         url: siteConfig.url,
@@ -56,27 +56,30 @@ export function baseJsonLd(locale: Locale = defaultLocale) {
         email: siteConfig.email,
         description: siteDescriptions[locale],
         priceRange: "€€",
+        // Service-area business run from a private address — locality only, no street.
         address: {
           "@type": "PostalAddress",
           addressLocality: siteConfig.location.city,
           addressRegion: siteConfig.location.region,
           addressCountry: siteConfig.location.country,
         },
-        areaServed: siteConfig.areas.map((name) => ({
-          "@type": "Place",
-          name,
-        })),
-        serviceArea: siteConfig.localAreas.map((name) => ({
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: siteConfig.location.geo.latitude,
+          longitude: siteConfig.location.geo.longitude,
+        },
+        areaServed: siteConfig.localAreas.map((name) => ({
           "@type": "Place",
           name,
         })),
         knowsAbout: [
-          "création de site web",
           "création de site internet",
-          "SEO local",
-          "Google Business Profile",
+          "création de site web",
+          "création de site vitrine",
+          "refonte de site internet",
           "développement web",
-          "site vitrine",
+          "SEO local",
+          "design UI/UX",
           "accessibilité numérique",
         ],
         contactPoint: [
@@ -84,7 +87,10 @@ export function baseJsonLd(locale: Locale = defaultLocale) {
             "@type": "ContactPoint",
             contactType: "customer support",
             email: siteConfig.email,
-            areaServed: siteConfig.areas,
+            areaServed: [
+              ...siteConfig.localAreas.slice(0, 3),
+              ...siteConfig.areas,
+            ],
             availableLanguage: ["fr", "en"],
           },
         ],
@@ -95,6 +101,7 @@ export function baseJsonLd(locale: Locale = defaultLocale) {
             name: service.name,
             description: service.description,
             serviceType: service.serviceType,
+            provider: { "@id": organizationId },
           },
         })),
       },

@@ -28,7 +28,7 @@ const services = [
   {
     title: "Développement Web",
     desc: "Sites sur mesure, rapides et responsive, conçus pour convertir vos visiteurs en clients.",
-    href: "/creation-site-web-montbeliard",
+    href: "/creation-site-internet-montbeliard",
     linkLabel: "Création site web Montbéliard",
     icon: (
       <svg viewBox="0 0 32 32" fill="none" className="h-10 w-10" aria-hidden>
@@ -160,6 +160,54 @@ export function HomePage({ locale = "fr" }: { locale?: Locale }) {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* LOCAL / SERVICE AREA */}
+      <section className="bg-fog px-6 py-28">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
+          <Reveal dir="left">
+            <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
+              {t.local.eyebrow}
+            </span>
+            <h2 className="text-[clamp(32px,4.5vw,44px)] font-bold leading-[1.1] tracking-[-0.016em]">
+              {t.local.heading}
+            </h2>
+            <p className="mt-5 max-w-xl text-xl font-light leading-relaxed text-graphite">
+              {t.local.text}
+            </p>
+            <Link
+              href={localizeHref(t.local.cta.href, locale)}
+              className="mt-6 inline-flex text-[17px] text-cobalt hover:underline"
+            >
+              {t.local.cta.label} ›
+            </Link>
+          </Reveal>
+          <Reveal dir="right">
+            <div className="rounded-[28px] bg-snow p-8">
+              <ul className="flex flex-wrap gap-2">
+                {[
+                  "Montbéliard",
+                  "Audincourt",
+                  "Sochaux",
+                  "Valentigney",
+                  "Bethoncourt",
+                  "Grand-Charmont",
+                  "Bavans",
+                  "Héricourt",
+                  "Belfort",
+                  "Doubs",
+                ].map((town) => (
+                  <li
+                    key={town}
+                    className="rounded-full border border-silver bg-fog px-4 py-2 text-sm text-slate"
+                  >
+                    {town}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
 

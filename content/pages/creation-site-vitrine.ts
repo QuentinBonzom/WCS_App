@@ -38,6 +38,20 @@ export const creationSiteVitrineContent: Localized<ServiceLandingContent> = {
       "Recevoir plus de demandes qualifiées grâce à un formulaire clair et des appels à l'action cohérents.",
       "Préparer votre référencement naturel avec une structure propre et des contenus faciles à enrichir.",
     ],
+    relatedLinks: [
+      {
+        href: "/creation-site-internet-montbeliard",
+        label: "Création de site internet à Montbéliard",
+        description:
+          "Vous êtes une entreprise du Doubs ? La page locale détaille le service, le processus et la zone d'intervention.",
+      },
+      {
+        href: "/agence-web-montbeliard",
+        label: "Agence web à Montbéliard",
+        description:
+          "L'accompagnement complet : stratégie, design, développement, SEO et suivi dans la durée.",
+      },
+    ],
     faq: [
       {
         question: "À quoi sert un site vitrine professionnel ?",
@@ -97,6 +111,20 @@ export const creationSiteVitrineContent: Localized<ServiceLandingContent> = {
       "Replace a scattered presence with a controlled central point: services, work, contact and credibility.",
       "Receive more qualified requests thanks to a clear form and coherent calls to action.",
       "Prepare your organic visibility with a clean structure and content that is easy to enrich.",
+    ],
+    relatedLinks: [
+      {
+        href: "/creation-site-internet-montbeliard",
+        label: "Website creation in Montbéliard",
+        description:
+          "Based in the Doubs? The local page details the service, process and service area.",
+      },
+      {
+        href: "/agence-web-montbeliard",
+        label: "Web agency in Montbéliard",
+        description:
+          "The full support: strategy, design, development, SEO and long-term follow-up.",
+      },
     ],
     faq: [
       {

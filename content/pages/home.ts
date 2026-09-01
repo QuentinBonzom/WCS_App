@@ -7,23 +7,23 @@ import type { Locale } from "@/lib/i18n";
 export const homeContent = {
   fr: {
     heroParallax: {
-      titleLines: ["Sites web et apps", "qui convertissent."],
-      highlight: "convertissent",
+      titleLines: ["Création de sites internet", "à Montbéliard."],
+      highlight: "Montbéliard",
       intro:
-        "Studio web à Montbéliard, nous concevons des sites rapides, des applications mobiles et des interfaces sur mesure pour transformer vos visiteurs en clients.",
-      primaryCta: { label: "Démarrer mon projet", href: "/contact" },
-      secondaryCta: { label: "Découvrir nos services", href: "/services" },
+        "WebCode Studio est un studio web basé à Montbéliard. Nous créons des sites internet, sites vitrines et applications sur mesure pour les entreprises, artisans et commerçants du Doubs — rapides, crédibles et pensés pour convertir.",
+      primaryCta: { label: "Demander un devis", href: "/contact" },
+      secondaryCta: { label: "Voir nos réalisations", href: "/projets" },
       visitLabel: "Visiter le site",
     },
     servicesEyebrow: "Nos services",
     servicesTitle: "Pensés pour convertir.",
     servicesText:
-      "Quatre expertises au cœur de votre projet digital : création de site internet, application mobile, design UI/UX et conformité accessibilité.",
+      "De la création de site vitrine au développement sur mesure : quatre expertises pour une présence digitale qui vous rend visible sur Google et transforme vos visiteurs en clients.",
     services: [
       {
-        title: "Développement Web",
-        desc: "Sites sur mesure, rapides et responsive, conçus pour convertir vos visiteurs en clients.",
-        linkLabel: "Création site web Montbéliard",
+        title: "Sites internet & vitrines",
+        desc: "Sites sur mesure, sites vitrines et refontes : rapides, responsive et optimisés pour le référencement local.",
+        linkLabel: "Création site internet Montbéliard",
       },
       {
         title: "Applications Mobiles",
@@ -41,6 +41,15 @@ export const homeContent = {
         linkLabel: "Découvrir Repère",
       },
     ],
+    local: {
+      eyebrow: "Zone d'intervention",
+      heading: "Un studio web ancré à Montbéliard.",
+      text: "Basés dans le Pays de Montbéliard, nous accompagnons les entreprises, artisans, commerçants et indépendants du Doubs et du Nord Franche-Comté — Audincourt, Sochaux, Valentigney, Héricourt, Belfort — dans la création, la refonte et le référencement de leur site internet. Le reste de la France et l'international sont pris en charge à distance.",
+      cta: {
+        label: "Création de site internet à Montbéliard",
+        href: "/creation-site-internet-montbeliard",
+      },
+    },
     repereEyebrow: "Repère · nouveau service",
     repereTitle: "Accessibilité, conformité, preuves.",
     repereText:
@@ -70,22 +79,22 @@ export const homeContent = {
   },
   en: {
     heroParallax: {
-      titleLines: ["Websites and apps", "that convert."],
-      highlight: "convert",
+      titleLines: ["Website creation", "in Montbéliard."],
+      highlight: "Montbéliard",
       intro:
-        "Based in Montbéliard, we design fast websites, mobile applications and custom interfaces that turn visitors into customers.",
-      primaryCta: { label: "Start my project", href: "/contact" },
-      secondaryCta: { label: "Discover our services", href: "/services" },
+        "WebCode Studio is a web studio based in Montbéliard. We build custom websites, showcase sites and apps for businesses, artisans and shops across the Doubs — fast, credible and built to convert.",
+      primaryCta: { label: "Request a quote", href: "/contact" },
+      secondaryCta: { label: "See our work", href: "/projets" },
       visitLabel: "Visit website",
     },
     servicesEyebrow: "Our services",
     servicesTitle: "Built to convert.",
     servicesText:
-      "Four core skills for your digital project: website creation, mobile applications, UI/UX design and accessibility compliance.",
+      "From showcase sites to custom development: four skills for a digital presence that makes you visible on Google and turns visitors into customers.",
     services: [
       {
-        title: "Web Development",
-        desc: "Fast, responsive custom websites designed to convert visitors into customers.",
+        title: "Websites & showcase sites",
+        desc: "Custom sites, showcase sites and redesigns: fast, responsive and optimized for local search.",
         linkLabel: "Website creation in Montbéliard",
       },
       {
@@ -104,6 +113,15 @@ export const homeContent = {
         linkLabel: "Discover Repère",
       },
     ],
+    local: {
+      eyebrow: "Service area",
+      heading: "A web studio rooted in Montbéliard.",
+      text: "Based in the Montbéliard area, we support businesses, artisans and shops across the Doubs and the Nord Franche-Comté — Audincourt, Sochaux, Valentigney, Héricourt, Belfort — with the creation, redesign and SEO of their website. The rest of France and international work is handled remotely.",
+      cta: {
+        label: "Website creation in Montbéliard",
+        href: "/creation-site-internet-montbeliard",
+      },
+    },
     repereEyebrow: "Repère · new service",
     repereTitle: "Accessibility, compliance, proof.",
     repereText:

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const links = [
   { href: "/services", label: "Nos services" },
   { href: "/projets", label: "Réalisations" },
-  { href: "/creation-site-web-montbeliard", label: "Création site web Montbéliard" },
+  { href: "/creation-site-internet-montbeliard", label: "Création site internet Montbéliard" },
   { href: "/contact", label: "Contact" },
 ];
 
