@@ -292,6 +292,109 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "refonte-site-internet-7-signes",
+    title:
+      "Refonte de site internet : 7 signes qu'il est temps de refaire votre site",
+    description:
+      "Site lent, non responsive, design daté, invisible sur Google : les 7 signaux qui indiquent qu'une refonte de votre site internet est devenue rentable — et comment la mener sans perdre de trafic.",
+    excerpt:
+      "Site lent, non responsive, design daté, difficile à mettre à jour, invisible sur Google : les signes qu'une refonte s'impose, et comment la faire sans casser votre référencement.",
+    keywords: [
+      "refonte site internet",
+      "refaire son site web",
+      "moderniser site internet",
+      "refonte site Montbéliard",
+      "quand refaire son site",
+    ],
+    category: "Guide",
+    datePublished: "2026-09-02",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "Un site internet vieillit plus vite qu'on ne le croit. Les usages changent, les téléphones prennent le dessus, Google relève ses exigences, et un site qui convertissait bien il y a quatre ans peut aujourd'hui faire fuir des prospects sans que vous le sachiez. Voici sept signaux concrets qui indiquent qu'une refonte est devenue un investissement rentable.",
+      },
+      {
+        type: "h2",
+        text: "1. Le site est lent à charger",
+      },
+      {
+        type: "p",
+        text: "La vitesse est un critère direct de classement Google et, surtout, de conversion : au-delà de trois secondes de chargement, une part importante des visiteurs abandonne. Si votre site s'appuie sur un thème lourd bourré d'extensions, ou si les images ne sont pas optimisées, la refonte permet de repartir sur un socle léger et rapide.",
+      },
+      {
+        type: "h2",
+        text: "2. L'affichage mobile est cassé ou approximatif",
+      },
+      {
+        type: "p",
+        text: "La majorité de vos visiteurs consultent votre site sur téléphone, et Google indexe la version mobile en priorité. Menu illisible, textes minuscules, boutons trop rapprochés, images qui débordent : si l'expérience mobile n'est pas irréprochable, vous perdez à la fois des clients et du référencement.",
+      },
+      {
+        type: "h2",
+        text: "3. Le design ne vous ressemble plus",
+      },
+      {
+        type: "p",
+        text: "Un site daté envoie un signal : celui d'une entreprise qui n'a pas évolué. Vos prospects comparent, souvent en quelques secondes, votre site à celui de vos concurrents. Si le vôtre paraît en retard, la crédibilité en prend un coup avant même le premier contact.",
+      },
+      {
+        type: "h2",
+        text: "4. Vous ne pouvez pas le mettre à jour vous-même",
+      },
+      {
+        type: "p",
+        text: "Ajouter une page, changer une photo, publier une actualité : si chaque modification passe par un prestataire injoignable ou par du code, votre site devient un frein plutôt qu'un outil. Une refonte est l'occasion de repartir sur une base que vous maîtrisez.",
+      },
+      {
+        type: "h2",
+        text: "5. Le site n'apparaît pas sur Google",
+      },
+      {
+        type: "p",
+        text: "Structure technique faible, contenus trop minces, absence de données structurées, pages importantes non optimisées : un site peut être en ligne depuis des années sans jamais apparaître sur les recherches qui comptent pour votre activité. La refonte permet de reconstruire des fondations SEO solides.",
+      },
+      {
+        type: "h2",
+        text: "6. Le taux de contact a chuté",
+      },
+      {
+        type: "p",
+        text: "Si vous recevez moins de demandes qu'avant à trafic équivalent, le problème vient souvent du parcours : proposition de valeur floue, appels à l'action mal placés, formulaire trop long, manque de preuves de confiance. Une refonte centrée sur la conversion corrige ces points.",
+      },
+      {
+        type: "h2",
+        text: "7. La technologie n'est plus maintenue",
+      },
+      {
+        type: "p",
+        text: "CMS abandonné, extensions qui ne reçoivent plus de mises à jour, faille de sécurité potentielle : au-delà de l'inconfort, c'est un risque. Mieux vaut anticiper une refonte que subir un piratage ou une panne.",
+      },
+      {
+        type: "h2",
+        text: "Refaire son site sans perdre son référencement",
+      },
+      {
+        type: "p",
+        text: "La principale crainte d'une refonte est justifiée : mal préparée, elle peut faire chuter le trafic du jour au lendemain. On l'évite avec une méthode simple :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Auditer les pages qui génèrent réellement du trafic et les mots-clés positionnés avant de toucher à quoi que ce soit.",
+          "Conserver les contenus utiles et les URL bien référencées plutôt que de tout renommer.",
+          "Établir un plan de redirections 301, une ancienne URL vers sa nouvelle version, sans exception.",
+          "Mettre à jour le sitemap et la Search Console le jour de la bascule.",
+          "Suivre le positionnement les semaines suivantes pour corriger vite si besoin.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Si plusieurs de ces sept signes vous parlent, une refonte est probablement rentable. Chez WebCode Studio, à Montbéliard, on commence toujours par un audit de votre site actuel : vous savez ce qu'il faut garder, ce qu'il faut changer, et ce que ça coûte, avant de vous engager.",
+      },
+    ],
+  },
 ];
 
 const blogPostsEn: BlogPost[] = [
@@ -561,6 +664,108 @@ const blogPostsEn: BlogPost[] = [
       {
         type: "p",
         text: "If you could only do one thing this week, complete and optimize your Google Business Profile. Then work on your website pages and reviews. Local SEO is long-term work, but the first results often arrive quickly. Need help structuring it all? That is exactly what we do.",
+      },
+    ],
+  },
+  {
+    slug: "refonte-site-internet-7-signes",
+    title: "Website redesign: 7 signs it's time to rebuild your site",
+    description:
+      "Slow, not responsive, dated design, invisible on Google: the 7 signals that a website redesign has become worth it — and how to run it without losing traffic.",
+    excerpt:
+      "Slow, not responsive, dated design, hard to update, invisible on Google: the signs a redesign is due, and how to do it without breaking your SEO.",
+    keywords: [
+      "website redesign",
+      "rebuild website",
+      "modernize website",
+      "website redesign Montbéliard",
+      "when to redo your site",
+    ],
+    category: "Guide",
+    datePublished: "2026-09-02",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "A website ages faster than you'd think. Habits change, phones take over, Google raises the bar, and a site that converted well four years ago can now push prospects away without you knowing. Here are seven concrete signals that a redesign has become a worthwhile investment.",
+      },
+      {
+        type: "h2",
+        text: "1. The site is slow to load",
+      },
+      {
+        type: "p",
+        text: "Speed is a direct Google ranking factor and, above all, a conversion factor: beyond three seconds of loading, a large share of visitors leave. If your site relies on a heavy theme stuffed with plugins, or if images aren't optimized, a redesign lets you start over on a light, fast base.",
+      },
+      {
+        type: "h2",
+        text: "2. Mobile display is broken or rough",
+      },
+      {
+        type: "p",
+        text: "Most of your visitors browse on a phone, and Google indexes the mobile version first. Unreadable menu, tiny text, cramped buttons, overflowing images: if the mobile experience isn't flawless, you lose both customers and rankings.",
+      },
+      {
+        type: "h2",
+        text: "3. The design no longer reflects you",
+      },
+      {
+        type: "p",
+        text: "A dated site sends a signal: that of a business that hasn't evolved. Prospects compare your site to your competitors', often in seconds. If yours looks behind, credibility takes a hit before the first contact.",
+      },
+      {
+        type: "h2",
+        text: "4. You can't update it yourself",
+      },
+      {
+        type: "p",
+        text: "Adding a page, changing a photo, publishing news: if every change goes through an unreachable provider or through code, your site becomes a burden rather than a tool. A redesign is the chance to start over on a base you control.",
+      },
+      {
+        type: "h2",
+        text: "5. The site doesn't show up on Google",
+      },
+      {
+        type: "p",
+        text: "Weak technical structure, thin content, no structured data, key pages not optimized: a site can be online for years without ever appearing for the searches that matter to your business. A redesign lets you rebuild solid SEO foundations.",
+      },
+      {
+        type: "h2",
+        text: "6. The contact rate has dropped",
+      },
+      {
+        type: "p",
+        text: "If you get fewer enquiries than before at equal traffic, the problem is often the journey: unclear value proposition, badly placed calls to action, a form that's too long, missing trust signals. A conversion-focused redesign fixes these.",
+      },
+      {
+        type: "h2",
+        text: "7. The technology is no longer maintained",
+      },
+      {
+        type: "p",
+        text: "Abandoned CMS, plugins that no longer receive updates, potential security holes: beyond the discomfort, it's a risk. Better to plan a redesign than to suffer a hack or an outage.",
+      },
+      {
+        type: "h2",
+        text: "Redoing your site without losing your rankings",
+      },
+      {
+        type: "p",
+        text: "The main fear about a redesign is justified: poorly prepared, it can drop traffic overnight. You avoid it with a simple method:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Audit the pages that actually generate traffic and the ranked keywords before touching anything.",
+          "Keep the useful content and well-ranked URLs rather than renaming everything.",
+          "Set up a 301 redirect plan, one old URL to its new version, with no exception.",
+          "Update the sitemap and Search Console on switch day.",
+          "Monitor rankings in the following weeks to fix quickly if needed.",
+        ],
+      },
+      {
+        type: "p",
+        text: "If several of these seven signs ring true, a redesign is probably worth it. At WebCode Studio, in Montbéliard, we always start with an audit of your current site: you know what to keep, what to change and what it costs before committing.",
       },
     ],
   },

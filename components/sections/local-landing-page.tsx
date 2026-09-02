@@ -18,27 +18,33 @@ import {
   siteConfig,
 } from "@/lib/seo";
 import { defaultLocale, localizeHref, type Locale } from "@/lib/i18n";
-import { creationSiteInternetMontbeliardContent } from "@/content/pages/creation-site-internet-montbeliard";
+import {
+  localLandingContent,
+  type LocalLandingKey,
+} from "@/content/pages/local-landings";
 import { projetsContent } from "@/content/pages/projets";
 
-const PAGE_KEY = "creationSiteInternetMontbeliard" as const;
-
-export function localLandingMetadata(locale: Locale = defaultLocale): Metadata {
-  return buildPageMetadata(getSeoPage(PAGE_KEY, locale), locale);
+export function localLandingMetadata(
+  pageKey: LocalLandingKey,
+  locale: Locale = defaultLocale,
+): Metadata {
+  return buildPageMetadata(getSeoPage(pageKey, locale), locale);
 }
 
 /**
- * /creation-site-internet-montbeliard — the flagship local landing page.
- * Rich, bespoke layout that reuses the site's motion + card primitives.
- * All copy lives in `content/pages/creation-site-internet-montbeliard.ts`.
+ * Rich local landing page (e.g. /creation-site-internet-montbeliard,
+ * /refonte-site-internet-montbeliard). Bespoke layout reusing the site's
+ * motion + card primitives. Copy lives in `content/pages/local-landings.ts`.
  */
 export function LocalLandingPage({
+  pageKey,
   locale = defaultLocale,
 }: {
+  pageKey: LocalLandingKey;
   locale?: Locale;
 }) {
-  const page = getSeoPage(PAGE_KEY, locale);
-  const c = creationSiteInternetMontbeliardContent[locale];
+  const page = getSeoPage(pageKey, locale);
+  const c = localLandingContent[pageKey][locale];
   const projects = projetsContent[locale].projects.slice(0, 3);
   const contact = localizeHref("/contact", locale);
   const projectsHref = localizeHref("/projets", locale);
@@ -270,17 +276,7 @@ export function LocalLandingPage({
         </div>
       </section>
 
-      <Marquee
-        items={[
-          "SITE VITRINE",
-          "SITE SUR MESURE",
-          "REFONTE",
-          "SEO LOCAL",
-          "RESPONSIVE",
-          "PERFORMANCE",
-          "MONTBÉLIARD · DOUBS",
-        ]}
-      />
+      <Marquee items={[...c.marquee]} />
 
       {/* WHY */}
       <section className="bg-fog px-6 py-24">
@@ -378,8 +374,32 @@ export function LocalLandingPage({
         </div>
       </section>
 
+      {/* RELATED PAGES */}
+      {c.related && (
+        <section className="bg-snow px-6 py-20">
+          <div className="mx-auto max-w-[1200px]">
+            <Reveal>
+              <h2 className="text-[clamp(24px,3.5vw,36px)] font-bold leading-[1.15] tracking-[-0.015em]">
+                {c.related.heading}
+              </h2>
+              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[17px]">
+                {c.related.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={localizeHref(link.href, locale)}
+                    className="text-cobalt hover:underline"
+                  >
+                    {link.label} ›
+                  </Link>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
-      <section id="faq" className="bg-snow px-6 py-24">
+      <section id="faq" className="bg-fog px-6 py-24">
         <div className="mx-auto max-w-[900px]">
           <Reveal className="mb-12 text-center">
             <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
@@ -392,7 +412,7 @@ export function LocalLandingPage({
           <div className="grid grid-cols-1 gap-3">
             {c.faq.map((item) => (
               <Reveal key={item.question}>
-                <article className="rounded-[28px] bg-fog p-7">
+                <article className="rounded-[28px] bg-snow p-7">
                   <h3 className="text-xl font-semibold tracking-tight">
                     {item.question}
                   </h3>
@@ -407,7 +427,7 @@ export function LocalLandingPage({
       </section>
 
       {/* CTA */}
-      <section className="bg-fog px-6 py-32 text-center">
+      <section className="bg-snow px-6 py-32 text-center">
         <Reveal>
           <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
             {c.finalCta.eyebrow}

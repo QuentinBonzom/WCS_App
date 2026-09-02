@@ -1,73 +1,4 @@
-import type { FaqItem } from "@/lib/seo";
-import type { Localized } from "./types";
-
-export type LocalLandingContent = {
-  /** schema.org Service */
-  serviceName: string;
-  serviceType: string;
-  hero: {
-    eyebrow: string;
-    titleLines: string[];
-    intro: string;
-    primaryCta: { label: string; href: string };
-    secondaryCta: { label: string; href: string };
-  };
-  value: {
-    eyebrow: string;
-    heading: string;
-    points: { title: string; text: string }[];
-  };
-  siteTypes: {
-    eyebrow: string;
-    heading: string;
-    intro: string;
-    items: { title: string; text: string; badge?: string }[];
-  };
-  advantages: {
-    eyebrow: string;
-    heading: string;
-    intro: string;
-    items: string[];
-  };
-  process: {
-    eyebrow: string;
-    heading: string;
-    steps: { step: string; title: string; text: string }[];
-  };
-  work: {
-    eyebrow: string;
-    heading: string;
-    text: string;
-    ctaLabel: string;
-  };
-  why: {
-    eyebrow: string;
-    heading: string;
-    items: { title: string; text: string }[];
-  };
-  area: {
-    eyebrow: string;
-    heading: string;
-    text: string;
-    note: string;
-  };
-  pricing: {
-    eyebrow: string;
-    heading: string;
-    intro: string;
-    factors: string[];
-    note: string;
-  };
-  faqEyebrow: string;
-  faqHeading: string;
-  faq: FaqItem[];
-  finalCta: {
-    eyebrow: string;
-    heading: string;
-    text: string;
-    ctaLabel: string;
-  };
-};
+import type { Localized, LocalLandingContent } from "./types";
 
 export const creationSiteInternetMontbeliardContent: Localized<LocalLandingContent> =
   {
@@ -215,6 +146,27 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
           "La reprise ou non d'un site existant",
         ],
         note: "Le formulaire de contact propose des tranches de budget indicatives pour situer votre projet. Vous recevez ensuite un devis détaillé et engageant sous 24h.",
+      },
+      marquee: [
+        "SITE VITRINE",
+        "SITE SUR MESURE",
+        "SEO LOCAL",
+        "RESPONSIVE",
+        "PERFORMANCE",
+        "MONTBÉLIARD · DOUBS",
+      ],
+      related: {
+        heading: "Vous avez déjà un site ?",
+        links: [
+          {
+            label: "Refonte de site internet à Montbéliard",
+            href: "/refonte-site-internet-montbeliard",
+          },
+          {
+            label: "Agence web à Montbéliard",
+            href: "/agence-web-montbeliard",
+          },
+        ],
       },
       faqEyebrow: "FAQ",
       faqHeading: "Questions fréquentes.",
@@ -399,6 +351,24 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
           "Whether an existing site is being reused",
         ],
         note: "The contact form offers indicative budget ranges to situate your project. You then receive a detailed, binding quote within 24h.",
+      },
+      marquee: [
+        "SHOWCASE SITE",
+        "CUSTOM BUILD",
+        "LOCAL SEO",
+        "RESPONSIVE",
+        "PERFORMANCE",
+        "MONTBÉLIARD · DOUBS",
+      ],
+      related: {
+        heading: "Already have a website?",
+        links: [
+          {
+            label: "Website redesign in Montbéliard",
+            href: "/refonte-site-internet-montbeliard",
+          },
+          { label: "Web agency in Montbéliard", href: "/agence-web-montbeliard" },
+        ],
       },
       faqEyebrow: "FAQ",
       faqHeading: "Frequently asked questions.",

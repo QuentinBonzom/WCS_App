@@ -152,6 +152,11 @@ export const servicesContent: Localized<ServicesContent> = {
         href: "/creation-site-vitrine",
       },
       {
+        title: "Refonte site internet Montbéliard",
+        desc: "Vous avez déjà un site ? On le modernise (design, performances, mobile, SEO) sans casser votre référencement.",
+        href: "/refonte-site-internet-montbeliard",
+      },
+      {
         title: "Repère · conformité accessibilité",
         desc: "Audit, remédiation et documentation pour rendre votre site conforme à l'European Accessibility Act et au RGAA.",
         href: "/repere-audit",
@@ -278,6 +283,11 @@ export const servicesContent: Localized<ServicesContent> = {
         title: "Showcase website creation",
         desc: "The ideal format to present your activity, reassure prospects and generate more requests.",
         href: "/creation-site-vitrine",
+      },
+      {
+        title: "Website redesign in Montbéliard",
+        desc: "Already have a site? We modernize it (design, performance, mobile, SEO) without breaking your rankings.",
+        href: "/refonte-site-internet-montbeliard",
       },
       {
         title: "Repère · accessibility compliance",

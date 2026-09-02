@@ -5,10 +5,10 @@ import {
 } from "@/components/sections/local-landing-page";
 
 export const metadata: Metadata = localLandingMetadata(
-  "creationSiteInternetMontbeliard",
+  "refonteSiteInternetMontbeliard",
   "fr",
 );
 
-export default function CreationSiteInternetMontbeliardPage() {
-  return <LocalLandingPage pageKey="creationSiteInternetMontbeliard" />;
+export default function RefonteSiteInternetMontbeliardPage() {
+  return <LocalLandingPage pageKey="refonteSiteInternetMontbeliard" />;
 }

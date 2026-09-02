@@ -90,7 +90,7 @@ export const seoPages = {
     path: "/creation-site-internet-montbeliard",
     title: "Création de site internet à Montbéliard",
     description:
-      "Création de site internet à Montbéliard : sites vitrines, sites sur mesure et refontes pour entreprises, artisans et commerçants du Doubs. Design premium, SEO local, devis clair sous 24h.",
+      "Création de site internet à Montbéliard : sites vitrines et sites sur mesure pour entreprises, artisans et commerçants du Doubs. Design premium, SEO local, devis clair sous 24h.",
     keywords: [
       ...sharedKeywords,
       "création site internet Montbéliard",
@@ -98,7 +98,6 @@ export const seoPages = {
       "création de site internet Montbéliard",
       "création site web Montbéliard",
       "création site vitrine Montbéliard",
-      "refonte site internet Montbéliard",
       "développeur web Montbéliard",
       "développeur web Doubs",
       "création site web Doubs",
@@ -107,6 +106,25 @@ export const seoPages = {
     priority: 0.95,
     changeFrequency: "monthly",
     ogLabel: "Site internet à Montbéliard",
+  },
+  refonteSiteInternetMontbeliard: {
+    path: "/refonte-site-internet-montbeliard",
+    title: "Refonte de site internet à Montbéliard",
+    description:
+      "Refonte de site internet à Montbéliard : nouveau design, performances, mobile et SEO pour votre site existant — en conservant ce qui fonctionne déjà. Audit et devis sous 24h.",
+    keywords: [
+      ...sharedKeywords,
+      "refonte site internet Montbéliard",
+      "refonte site web Montbéliard",
+      "refonte site internet Doubs",
+      "moderniser site internet Montbéliard",
+      "refaire site internet Montbéliard",
+      "développeur web Montbéliard",
+      "SEO local Montbéliard",
+    ],
+    priority: 0.9,
+    changeFrequency: "monthly",
+    ogLabel: "Refonte à Montbéliard",
   },
   agenceWebMontbeliard: {
     path: "/agence-web-montbeliard",
@@ -249,7 +267,7 @@ export const seoPagesByLocale = {
       path: "/creation-site-internet-montbeliard",
       title: "Website creation in Montbéliard",
       description:
-        "Website creation in Montbéliard for businesses, artisans and shops in the Doubs area: showcase sites, custom builds and redesigns. Premium design, local SEO, clear quote within 24h.",
+        "Website creation in Montbéliard for businesses, artisans and shops in the Doubs area: showcase sites and custom builds. Premium design, local SEO, clear quote within 24h.",
       keywords: [
         "website creation Montbéliard",
         "web design Montbéliard",
@@ -261,6 +279,23 @@ export const seoPagesByLocale = {
       priority: 0.95,
       changeFrequency: "monthly",
       ogLabel: "Website in Montbéliard",
+    },
+    refonteSiteInternetMontbeliard: {
+      path: "/refonte-site-internet-montbeliard",
+      title: "Website redesign in Montbéliard",
+      description:
+        "Website redesign in Montbéliard: new design, performance, mobile and SEO for your existing site — keeping what already works. Audit and quote within 24h.",
+      keywords: [
+        "website redesign Montbéliard",
+        "website revamp Montbéliard",
+        "website redesign Doubs",
+        "modernize website Montbéliard",
+        "web developer Montbéliard",
+        "local SEO Montbéliard",
+      ],
+      priority: 0.9,
+      changeFrequency: "monthly",
+      ogLabel: "Redesign in Montbéliard",
     },
     agenceWebMontbeliard: {
       path: "/agence-web-montbeliard",

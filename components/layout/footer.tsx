@@ -95,6 +95,12 @@ export function Footer() {
             {t.showcaseWebsite}
           </Link>
           <Link
+            href={localizedPath("/refonte-site-internet-montbeliard", locale)}
+            className="text-xs text-white/70 transition-colors hover:text-white"
+          >
+            {t.redesign}
+          </Link>
+          <Link
             href={localizedPath("/repere-audit", locale)}
             className="text-xs text-white/70 transition-colors hover:text-white"
           >

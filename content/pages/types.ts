@@ -38,3 +38,64 @@ export type ServiceLandingContent = {
   relatedLinks?: RelatedLink[];
   faq: FaqItem[];
 };
+
+/**
+ * Everything a rich "local landing" page renders, for one locale.
+ * Consumed by {@link LocalLandingPage}.
+ */
+export type LocalLandingContent = {
+  /** schema.org Service */
+  serviceName: string;
+  serviceType: string;
+  hero: {
+    eyebrow: string;
+    titleLines: string[];
+    intro: string;
+    primaryCta: { label: string; href: string };
+    secondaryCta: { label: string; href: string };
+  };
+  value: {
+    eyebrow: string;
+    heading: string;
+    points: { title: string; text: string }[];
+  };
+  siteTypes: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    items: { title: string; text: string; badge?: string }[];
+  };
+  advantages: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    items: string[];
+  };
+  process: {
+    eyebrow: string;
+    heading: string;
+    steps: { step: string; title: string; text: string }[];
+  };
+  work: { eyebrow: string; heading: string; text: string; ctaLabel: string };
+  why: {
+    eyebrow: string;
+    heading: string;
+    items: { title: string; text: string }[];
+  };
+  area: { eyebrow: string; heading: string; text: string; note: string };
+  pricing: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    factors: string[];
+    note: string;
+  };
+  /** marquee words */
+  marquee: string[];
+  /** cross-links to sibling local pages */
+  related?: { heading: string; links: { label: string; href: string }[] };
+  faqEyebrow: string;
+  faqHeading: string;
+  faq: FaqItem[];
+  finalCta: { eyebrow: string; heading: string; text: string; ctaLabel: string };
+};
