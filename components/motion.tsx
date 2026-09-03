@@ -3,12 +3,22 @@
 import React, { useRef } from "react";
 import {
   motion,
+  MotionConfig,
+  useReducedMotion,
   useScroll,
   useSpring,
   useMotionValue,
   type Variants,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
+
+/**
+ * Enables framer-motion's global "respect prefers-reduced-motion" behaviour.
+ * Wraps the whole app in the root layout.
+ */
+export function MotionProvider({ children }: { children: React.ReactNode }) {
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
+}
 
 /* ---------------------------------------------------------------- Reveal */
 type Dir = "up" | "down" | "left" | "right" | "zoom" | "blur";
@@ -35,7 +45,13 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
+  const reduced = useReducedMotion();
   const Tag = motion[as] as typeof motion.div;
+
+  if (reduced) {
+    return <Tag className={className}>{children}</Tag>;
+  }
+
   return (
     <Tag
       className={className}

@@ -48,7 +48,7 @@ function SiteBrand({ locale }: { locale: Locale }) {
     >
       <Image
         src="/logoWCSsansfond.png"
-        alt="WebCode Studio"
+        alt=""
         width={612}
         height={408}
         priority
@@ -80,7 +80,8 @@ function LanguageSwitcher({
           <Link
             key={targetLocale}
             href={switchLocalePath(pathname, targetLocale)}
-            aria-current={active ? "true" : undefined}
+            aria-current={active ? "page" : undefined}
+            hrefLang={targetLocale}
             className={`inline-flex h-9 min-w-10 items-center justify-center rounded-full px-3 text-sm font-semibold transition-colors ${
               active
                 ? "bg-ink text-white"
@@ -115,13 +116,16 @@ export function SiteNav() {
   ];
 
   return (
-    <>
+    <header>
       <SiteBrand locale={locale} />
       <LanguageSwitcher locale={locale} pathname={pathname} />
 
       {/* Desktop / tablet: tubelight pill */}
       <div className="hidden sm:block">
-        <NavBar items={navItems} />
+        <NavBar
+          items={navItems}
+          label={locale === "fr" ? "Navigation principale" : "Primary navigation"}
+        />
       </div>
 
       {/* Mobile: hamburger overlay */}
@@ -140,6 +144,6 @@ export function SiteNav() {
           closeLabel={t.closeMenu}
         />
       </div>
-    </>
+    </header>
   );
 }

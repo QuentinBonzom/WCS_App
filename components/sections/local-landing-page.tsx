@@ -179,16 +179,19 @@ export function LocalLandingPage({
           </Reveal>
           <ul className="grid grid-cols-1 gap-3">
             {c.advantages.items.map((item) => (
-              <Reveal key={item} dir="zoom">
-                <li className="flex items-start gap-4 rounded-[28px] bg-fog p-7">
-                  <svg viewBox="0 0 24 24" fill="none" className="mt-1 h-5 w-5 shrink-0">
+              <li key={item}>
+                <Reveal
+                  dir="zoom"
+                  className="flex items-start gap-4 rounded-[28px] bg-fog p-7"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" className="mt-1 h-5 w-5 shrink-0" aria-hidden="true">
                     <path d="M5 12.5 L10 17.5 L19 7" stroke="#0071e3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <span className="text-[17px] leading-relaxed text-slate">
                     {item}
                   </span>
-                </li>
-              </Reveal>
+                </Reveal>
+              </li>
             ))}
           </ul>
         </div>
@@ -357,14 +360,17 @@ export function LocalLandingPage({
           <div>
             <ul className="grid grid-cols-1 gap-3">
               {c.pricing.factors.map((f) => (
-                <Reveal key={f} dir="zoom">
-                  <li className="flex items-start gap-4 rounded-[28px] bg-snow p-7">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" />
+                <li key={f}>
+                  <Reveal
+                    dir="zoom"
+                    className="flex items-start gap-4 rounded-[28px] bg-snow p-7"
+                  >
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" aria-hidden="true" />
                     <span className="text-[17px] leading-relaxed text-slate">
                       {f}
                     </span>
-                  </li>
-                </Reveal>
+                  </Reveal>
+                </li>
               ))}
             </ul>
             <p className="mt-6 text-[15px] leading-relaxed text-graphite">

@@ -3,7 +3,8 @@
 /* ===================== APPLE DESIGN TOKENS (Tailwind v4 @theme) ===================== */
 @theme {
   --color-ink: #1d1d1f;
-  --color-graphite: #707070;
+  /* graphite darkened from #707070 to clear WCAG 1.4.3 (4.5:1) on fog/silver/white */
+  --color-graphite: #5c5c5c;
   --color-slate: #474747;
   --color-fog: #f5f5f7;
   --color-snow: #ffffff;

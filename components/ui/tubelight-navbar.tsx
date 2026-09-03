@@ -16,9 +16,10 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[];
   className?: string;
+  label?: string;
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, label = "Navigation" }: NavBarProps) {
   const pathname = usePathname();
   // Match the deepest nav item that prefixes the current path, so landing pages
   // outside the nav simply highlight nothing rather than defaulting to "Home".
@@ -40,7 +41,8 @@ export function NavBar({ items, className }: NavBarProps) {
   }, [pathname, items]);
 
   return (
-    <div
+    <nav
+      aria-label={label}
       className={cn(
         "fixed bottom-0 left-1/2 z-[65] mb-6 -translate-x-1/2 sm:bottom-auto sm:top-4 sm:mb-0",
         className
@@ -55,16 +57,18 @@ export function NavBar({ items, className }: NavBarProps) {
             <Link
               key={item.name}
               href={item.url}
+              aria-label={item.name}
+              aria-current={isActive ? "page" : undefined}
               onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer rounded-full px-5 py-2 text-sm font-semibold tracking-tight transition-colors",
-                "text-ink/70 hover:text-azure",
+                "text-ink/70 hover:text-azure focus-visible:text-azure",
                 isActive && "text-azure"
               )}
             >
               <span className="hidden md:inline">{item.name}</span>
               <span className="md:hidden">
-                <Icon size={18} strokeWidth={2.5} />
+                <Icon size={18} strokeWidth={2.5} aria-hidden="true" />
               </span>
               {isActive && (
                 <motion.div
@@ -84,6 +88,6 @@ export function NavBar({ items, className }: NavBarProps) {
           );
         })}
       </div>
-    </div>
+    </nav>
   );
 }

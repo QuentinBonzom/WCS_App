@@ -4,11 +4,10 @@ import "./globals.css";
 import { SiteNav } from "@/components/layout/site-nav";
 import { Footer } from "@/components/layout/footer";
 import { HtmlLang } from "@/components/layout/html-lang";
-import { JsonLd } from "@/components/ui/json-ld";
-import { ScrollProgress } from "@/components/motion";
+import { BaseJsonLd } from "@/components/ui/json-ld";
+import { MotionProvider, ScrollProgress } from "@/components/motion";
 import {
   absoluteUrl,
-  baseJsonLd,
   buildPageMetadata,
   seoPages,
   siteConfig,
@@ -74,12 +73,20 @@ export default function RootLayout({
   return (
     <html lang="fr" className={inter.variable}>
       <body className="font-sans">
-        <HtmlLang />
-        <ScrollProgress />
-        <JsonLd data={baseJsonLd()} />
-        <SiteNav />
-        {children}
-        <Footer />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-azure focus:px-5 focus:py-2.5 focus:text-white"
+        >
+          Aller au contenu
+        </a>
+        <MotionProvider>
+          <HtmlLang />
+          <ScrollProgress />
+          <BaseJsonLd />
+          <SiteNav />
+          <div id="main-content">{children}</div>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

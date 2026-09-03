@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { Locale } from "@/lib/i18n";
 
 const inputCls =
-  "rounded-xl border border-transparent bg-silver px-4 py-3 text-[17px] text-ink outline-none transition-colors placeholder:text-graphite focus:border-azure focus:bg-snow";
+  "rounded-xl border border-transparent bg-silver px-4 py-3 text-[17px] text-ink outline-none transition-colors placeholder:text-graphite focus:border-azure focus:bg-snow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure";
 
 const copy = {
   fr: {
@@ -106,31 +106,32 @@ export function ContactForm({ locale = "fr" }: { locale?: Locale }) {
     <form
       onSubmit={onSubmit}
       noValidate
+      aria-busy={status === "sending"}
       className="rounded-[28px] bg-snow p-12"
     >
       <label className="absolute -left-[9999px]" aria-hidden="true">
         {t.honeypot}
         <input type="text" name="website" tabIndex={-1} autoComplete="off" />
       </label>
-      <h3 className="mb-7 text-2xl font-semibold tracking-tight">
+      <h2 className="mb-7 text-2xl font-semibold tracking-tight">
         {t.title}
-      </h3>
+      </h2>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <label className="flex flex-col gap-2">
           <span className="text-sm text-graphite">{t.name}</span>
-          <input className={inputCls} type="text" name="name" placeholder={t.namePlaceholder} required />
+          <input className={inputCls} type="text" name="name" autoComplete="name" placeholder={t.namePlaceholder} required />
         </label>
         <label className="flex flex-col gap-2">
           <span className="text-sm text-graphite">{t.email}</span>
-          <input className={inputCls} type="email" name="email" placeholder={t.emailPlaceholder} required />
+          <input className={inputCls} type="email" name="email" autoComplete="email" placeholder={t.emailPlaceholder} required />
         </label>
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         <label className="flex flex-col gap-2">
           <span className="text-sm text-graphite">{t.company}</span>
-          <input className={inputCls} type="text" name="company" placeholder={t.companyPlaceholder} />
+          <input className={inputCls} type="text" name="company" autoComplete="organization" placeholder={t.companyPlaceholder} />
         </label>
         <label className="flex flex-col gap-2">
           <span className="text-sm text-graphite">{t.budget}</span>
@@ -167,16 +168,27 @@ export function ContactForm({ locale = "fr" }: { locale?: Locale }) {
             : t.submit}
       </button>
       
-      {status === "sent" && (
-        <p className="mt-4 rounded-xl bg-silver p-4 text-center text-sm text-ink">
-          {t.success}
-        </p>
-      )}
-      {status === "error" && (
-        <p className="mt-4 rounded-xl bg-red-50 p-4 text-center text-sm text-red-700">
-          {errorMessage}
-        </p>
-      )}
+      <p
+        role="status"
+        aria-live="polite"
+        className={
+          status === "sent"
+            ? "mt-4 rounded-xl bg-silver p-4 text-center text-sm text-ink"
+            : "sr-only"
+        }
+      >
+        {status === "sent" ? t.success : ""}
+      </p>
+      <p
+        role="alert"
+        className={
+          status === "error"
+            ? "mt-4 rounded-xl bg-red-50 p-4 text-center text-sm text-red-700"
+            : "sr-only"
+        }
+      >
+        {status === "error" ? errorMessage : ""}
+      </p>
     </form>
   );
 }

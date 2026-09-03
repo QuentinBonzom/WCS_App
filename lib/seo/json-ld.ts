@@ -330,8 +330,19 @@ export function blogPostingJsonLd(
         keywords: post.keywords.join(", "),
         articleSection: post.category,
         image: absoluteUrl(postOgImage(post)),
-        author: { "@id": absoluteUrl("#organization") },
-        publisher: { "@id": absoluteUrl("#organization") },
+        author: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          logo: {
+            "@type": "ImageObject",
+            url: absoluteUrl(siteConfig.logoPath),
+          },
+        },
       },
     ],
   };
