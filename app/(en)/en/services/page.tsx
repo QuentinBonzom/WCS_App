@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServicesPage } from "@/app/services/page";
+import { ServicesPage } from "@/app/(fr)/services/page";
 import { buildPageMetadata, getSeoPage } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata(

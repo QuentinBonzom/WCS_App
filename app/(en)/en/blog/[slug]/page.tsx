@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BlogPostPageContent } from "@/app/blog/[slug]/page";
+import { BlogPostPageContent } from "@/app/(fr)/blog/[slug]/page";
 import { buildPostMetadata } from "@/lib/seo";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 

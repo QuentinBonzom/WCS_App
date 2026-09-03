@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomePage } from "@/app/page";
+import { HomePage } from "@/app/(fr)/page";
 import { buildPageMetadata, getSeoPage } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata(getSeoPage("home", "en"), "en");

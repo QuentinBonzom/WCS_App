@@ -11,3 +11,4 @@ export * from "./pages";
 export * from "./catalog";
 export * from "./metadata";
 export * from "./json-ld";
+export * from "./root";
