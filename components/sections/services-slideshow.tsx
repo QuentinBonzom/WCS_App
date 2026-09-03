@@ -9,13 +9,11 @@ import {
 import type { Locale } from "@/lib/i18n";
 
 const images = {
-  web: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=70",
-  apps: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=70",
-  design:
-    "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=70",
-  seo: "https://images.unsplash.com/photo-1726066012698-bb7a3abce786?auto=format&fit=crop&w=1200&q=70",
-  maintenance:
-    "https://images.unsplash.com/photo-1624996752380-8ec242e0f85d?auto=format&fit=crop&w=1200&q=70",
+  web: "/services/web.jpg",
+  apps: "/services/apps.jpg",
+  design: "/services/design.jpg",
+  seo: "/services/seo.jpg",
+  maintenance: "/services/maintenance.jpg",
 };
 
 const copy = {
@@ -92,6 +90,8 @@ export function ServicesSlideshow({ locale = "fr" }: { locale?: Locale }) {
                   src={slide.imageUrl}
                   alt={slide.title}
                   className="size-full max-h-105 rounded-card object-cover"
+                  width={1200}
+                  height={900}
                   loading="lazy"
                   decoding="async"
                 />

@@ -106,7 +106,7 @@ export function ServicesPage({ locale = "fr" }: { locale?: Locale }) {
           linkLabel={t.showcases[0].linkLabel}
         >
           <BrowserMock
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=70"
+            src="/services/web.jpg"
             alt={t.showcases[0].alt ?? ""}
           />
         </FeatureShowcase>
@@ -123,7 +123,7 @@ export function ServicesPage({ locale = "fr" }: { locale?: Locale }) {
           reverse
         >
           <PhoneMock
-            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=70"
+            src="/services/apps.jpg"
             alt={t.showcases[1].alt ?? ""}
           />
         </FeatureShowcase>
@@ -139,7 +139,7 @@ export function ServicesPage({ locale = "fr" }: { locale?: Locale }) {
           linkLabel={t.showcases[2].linkLabel}
         >
           <BrowserMock
-            src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=70"
+            src="/services/design.jpg"
             alt={t.showcases[2].alt ?? ""}
           />
         </FeatureShowcase>
