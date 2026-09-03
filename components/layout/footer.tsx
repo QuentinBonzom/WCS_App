@@ -10,7 +10,7 @@ import {
 } from "@/lib/i18n";
 
 const linkCls =
-  "text-xs text-white/80 transition-colors hover:text-white focus-visible:text-white";
+  "inline-flex min-h-6 items-center text-xs text-white/80 transition-colors hover:text-white focus-visible:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
 export function Footer() {
   const pathname = usePathname();

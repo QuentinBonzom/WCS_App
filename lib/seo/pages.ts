@@ -6,7 +6,7 @@ export const seoPages = {
     path: "/",
     title: "Agence web à Montbéliard · Création de sites internet",
     description:
-      "WebCode Studio, studio web à Montbéliard : création de sites internet, sites vitrines et applications sur mesure pour les entreprises, artisans et commerçants du Doubs. Devis sous 24h.",
+      "Studio web à Montbéliard : création de sites internet, sites vitrines et applications sur mesure pour les entreprises et artisans du Doubs. Devis clair sous 24h.",
     keywords: [
       "agence web Montbéliard",
       "création site internet Montbéliard",
@@ -90,7 +90,7 @@ export const seoPages = {
     path: "/creation-site-internet-montbeliard",
     title: "Création de site internet à Montbéliard",
     description:
-      "Création de site internet à Montbéliard : sites vitrines et sites sur mesure pour entreprises, artisans et commerçants du Doubs. Design premium, SEO local, devis clair sous 24h.",
+      "Création de site internet à Montbéliard : sites vitrines et sites sur mesure pour les entreprises et artisans du Doubs. Design premium, SEO local, devis sous 24h.",
     keywords: [
       ...sharedKeywords,
       "création site internet Montbéliard",
@@ -111,7 +111,7 @@ export const seoPages = {
     path: "/refonte-site-internet-montbeliard",
     title: "Refonte de site internet à Montbéliard",
     description:
-      "Refonte de site internet à Montbéliard : nouveau design, performances, mobile et SEO pour votre site existant — en conservant ce qui fonctionne déjà. Audit et devis sous 24h.",
+      "Refonte de site internet à Montbéliard : nouveau design, performances, mobile et SEO pour votre site existant, sans casser votre référencement. Audit et devis sous 24h.",
     keywords: [
       ...sharedKeywords,
       "refonte site internet Montbéliard",
@@ -130,7 +130,7 @@ export const seoPages = {
     path: "/agence-web-montbeliard",
     title: "Agence web à Montbéliard",
     description:
-      "Agence web à Montbéliard : stratégie, design, développement, SEO local et suivi pour les entreprises du Doubs et du Nord Franche-Comté. Un interlocuteur unique, pas de sous-traitance.",
+      "Agence web à Montbéliard : stratégie, design, développement, SEO local et suivi pour les entreprises du Doubs. Un interlocuteur unique, pas de sous-traitance.",
     keywords: [
       ...sharedKeywords,
       "agence web Montbéliard",
@@ -164,9 +164,9 @@ export const seoPages = {
   },
   repereAudit: {
     path: "/repere-audit",
-    title: "Repère — mise en conformité accessibilité (EAA / RGAA)",
+    title: "Mise en conformité accessibilité RGAA / EAA",
     description:
-      "Audit, remédiation et documentation réglementaire pour rendre votre site et votre application conformes à l'European Accessibility Act et au RGAA. Sécurisez-vous contre les sanctions de non-conformité.",
+      "Audit RGAA, remédiation du code et documentation réglementaire pour rendre votre site et votre application conformes à l'European Accessibility Act. Devis sous 24h.",
     keywords: [
       ...sharedKeywords,
       "mise en conformité accessibilité",

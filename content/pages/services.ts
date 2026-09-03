@@ -129,7 +129,7 @@ export const servicesContent: Localized<ServicesContent> = {
       },
       {
         title: "Maintenance & Support",
-        desc: "Maintenance proactive et support technique 24/7 pour une performance continue.",
+        desc: "Maintenance proactive et support technique réactif pour une performance continue.",
         tags: ["Monitoring", "Updates", "Support"],
       },
     ],

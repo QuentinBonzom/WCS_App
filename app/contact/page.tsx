@@ -43,9 +43,9 @@ export function ContactPage({ locale = "fr" }: { locale?: Locale }) {
 
           <Reveal dir="right" className="flex flex-col gap-8">
             <div>
-              <h3 className="mb-2 text-xl font-semibold tracking-tight">
+              <h2 className="mb-2 text-xl font-semibold tracking-tight">
                 {t.infoTitle}
-              </h3>
+              </h2>
               <p className="mb-3 text-[17px] text-graphite">
                 {t.infoText}
               </p>
@@ -58,9 +58,9 @@ export function ContactPage({ locale = "fr" }: { locale?: Locale }) {
             </div>
 
             <div>
-              <h3 className="mb-2 text-xl font-semibold tracking-tight">
+              <h2 className="mb-2 text-xl font-semibold tracking-tight">
                 {t.locationTitle}
-              </h3>
+              </h2>
               <p className="text-[17px] text-graphite">
                 {t.locationTextBefore}{" "}
                 <Link
@@ -74,9 +74,9 @@ export function ContactPage({ locale = "fr" }: { locale?: Locale }) {
             </div>
 
             <div>
-              <h3 className="mb-2 text-xl font-semibold tracking-tight">
+              <h2 className="mb-2 text-xl font-semibold tracking-tight">
                 {t.areasTitle}
-              </h3>
+              </h2>
               <p className="mb-3 text-[17px] text-graphite">
                 {t.areasText}
               </p>

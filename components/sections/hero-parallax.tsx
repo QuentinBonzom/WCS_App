@@ -86,7 +86,9 @@ export function HeroParallax({
       className="relative flex h-[135vh] flex-col self-auto overflow-hidden bg-fog py-20 antialiased [perspective:1000px] [transform-style:preserve-3d] sm:h-[150vh] sm:py-28"
     >
       <Header copy={copy} />
+      {/* Decorative project montage — real projects live on /projets (hero CTA). */}
       <motion.div
+        aria-hidden="true"
         style={{ rotateX, rotateZ, translateY, opacity }}
         className="pointer-events-none"
       >
@@ -188,6 +190,7 @@ function ProjectCard({
         href={project.href}
         target={project.external ? "_blank" : undefined}
         rel={project.external ? "noreferrer" : undefined}
+        tabIndex={-1}
         className="block h-full w-full"
       >
         <Image

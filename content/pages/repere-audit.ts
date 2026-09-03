@@ -63,7 +63,7 @@ export const repereAuditContent: Localized<RepereAuditContent> = {
     serviceType: "Accessibility compliance audit",
     hero: {
       eyebrow: "European Accessibility Act · en vigueur",
-      heading: "Votre site est-il hors conformité sans le savoir ?",
+      heading: "Accessibilité numérique : votre site est-il en conformité ?",
       intro:
         "Depuis le 28 juin 2025, de nouvelles exigences s'appliquent à plusieurs services numériques privés. Repère audite, corrige et documente votre site ou votre application. Vous avancez vers une conformité claire, preuves à l'appui.",
       ctaPrimary: "Lancer mon audit",
@@ -203,7 +203,7 @@ export const repereAuditContent: Localized<RepereAuditContent> = {
       {
         question: "Quel est le risque en cas de non-conformité ?",
         answer:
-          "Pour les produits et services couverts par la directive Accessibilité, la DGCCRF indique que les infractions relèvent de contraventions de 5e classe, avec des amendes de 7 500 € cumulatives selon le nombre d'infractions constatées. D'autres régimes de sanction peuvent s'ajouter selon l'organisme, le service et le fondement juridique applicable.",
+          "Pour les produits et services couverts par la directive Accessibilité, les autorités peuvent prononcer des sanctions et imposer des mesures correctives selon le régime applicable. L'exposition exacte dépend de l'organisme, du service et du fondement juridique.",
       },
       {
         question: "Que comprend exactement l'audit RGAA ?",
@@ -233,7 +233,7 @@ export const repereAuditContent: Localized<RepereAuditContent> = {
     serviceType: "Accessibility compliance audit",
     hero: {
       eyebrow: "European Accessibility Act · in force",
-      heading: "Is your website non-compliant without knowing it?",
+      heading: "Digital accessibility: is your website compliant?",
       intro:
         "Since June 28, 2025, new requirements apply to several private digital services. Repère audits, fixes and documents your website or application so you move toward clear, evidence-backed compliance.",
       ctaPrimary: "Launch my audit",
