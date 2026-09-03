@@ -99,32 +99,32 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
       },
       work: {
         eyebrow: "Réalisations",
-        heading: "Des sites livrés et suivis.",
-        text: "Sites vitrines, écosystèmes web et mobile, présences digitales techniques — pour des clients en France et à l'étranger.",
+        heading: "Des sites repris, livrés, suivis.",
+        text: "Sites vitrines, écosystèmes web et mobile et présences digitales techniques — dont des refontes de sites existants, pour des clients en France et à l'étranger.",
         ctaLabel: "Voir toutes les réalisations",
       },
       why: {
         eyebrow: "Pourquoi WebCode Studio",
-        heading: "Local, technique, impliqué.",
+        heading: "Une refonte menée sans casse.",
         items: [
           {
-            title: "Basé à Montbéliard",
-            text: "On connaît le territoire et les recherches des habitants du Pays de Montbéliard. Les échanges se font sur place ou à distance.",
+            title: "On part de vos données",
+            text: "Avant de toucher au design, on regarde ce que dit votre Search Console : pages qui ramènent du trafic, mots-clés déjà gagnés, contenus à préserver. La refonte s'appuie sur ces acquis.",
           },
           {
-            title: "Un niveau d'exécution premium",
-            text: "Design, développement, performance et SEO traités ensemble, avec le même soin qu'une agence parisienne — sans les tarifs parisiens.",
+            title: "Refonte complète, pas relooking",
+            text: "Design, socle technique, structure, performance et SEO sont repris ensemble. Un simple habillage graphique sur un vieux code ne règle aucun des problèmes de fond.",
           },
           {
-            title: "Un partenaire dans la durée",
-            text: "Après la bascule, on suit le positionnement, on corrige et on fait évoluer le site plutôt que de disparaître.",
+            title: "On reste après la bascule",
+            text: "Les semaines qui suivent la mise en ligne, on surveille le positionnement et les erreurs d'indexation, et on corrige vite si un signal baisse.",
           },
         ],
       },
       area: {
         eyebrow: "Zone d'intervention",
-        heading: "Montbéliard, le Doubs et le Nord Franche-Comté.",
-        text: "WebCode Studio accompagne les entreprises de Montbéliard et de sa région : Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Bethoncourt, Grand-Charmont, Bavans, Voujeaucourt, ainsi que Héricourt et Belfort. Le reste de la France et l'international sont pris en charge à distance.",
+        heading: "Refonte à Montbéliard et dans le Doubs.",
+        text: "Nous reprenons les sites d'entreprises de Montbéliard et de sa région — Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Héricourt, Belfort et le Nord Franche-Comté — avec des points d'étape sur place. Les refontes à distance sont possibles partout en France.",
         note: "Activité exercée depuis un bureau privé — les rendez-vous se font sur site client, en visio ou dans un lieu tiers.",
       },
       pricing: {
@@ -297,32 +297,32 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
       },
       work: {
         eyebrow: "Work",
-        heading: "Sites delivered and followed up.",
-        text: "Showcase sites, web and mobile ecosystems, technical digital presences — for clients in France and abroad.",
+        heading: "Sites taken over, delivered, followed up.",
+        text: "Showcase sites, web and mobile ecosystems and technical digital presences — including redesigns of existing sites, for clients in France and abroad.",
         ctaLabel: "See all projects",
       },
       why: {
         eyebrow: "Why WebCode Studio",
-        heading: "Local, technical, involved.",
+        heading: "A redesign done without breakage.",
         items: [
           {
-            title: "Based in Montbéliard",
-            text: "We know the area and what people around Montbéliard search for. Meetings can be on site or remote.",
+            title: "We start from your data",
+            text: "Before touching the design, we look at what Search Console says: pages that bring traffic, keywords already won, content to preserve. The redesign builds on those gains.",
           },
           {
-            title: "Premium execution",
-            text: "Design, development, performance and SEO handled together, with the same care as a Paris agency — without the Paris rates.",
+            title: "Full redesign, not a reskin",
+            text: "Design, technical base, structure, performance and SEO are all reworked together. A graphic reskin over old code fixes none of the underlying problems.",
           },
           {
-            title: "A long-term partner",
-            text: "After the switch we watch the rankings, fix issues and keep the site evolving rather than disappearing.",
+            title: "We stay after the switch",
+            text: "In the weeks after go-live we watch rankings and indexing errors, and fix fast if a signal drops.",
           },
         ],
       },
       area: {
         eyebrow: "Service area",
-        heading: "Montbéliard, the Doubs and the Nord Franche-Comté.",
-        text: "WebCode Studio supports businesses in Montbéliard and its region: Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Bethoncourt, Grand-Charmont, Bavans, Voujeaucourt, as well as Héricourt and Belfort. The rest of France and international work is handled remotely.",
+        heading: "Redesign in Montbéliard and the Doubs.",
+        text: "We take over the sites of businesses in Montbéliard and its region — Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Héricourt, Belfort and the Nord Franche-Comté — with in-person checkpoints. Remote redesigns are possible anywhere in France.",
         note: "Run from a private office — meetings happen at the client's site, by video call or in a third-party location.",
       },
       pricing: {
