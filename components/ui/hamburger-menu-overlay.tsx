@@ -76,6 +76,8 @@ export function HamburgerMenuOverlay({
 }: HamburgerMenuOverlayProps) {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const panelRef = React.useRef<HTMLDivElement>(null);
 
   const close = React.useCallback(() => {
     setOpen(false);
@@ -96,18 +98,48 @@ export function HamburgerMenuOverlay({
     setOpen(false);
   }, [pathname]);
 
-  // Lock body scroll + close on Escape while open.
+  // While open: lock scroll, close on Escape, move focus into the panel and
+  // trap Tab within it, then restore focus to the trigger on close.
   React.useEffect(() => {
     if (!open) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
+    const focusables = () =>
+      Array.from(
+        panelRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      );
+
+    const raf = requestAnimationFrame(() => focusables()[0]?.focus());
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") {
+        close();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const els = focusables();
+      if (els.length === 0) return;
+      const first = els[0];
+      const last = els[els.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !panelRef.current?.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     window.addEventListener("keydown", onKey);
+
     return () => {
+      cancelAnimationFrame(raf);
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKey);
+      triggerRef.current?.focus();
     };
   }, [open, close]);
 
@@ -117,11 +149,13 @@ export function HamburgerMenuOverlay({
     <div className={className}>
       {/* Toggle button */}
       <button
+        ref={triggerRef}
         type="button"
         onClick={toggle}
         aria-label={open ? closeLabel : openLabel}
         aria-expanded={open}
-        className="fixed z-[80] flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 shadow-[0_6px_24px_rgba(0,0,0,0.08)] backdrop-blur-lg backdrop-saturate-150"
+        aria-haspopup="dialog"
+        className="fixed z-[80] flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 shadow-[0_6px_24px_rgba(0,0,0,0.08)] backdrop-blur-lg backdrop-saturate-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure"
         style={{ top: buttonTop, left: buttonLeft, right: buttonLeft ? undefined : buttonRight }}
       >
         <span className="relative block h-4 w-5" aria-hidden="true">
@@ -152,6 +186,10 @@ export function HamburgerMenuOverlay({
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -163,6 +201,7 @@ export function HamburgerMenuOverlay({
             style={{ background: overlayBackground, color: textColor }}
           >
             <motion.nav
+              aria-label="Menu"
               className={cn("mx-auto flex w-full max-w-xl flex-col gap-2", alignMap[menuAlignment])}
               initial="hidden"
               animate="show"
@@ -199,6 +238,7 @@ export function HamburgerMenuOverlay({
                     {item.href ? (
                       <Link
                         href={item.href}
+                        className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                         onClick={() => {
                           item.onClick?.();
                           close();
@@ -209,6 +249,7 @@ export function HamburgerMenuOverlay({
                     ) : (
                       <button
                         type="button"
+                        className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                         onClick={() => {
                           item.onClick?.();
                           close();
