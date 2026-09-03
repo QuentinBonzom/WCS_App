@@ -20,7 +20,7 @@ const images = {
 
 const copy = {
   fr: {
-    eyebrow: "Survolez pour explorer",
+    eyebrow: "En un coup d'œil",
     title: "Ce que nous créons.",
     slides: [
       { id: "service-web", title: "sites web", imageUrl: images.web },
@@ -35,7 +35,7 @@ const copy = {
     ],
   },
   en: {
-    eyebrow: "Hover to explore",
+    eyebrow: "At a glance",
     title: "What we create.",
     slides: [
       { id: "service-web", title: "websites", imageUrl: images.web },
@@ -62,7 +62,7 @@ export function ServicesSlideshow({ locale = "fr" }: { locale?: Locale }) {
   const t = copy[locale];
 
   return (
-    <section className="bg-snow px-6 py-32">
+    <section className="bg-snow px-6 py-32" aria-hidden="true">
       <HoverSlider className="mx-auto max-w-300">
         <span className="mb-3 block text-2xl font-semibold tracking-tight text-azure">
           {t.eyebrow}
@@ -92,7 +92,7 @@ export function ServicesSlideshow({ locale = "fr" }: { locale?: Locale }) {
                   src={slide.imageUrl}
                   alt={slide.title}
                   className="size-full max-h-105 rounded-card object-cover"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
               </div>
