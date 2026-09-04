@@ -13,6 +13,9 @@ export type SeoPage = {
   >;
   ogLabel?: string;
   images?: string[];
+  /** ISO date of the last meaningful content change — keeps sitemap
+   *  `lastmod` stable across deploys instead of "now" on every build. */
+  lastModified?: string;
 };
 
 export type FaqItem = {

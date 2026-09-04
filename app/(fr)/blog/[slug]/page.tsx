@@ -7,6 +7,7 @@ import { buildPostMetadata, blogPostingJsonLd } from "@/lib/seo";
 import {
   blogPosts,
   getPostBySlug,
+  getRelatedReading,
   formatPostDate,
   type ContentBlock,
 } from "@/lib/blog";
@@ -89,10 +90,12 @@ const postCopy = {
   fr: {
     back: "‹ Tous les articles",
     ctaTitle: "Un projet de site web ?",
+    relatedTitle: "Sur le même sujet",
   },
   en: {
     back: "‹ All articles",
     ctaTitle: "Planning a website project?",
+    relatedTitle: "Related reading",
   },
 } as const satisfies Record<Locale, object>;
 
@@ -107,6 +110,7 @@ export function BlogPostPageContent({
   if (!post) notFound();
   const t = postCopy[locale];
   const common = getDictionary(locale).common;
+  const relatedReading = getRelatedReading(slug, locale);
 
   return (
     <main>
@@ -144,6 +148,29 @@ export function BlogPostPageContent({
           {post.content.map((block, i) => (
             <Block key={i} block={block} lead={i === 0 && block.type === "p"} />
           ))}
+
+          {relatedReading.length > 0 && (
+            <nav
+              aria-label={t.relatedTitle}
+              className="mt-16 border-t border-silver pt-8"
+            >
+              <h2 className="text-[clamp(20px,3vw,24px)] font-bold tracking-[-0.01em]">
+                {t.relatedTitle}
+              </h2>
+              <ul className="mt-4 space-y-2.5">
+                {relatedReading.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={localizeHref(link.href, locale)}
+                      className="text-[17px] text-cobalt hover:underline"
+                    >
+                      {link.label} ›
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
         </div>
       </article>
 

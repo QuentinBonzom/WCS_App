@@ -59,7 +59,7 @@ export function ProjetsPage({ locale = "fr" }: { locale?: Locale }) {
                     {p.temporary ? (
                       <>
                         <span className="h-1 w-1 rounded-full bg-silver" />
-                        <span className="rounded-full bg-azure/10 px-2 py-1 text-[10px] text-azure">
+                        <span className="rounded-full bg-azure/10 px-2 py-1 text-[10px] text-cobalt">
                           {t.temporary}
                         </span>
                       </>

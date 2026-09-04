@@ -146,7 +146,7 @@ export function LocalLandingPage({
               <Reveal key={item.title} dir="zoom" delay={i * 0.06}>
                 <TiltCard className="relative h-full rounded-[28px] bg-snow p-8">
                   {item.badge && (
-                    <span className="absolute right-7 top-7 rounded-full bg-azure/10 px-3 py-1 text-xs font-semibold text-azure">
+                    <span className="absolute right-7 top-7 rounded-full bg-azure/10 px-3 py-1 text-xs font-semibold text-cobalt">
                       {item.badge}
                     </span>
                   )}
@@ -211,7 +211,7 @@ export function LocalLandingPage({
           <StaggerGroup className="grid grid-cols-1 gap-px overflow-hidden rounded-[28px] border border-silver bg-silver sm:grid-cols-2 lg:grid-cols-4">
             {c.process.steps.map((s) => (
               <StaggerItem key={s.step} className="bg-snow p-8">
-                <span className="block text-sm font-semibold uppercase tracking-wide text-azure">
+                <span className="block text-sm font-semibold uppercase tracking-wide text-cobalt">
                   {s.step}
                 </span>
                 <h3 className="mt-6 text-2xl font-semibold tracking-tight">
@@ -254,7 +254,7 @@ export function LocalLandingPage({
                     />
                   </div>
                   <div className="p-6">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-azure">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-cobalt">
                       {p.cat}
                     </span>
                     <h3 className="mt-1 text-xl font-semibold tracking-tight">

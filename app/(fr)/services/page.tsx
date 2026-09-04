@@ -199,7 +199,7 @@ export function ServicesPage({ locale = "fr" }: { locale?: Locale }) {
           <StaggerGroup className="grid grid-cols-1 gap-px overflow-hidden rounded-[28px] border border-silver bg-silver sm:grid-cols-2 lg:grid-cols-4">
             {t.process.map((p) => (
               <StaggerItem key={p.n} className="bg-snow p-8">
-                <span className="block font-mono text-sm text-azure">{p.n}</span>
+                <span className="block font-mono text-sm text-cobalt">{p.n}</span>
                 <h3 className="mt-6 text-2xl font-semibold tracking-tight">
                   {p.t}
                 </h3>

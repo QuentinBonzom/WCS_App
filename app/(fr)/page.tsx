@@ -37,14 +37,15 @@ const services = [
     ),
   },
   {
-    title: "Applications Mobiles",
-    desc: "Apps natives et cross-platform — iOS & Android — pour une expérience exceptionnelle.",
-    href: "/services#showcases",
-    linkLabel: "Voir les apps mobiles",
+    title: "Applications & outils métier",
+    desc: "Prise de rendez-vous, suivi de dossiers, devis-factures : des outils sur mesure calés sur vos process.",
+    href: "/applications-metier-montbeliard",
+    linkLabel: "Applications métier sur mesure",
     icon: (
       <svg viewBox="0 0 32 32" fill="none" className="h-10 w-10" aria-hidden>
-        <rect x="9" y="3" width="14" height="26" rx="3" stroke="#1d1d1f" strokeWidth="1.6" />
-        <line x1="14" y1="25" x2="18" y2="25" stroke="#1d1d1f" strokeWidth="1.6" strokeLinecap="round" />
+        <rect x="4" y="5" width="24" height="22" rx="3" stroke="#1d1d1f" strokeWidth="1.6" />
+        <path d="M4 11 H28 M10 5 V27" stroke="#1d1d1f" strokeWidth="1.6" />
+        <path d="M14 16 H24 M14 21 H24" stroke="#1d1d1f" strokeWidth="1.6" strokeLinecap="round" />
       </svg>
     ),
   },

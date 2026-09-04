@@ -165,7 +165,7 @@ export function RepereAuditPage({
             {c.method.steps.map((s, i) => (
               <Reveal key={s.title} dir="zoom" delay={i * 0.1}>
                 <div className="h-full rounded-[28px] bg-snow p-8">
-                  <span className="block text-sm font-semibold uppercase tracking-wide text-azure">
+                  <span className="block text-sm font-semibold uppercase tracking-wide text-cobalt">
                     {s.step}
                   </span>
                   <h3 className="mt-2 text-2xl font-semibold tracking-tight">

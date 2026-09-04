@@ -181,6 +181,24 @@ export const seoPages = {
     changeFrequency: "monthly",
     ogLabel: "Accessibilité & conformité",
   },
+  applicationsMetierMontbeliard: {
+    path: "/applications-metier-montbeliard",
+    title: "Applications & outils métier sur mesure à Montbéliard",
+    description:
+      "Développement d'applications web et d'outils métier sur mesure à Montbéliard : prise de rendez-vous, suivi de dossiers, devis-factures, tableaux de bord. Devis sous 24h.",
+    keywords: [
+      ...sharedKeywords,
+      "application métier sur mesure Montbéliard",
+      "logiciel de gestion sur mesure",
+      "application prise de rendez-vous",
+      "outil interne entreprise",
+      "développeur application web Montbéliard",
+      "logiciel sur mesure Doubs",
+    ],
+    priority: 0.9,
+    changeFrequency: "monthly",
+    ogLabel: "Applications métier",
+  },
 } satisfies Record<string, SeoPage>;
 
 export const seoPagesByLocale = {
@@ -343,10 +361,45 @@ export const seoPagesByLocale = {
       changeFrequency: "monthly",
       ogLabel: "Accessibility & compliance",
     },
+    applicationsMetierMontbeliard: {
+      path: "/applications-metier-montbeliard",
+      title: "Custom business apps & internal tools in Montbéliard",
+      description:
+        "Custom web app and internal tool development in Montbéliard: appointment booking, case tracking, quotes and invoicing, dashboards. Quote within 24h.",
+      keywords: [
+        "custom business application",
+        "custom management software",
+        "appointment booking application",
+        "internal company tool",
+        "web application developer Montbéliard",
+      ],
+      priority: 0.9,
+      changeFrequency: "monthly",
+      ogLabel: "Business apps",
+    },
   },
 } satisfies Record<Locale, Record<keyof typeof seoPages, SeoPage>>;
 
 export type SeoPageKey = keyof typeof seoPages;
+
+/**
+ * Last meaningful content change per route, as an ISO date. Used for the
+ * sitemap `lastmod` so it stays stable across deploys instead of "now".
+ * Bump a date only when that page's copy actually changes.
+ */
+export const pageLastModified: Record<SeoPageKey, string> = {
+  home: "2026-09-03",
+  services: "2026-09-03",
+  projects: "2026-09-03",
+  contact: "2026-09-03",
+  blog: "2026-09-04",
+  creationSiteInternetMontbeliard: "2026-09-03",
+  refonteSiteInternetMontbeliard: "2026-09-03",
+  agenceWebMontbeliard: "2026-09-03",
+  creationSiteVitrine: "2026-09-03",
+  repereAudit: "2026-09-03",
+  applicationsMetierMontbeliard: "2026-09-04",
+};
 
 export function getSeoPage(key: SeoPageKey, locale: Locale = defaultLocale) {
   return seoPagesByLocale[locale][key];

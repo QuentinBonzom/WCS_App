@@ -152,6 +152,11 @@ export const servicesContent: Localized<ServicesContent> = {
         href: "/creation-site-vitrine",
       },
       {
+        title: "Applications & outils métier",
+        desc: "Prise de rendez-vous, suivi de dossiers, devis-factures, tableaux de bord : des outils sur mesure calés sur vos process.",
+        href: "/applications-metier-montbeliard",
+      },
+      {
         title: "Refonte site internet Montbéliard",
         desc: "Vous avez déjà un site ? On le modernise (design, performances, mobile, SEO) sans casser votre référencement.",
         href: "/refonte-site-internet-montbeliard",
@@ -283,6 +288,11 @@ export const servicesContent: Localized<ServicesContent> = {
         title: "Showcase website creation",
         desc: "The ideal format to present your activity, reassure prospects and generate more requests.",
         href: "/creation-site-vitrine",
+      },
+      {
+        title: "Business apps & internal tools",
+        desc: "Booking, case tracking, quotes and invoicing, dashboards: custom tools shaped around your processes.",
+        href: "/applications-metier-montbeliard",
       },
       {
         title: "Website redesign in Montbéliard",

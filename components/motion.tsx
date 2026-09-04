@@ -183,7 +183,7 @@ export function Marquee({ items }: { items: string[] }) {
             <span className="whitespace-nowrap text-2xl font-bold tracking-tight text-ink">
               {t}
             </span>
-            <span className="text-sm text-azure">✦</span>
+            <span className="text-sm text-cobalt">✦</span>
           </React.Fragment>
         ))}
       </motion.div>

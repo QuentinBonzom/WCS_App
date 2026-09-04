@@ -26,9 +26,9 @@ export const homeContent = {
         linkLabel: "Création site internet Montbéliard",
       },
       {
-        title: "Applications Mobiles",
-        desc: "Apps natives et cross-platform - iOS & Android - pour une expérience exceptionnelle.",
-        linkLabel: "Voir les apps mobiles",
+        title: "Applications & outils métier",
+        desc: "Prise de rendez-vous, suivi de dossiers, devis-factures : des outils sur mesure qui remplacent les fichiers éparpillés.",
+        linkLabel: "Applications métier sur mesure",
       },
       {
         title: "Design UI/UX",
@@ -98,9 +98,9 @@ export const homeContent = {
         linkLabel: "Website creation in Montbéliard",
       },
       {
-        title: "Mobile Applications",
-        desc: "Native and cross-platform apps - iOS & Android - for outstanding user experiences.",
-        linkLabel: "View mobile apps",
+        title: "Business apps & internal tools",
+        desc: "Booking, case tracking, quotes and invoicing: custom tools that replace scattered spreadsheets.",
+        linkLabel: "Custom business apps",
       },
       {
         title: "UI/UX Design",

@@ -2,9 +2,11 @@ import type { MetadataRoute } from "next";
 import { locales, localizedPath } from "@/lib/i18n";
 import {
   absoluteUrl,
+  pageLastModified,
   postPath,
   seoPagesByLocale,
   type SeoPage,
+  type SeoPageKey,
 } from "@/lib/seo";
 import { getAllPosts } from "@/lib/blog";
 
@@ -14,12 +16,12 @@ function loc(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
   const staticEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
-    (Object.values(seoPagesByLocale[locale]) as SeoPage[]).map((page) => ({
+    (
+      Object.entries(seoPagesByLocale[locale]) as [SeoPageKey, SeoPage][]
+    ).map(([key, page]) => ({
       url: loc(localizedPath(page.path, locale)),
-      lastModified,
+      lastModified: new Date(page.lastModified ?? pageLastModified[key]),
       changeFrequency: page.changeFrequency,
       priority: page.priority,
       alternates: {

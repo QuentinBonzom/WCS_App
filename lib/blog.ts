@@ -776,6 +776,73 @@ const blogPostsByLocale: Record<Locale, BlogPost[]> = {
   en: blogPostsEn,
 };
 
+export type RelatedReadingLink = { label: string; href: string };
+
+/**
+ * Contextual internal links rendered at the end of each article, so posts pass
+ * link equity to the money pages instead of being SEO dead-ends.
+ */
+const relatedReadingBySlug: Record<
+  string,
+  Record<Locale, RelatedReadingLink[]>
+> = {
+  "creation-site-web-montbeliard-guide-2026": {
+    fr: [
+      { label: "Création de site internet à Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Création de site vitrine professionnel", href: "/creation-site-vitrine" },
+      { label: "Applications & outils métier sur mesure", href: "/applications-metier-montbeliard" },
+    ],
+    en: [
+      { label: "Website creation in Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Professional showcase website creation", href: "/creation-site-vitrine" },
+      { label: "Custom business apps & internal tools", href: "/applications-metier-montbeliard" },
+    ],
+  },
+  "combien-coute-un-site-web-2026": {
+    fr: [
+      { label: "Création de site vitrine professionnel", href: "/creation-site-vitrine" },
+      { label: "Création de site internet à Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Demander un devis", href: "/contact" },
+    ],
+    en: [
+      { label: "Professional showcase website creation", href: "/creation-site-vitrine" },
+      { label: "Website creation in Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Request a quote", href: "/contact" },
+    ],
+  },
+  "seo-local-par-ou-commencer": {
+    fr: [
+      { label: "Création de site internet à Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Agence web à Montbéliard", href: "/agence-web-montbeliard" },
+      { label: "Refonte de site internet à Montbéliard", href: "/refonte-site-internet-montbeliard" },
+    ],
+    en: [
+      { label: "Website creation in Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Web agency in Montbéliard", href: "/agence-web-montbeliard" },
+      { label: "Website redesign in Montbéliard", href: "/refonte-site-internet-montbeliard" },
+    ],
+  },
+  "refonte-site-internet-7-signes": {
+    fr: [
+      { label: "Refonte de site internet à Montbéliard", href: "/refonte-site-internet-montbeliard" },
+      { label: "Agence web à Montbéliard", href: "/agence-web-montbeliard" },
+      { label: "Mise en conformité accessibilité (Repère)", href: "/repere-audit" },
+    ],
+    en: [
+      { label: "Website redesign in Montbéliard", href: "/refonte-site-internet-montbeliard" },
+      { label: "Web agency in Montbéliard", href: "/agence-web-montbeliard" },
+      { label: "Accessibility compliance (Repère)", href: "/repere-audit" },
+    ],
+  },
+};
+
+export function getRelatedReading(
+  slug: string,
+  locale: Locale = "fr",
+): RelatedReadingLink[] {
+  return relatedReadingBySlug[slug]?.[locale] ?? [];
+}
+
 export function getAllPosts(locale: Locale = "fr"): BlogPost[] {
   return [...blogPostsByLocale[locale]].sort(
     (a, b) =>
