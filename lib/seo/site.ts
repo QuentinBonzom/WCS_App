@@ -57,7 +57,7 @@ export const siteConfig = {
   locale: "fr_FR",
   language: "fr",
   email: "contact@webcodestudio.fr",
-  logoPath: "/logoWCSsansfond.png",
+  logoPath: "/logo-webcode-studio.png",
   description:
     "Studio web à Montbéliard spécialisé dans la création de sites internet rapides, applications mobiles, design UI/UX et référencement SEO.",
   location: {

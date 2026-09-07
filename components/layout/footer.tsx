@@ -50,11 +50,11 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 py-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <Image
-            src="/logoWCSsansfond.png"
+            src="/logo-webcode-studio.png"
             alt="WebCode Studio"
-            width={612}
-            height={408}
-            className="h-16 w-auto object-contain brightness-0 invert"
+            width={1258}
+            height={292}
+            className="h-9 w-auto object-contain brightness-0 invert"
           />
           <p className="my-3 max-w-[40ch] text-xs leading-relaxed text-white/80">
             {t.description}

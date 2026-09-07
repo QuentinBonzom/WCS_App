@@ -43,16 +43,16 @@ function SiteBrand({ locale }: { locale: Locale }) {
   return (
     <Link
       href={localizedPath("/", locale)}
-      className="fixed left-3 top-2 z-[60] inline-flex items-center sm:left-5 sm:top-1"
+      className="fixed left-3 top-3 z-[60] inline-flex items-center sm:left-5 sm:top-4"
       aria-label={t.brandAria}
     >
       <Image
-        src="/logoWCSsansfond.png"
+        src="/logo-webcode-studio.png"
         alt=""
-        width={612}
-        height={408}
+        width={1258}
+        height={292}
         priority
-        className="h-16 w-auto object-contain sm:h-24 lg:h-28"
+        className="h-8 w-auto object-contain sm:h-9 lg:h-10"
       />
     </Link>
   );

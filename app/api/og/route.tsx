@@ -38,12 +38,11 @@ export async function GET(request: Request) {
             src={logoUrl}
             alt="WebCode Studio"
             style={{
-              width: "150px",
-              height: "100px",
+              width: "300px",
+              height: "70px",
               objectFit: "contain",
             }}
           />
-          <span>Studio web premium</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
