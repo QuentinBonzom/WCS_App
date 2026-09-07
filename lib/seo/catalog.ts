@@ -29,12 +29,6 @@ export const seoServices = [
       "Optimisation technique, structure de contenu, performance et données enrichies pour améliorer la visibilité organique.",
     serviceType: "Search engine optimization",
   },
-  {
-    name: "Repère — accessibilité numérique",
-    description:
-      "Audit RGAA, remédiation et documentation réglementaire pour rendre les sites et applications conformes à l'EAA.",
-    serviceType: "Accessibility compliance audit",
-  },
 ];
 
 export const seoServicesByLocale: Record<Locale, typeof seoServices> = {
@@ -63,12 +57,6 @@ export const seoServicesByLocale: Record<Locale, typeof seoServices> = {
       description:
         "Technical optimization, content structure, performance and structured data to improve organic visibility.",
       serviceType: "Search engine optimization",
-    },
-    {
-      name: "Repère - digital accessibility",
-      description:
-        "RGAA audit, remediation and regulatory documentation to make websites and apps compliant with the EAA.",
-      serviceType: "Accessibility compliance audit",
     },
   ],
 };

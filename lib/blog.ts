@@ -826,12 +826,12 @@ const relatedReadingBySlug: Record<
     fr: [
       { label: "Refonte de site internet à Montbéliard", href: "/refonte-site-internet-montbeliard" },
       { label: "Agence web à Montbéliard", href: "/agence-web-montbeliard" },
-      { label: "Mise en conformité accessibilité (Repère)", href: "/repere-audit" },
+      { label: "Création de site vitrine professionnel", href: "/creation-site-vitrine" },
     ],
     en: [
       { label: "Website redesign in Montbéliard", href: "/refonte-site-internet-montbeliard" },
       { label: "Web agency in Montbéliard", href: "/agence-web-montbeliard" },
-      { label: "Accessibility compliance (Repère)", href: "/repere-audit" },
+      { label: "Professional showcase website creation", href: "/creation-site-vitrine" },
     ],
   },
 };

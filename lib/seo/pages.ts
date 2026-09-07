@@ -162,25 +162,6 @@ export const seoPages = {
     changeFrequency: "monthly",
     ogLabel: "Site vitrine",
   },
-  repereAudit: {
-    path: "/repere-audit",
-    title: "Mise en conformité accessibilité RGAA / EAA",
-    description:
-      "Audit RGAA, remédiation du code et documentation réglementaire pour rendre votre site et votre application conformes à l'European Accessibility Act. Devis sous 24h.",
-    keywords: [
-      ...sharedKeywords,
-      "mise en conformité accessibilité",
-      "accessibilité numérique",
-      "audit accessibilité RGAA",
-      "European Accessibility Act",
-      "conformité RGAA",
-      "déclaration d'accessibilité",
-      "audit accessibilité site web",
-    ],
-    priority: 0.9,
-    changeFrequency: "monthly",
-    ogLabel: "Accessibilité & conformité",
-  },
   applicationsMetierMontbeliard: {
     path: "/applications-metier-montbeliard",
     title: "Applications & outils métier sur mesure à Montbéliard",
@@ -345,22 +326,6 @@ export const seoPagesByLocale = {
       changeFrequency: "monthly",
       ogLabel: "Showcase website",
     },
-    repereAudit: {
-      path: "/repere-audit",
-      title: "Repère - accessibility compliance (EAA / RGAA)",
-      description:
-        "Audit, remediation and regulatory documentation to make your website or app compliant with the European Accessibility Act and RGAA.",
-      keywords: [
-        "accessibility compliance",
-        "digital accessibility",
-        "RGAA audit",
-        "European Accessibility Act",
-        "accessibility statement",
-      ],
-      priority: 0.9,
-      changeFrequency: "monthly",
-      ogLabel: "Accessibility & compliance",
-    },
     applicationsMetierMontbeliard: {
       path: "/applications-metier-montbeliard",
       title: "Custom business apps & internal tools in Montbéliard",
@@ -397,7 +362,6 @@ export const pageLastModified: Record<SeoPageKey, string> = {
   refonteSiteInternetMontbeliard: "2026-09-03",
   agenceWebMontbeliard: "2026-09-03",
   creationSiteVitrine: "2026-09-03",
-  repereAudit: "2026-09-03",
   applicationsMetierMontbeliard: "2026-09-04",
 };
 

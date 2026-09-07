@@ -143,40 +143,6 @@ export function ServicesPage({ locale = "fr" }: { locale?: Locale }) {
             alt={t.showcases[2].alt ?? ""}
           />
         </FeatureShowcase>
-
-        <FeatureShowcase
-          index={t.showcases[3].index}
-          band="fog"
-          eyebrow={t.showcases[3].eyebrow}
-          title={t.showcases[3].title}
-          sub={t.showcases[3].sub}
-          tags={[...t.showcases[3].tags]}
-          href={localizeHref("/repere-audit", locale)}
-          linkLabel={t.showcases[3].linkLabel}
-          reverse
-        >
-          <div className="w-full max-w-[420px] rounded-[24px] bg-ink p-5 text-snow shadow-[0_24px_60px_-32px_rgba(29,29,31,0.65)]">
-            <div className="flex items-center justify-between border-b border-white/15 pb-4">
-              <span className="text-sm text-white/70">repere.audit</span>
-              <span className="rounded-full bg-azure/20 px-3 py-1 text-xs font-semibold text-[#8ec5ff]">
-                RGAA
-              </span>
-            </div>
-            <div className="mt-5 space-y-3">
-              {t.accessibilityPreviewRows.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex items-center justify-between gap-4 rounded-2xl bg-white/[0.08] px-4 py-3"
-                >
-                  <span className="text-[15px] text-white/90">{item.label}</span>
-                  <span className="text-sm font-medium text-[#8ec5ff]">
-                    {item.state}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FeatureShowcase>
       </div>
 
       {/* MARQUEE */}

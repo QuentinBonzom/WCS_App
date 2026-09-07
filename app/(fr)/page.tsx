@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck } from "lucide-react";
 import { Reveal, Magnetic } from "@/components/motion";
 import { TiltCard } from "@/components/ui/tilt-card";
 import { Counter } from "@/components/ui/counter";
@@ -61,13 +60,6 @@ const services = [
         <path d="M16 3 V12 M16 20 V29 M3 16 H12 M20 16 H29" stroke="#1d1d1f" strokeWidth="1.6" />
       </svg>
     ),
-  },
-  {
-    title: "Accessibilité RGAA",
-    desc: "Audit, remédiation et documents réglementaires pour sécuriser votre conformité EAA.",
-    href: "/repere-audit",
-    linkLabel: "Découvrir Repère",
-    icon: <ShieldCheck className="h-10 w-10 text-ink" strokeWidth={1.6} aria-hidden />,
   },
 ];
 
@@ -212,67 +204,6 @@ export function HomePage({ locale = "fr" }: { locale?: Locale }) {
         </div>
       </section>
 
-      {/* REPERE ACCESSIBILITY SERVICE */}
-      <section id="repere" className="bg-ink px-6 py-28 text-white">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_0.9fr]">
-          <Reveal>
-            <span className="mb-3 block text-2xl font-semibold tracking-tight text-[#8ec5ff]">
-              {t.repereEyebrow}
-            </span>
-            <h2 className="text-[clamp(36px,6vw,64px)] font-bold leading-[1.07] tracking-[-0.018em]">
-              {t.repereTitle}
-            </h2>
-            <p className="mt-5 max-w-xl text-xl font-light leading-relaxed text-white/70">
-              {t.repereText}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Magnetic>
-                <Link
-                  href={localizeHref("/repere-audit", locale)}
-                  className="inline-flex rounded-full bg-white px-6 py-3 text-xl text-ink transition-colors hover:bg-[#8ec5ff]"
-                >
-                  {t.reperePrimary}
-                </Link>
-              </Magnetic>
-              <Link
-                href={localizeHref("/contact", locale)}
-                className="inline-flex rounded-full border border-white/20 px-6 py-3 text-xl text-white transition-colors hover:border-white"
-              >
-                {t.repereSecondary}
-              </Link>
-            </div>
-          </Reveal>
-
-          <Reveal dir="zoom" delay={0.1}>
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.08] p-6 shadow-[0_30px_70px_-36px_rgba(0,0,0,0.8)]">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <span className="text-sm font-medium text-white/70">
-                  {t.reperePreview}
-                </span>
-                <span className="rounded-full bg-[#34c759]/15 px-3 py-1 text-xs font-semibold text-[#8ff0b8]">
-                  EAA / RGAA
-                </span>
-              </div>
-              <div className="mt-5 space-y-3">
-                {t.repereRows.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-center justify-between gap-4 rounded-2xl bg-white/[0.08] px-4 py-3"
-                  >
-                    <span className="text-[15px] text-white/90">{row.label}</span>
-                    <span className="text-right text-sm font-medium text-[#8ec5ff]">
-                      {row.state}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-5 text-[15px] leading-relaxed text-white/60">
-                {t.repereNote}
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* ABOUT */}
       <section className="bg-fog px-6 py-32">

@@ -30,6 +30,18 @@ const nextConfig = {
         destination: "/en/creation-site-internet-montbeliard",
         permanent: true,
       },
+      // Repère (accessibility-audit service) was discontinued — send its old
+      // URLs to the services hub.
+      {
+        source: "/repere-audit",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/en/repere-audit",
+        destination: "/en/services",
+        permanent: true,
+      },
     ];
   },
   turbopack: {

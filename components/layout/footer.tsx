@@ -23,9 +23,8 @@ export function Footer() {
       title: t.expertise,
       links: [
         { href: p("/creation-site-internet-montbeliard"), label: t.webCreation },
-        { href: p("/services"), label: t.mobileApps },
+        { href: p("/applications-metier-montbeliard"), label: t.mobileApps },
         { href: p("/services"), label: t.uiUx },
-        { href: p("/repere-audit"), label: t.accessibility },
         { href: p("/projets"), label: t.projects },
         { href: p("/blog"), label: "Blog" },
       ],
@@ -40,7 +39,6 @@ export function Footer() {
         { href: p("/agence-web-montbeliard"), label: t.localAgency },
         { href: p("/creation-site-vitrine"), label: t.showcaseWebsite },
         { href: p("/refonte-site-internet-montbeliard"), label: t.redesign },
-        { href: p("/repere-audit"), label: t.accessibilityAudit },
       ],
     },
   ];

@@ -16,7 +16,6 @@ export type ServicesContent = {
   headerText: string;
   discover: string;
   showcases: ServiceShowcase[];
-  accessibilityPreviewRows: { label: string; state: string }[];
   marquee: string[];
   processEyebrow: string;
   processTitle: string;
@@ -34,9 +33,9 @@ export type ServicesContent = {
 export const servicesContent: Localized<ServicesContent> = {
   fr: {
     headerEyebrow: "Nos services",
-    titleLines: ["Sites web, apps, SEO", "et accessibilité."],
+    titleLines: ["Sites web, applications,", "design et SEO."],
     headerText:
-      "Création de sites internet, applications mobiles, design UI/UX et conformité accessibilité pour construire une présence digitale qui convertit et reste solide dans le temps.",
+      "Création de sites internet, applications et outils métier sur mesure, design UI/UX et référencement pour construire une présence digitale qui convertit et reste solide dans le temps.",
     discover: "Découvrir",
     showcases: [
       {
@@ -66,20 +65,6 @@ export const servicesContent: Localized<ServicesContent> = {
         linkLabel: "Concevoir mon produit",
         alt: "Aperçu d'un design system",
       },
-      {
-        index: "04 / Accessibilité",
-        eyebrow: "Repère",
-        title: "Votre conformité EAA / RGAA.",
-        sub: "Audit, remédiation et documentation réglementaire pour rendre votre site ou application accessible, conforme et défendable.",
-        tags: ["Audit RGAA", "Corrections", "Déclaration d'accessibilité"],
-        linkLabel: "Découvrir Repère",
-      },
-    ],
-    accessibilityPreviewRows: [
-      { label: "Contrastes et lisibilité", state: "À vérifier" },
-      { label: "Navigation clavier", state: "À tester" },
-      { label: "Formulaires et erreurs", state: "À corriger" },
-      { label: "Documents de conformité", state: "À publier" },
     ],
     marquee: [
       "RESPONSIVE",
@@ -161,20 +146,15 @@ export const servicesContent: Localized<ServicesContent> = {
         desc: "Vous avez déjà un site ? On le modernise (design, performances, mobile, SEO) sans casser votre référencement.",
         href: "/refonte-site-internet-montbeliard",
       },
-      {
-        title: "Repère · conformité accessibilité",
-        desc: "Audit, remédiation et documentation pour rendre votre site conforme à l'European Accessibility Act et au RGAA.",
-        href: "/repere-audit",
-      },
     ],
     ctaEyebrow: "Passons au concret",
     ctaTitle: "Démarrer mon projet.",
   },
   en: {
     headerEyebrow: "Our services",
-    titleLines: ["Websites, apps, SEO", "and accessibility."],
+    titleLines: ["Websites, applications,", "design and SEO."],
     headerText:
-      "Website creation, mobile applications, UI/UX design and accessibility compliance to build a digital presence that converts and stays solid over time.",
+      "Website creation, custom applications and business tools, UI/UX design and SEO to build a digital presence that converts and stays solid over time.",
     discover: "Discover",
     showcases: [
       {
@@ -204,20 +184,6 @@ export const servicesContent: Localized<ServicesContent> = {
         linkLabel: "Design my product",
         alt: "Preview of a design system",
       },
-      {
-        index: "04 / Accessibility",
-        eyebrow: "Repère",
-        title: "Your EAA / RGAA compliance.",
-        sub: "Audit, remediation and regulatory documentation to make your website or app accessible, compliant and defensible.",
-        tags: ["RGAA audit", "Fixes", "Accessibility statement"],
-        linkLabel: "Discover Repère",
-      },
-    ],
-    accessibilityPreviewRows: [
-      { label: "Contrast and readability", state: "To check" },
-      { label: "Keyboard navigation", state: "To test" },
-      { label: "Forms and errors", state: "To fix" },
-      { label: "Compliance documents", state: "To publish" },
     ],
     marquee: [
       "RESPONSIVE",
@@ -298,11 +264,6 @@ export const servicesContent: Localized<ServicesContent> = {
         title: "Website redesign in Montbéliard",
         desc: "Already have a site? We modernize it (design, performance, mobile, SEO) without breaking your rankings.",
         href: "/refonte-site-internet-montbeliard",
-      },
-      {
-        title: "Repère · accessibility compliance",
-        desc: "Audit, remediation and documentation to make your site compliant with the European Accessibility Act and RGAA.",
-        href: "/repere-audit",
       },
     ],
     ctaEyebrow: "Ready to build",

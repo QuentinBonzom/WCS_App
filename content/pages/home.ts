@@ -18,7 +18,7 @@ export const homeContent = {
     servicesEyebrow: "Nos services",
     servicesTitle: "Pensés pour convertir.",
     servicesText:
-      "De la création de site vitrine au développement sur mesure : quatre expertises pour une présence digitale qui vous rend visible sur Google et transforme vos visiteurs en clients.",
+      "De la création de site vitrine au développement sur mesure : trois expertises pour une présence digitale qui vous rend visible sur Google et transforme vos visiteurs en clients.",
     services: [
       {
         title: "Sites internet & vitrines",
@@ -35,11 +35,6 @@ export const homeContent = {
         desc: "Interfaces intuitives et expériences mémorables, du prototype au design system.",
         linkLabel: "Voir le design UI/UX",
       },
-      {
-        title: "Accessibilité RGAA",
-        desc: "Audit, remédiation et documents réglementaires pour sécuriser votre conformité EAA.",
-        linkLabel: "Découvrir Repère",
-      },
     ],
     local: {
       eyebrow: "Zone d'intervention",
@@ -50,20 +45,6 @@ export const homeContent = {
         href: "/creation-site-internet-montbeliard",
       },
     },
-    repereEyebrow: "Repère · nouveau service",
-    repereTitle: "Accessibilité, conformité, preuves.",
-    repereText:
-      "L'accessibilité n'est plus un bonus : on audite votre site, on corrige le code, puis on prépare les documents RGAA attendus pour publier une conformité claire.",
-    reperePrimary: "Découvrir Repère",
-    repereSecondary: "Parler conformité",
-    reperePreview: "aperçu Repère",
-    repereRows: [
-      { label: "Audit RGAA", state: "106 critères" },
-      { label: "Remédiation", state: "Corrections codées" },
-      { label: "Documentation", state: "Prête à publier" },
-    ],
-    repereNote:
-      "Un service complémentaire aux créations et refontes : utile pour les e-commerces, plateformes de réservation, applications et services numériques B2C.",
     aboutEyebrow: "Expertise confirmée",
     aboutTitle: "Vos idées, en réalité digitale.",
     aboutText:
@@ -90,7 +71,7 @@ export const homeContent = {
     servicesEyebrow: "Our services",
     servicesTitle: "Built to convert.",
     servicesText:
-      "From showcase sites to custom development: four skills for a digital presence that makes you visible on Google and turns visitors into customers.",
+      "From showcase sites to custom development: three skills for a digital presence that makes you visible on Google and turns visitors into customers.",
     services: [
       {
         title: "Websites & showcase sites",
@@ -107,11 +88,6 @@ export const homeContent = {
         desc: "Intuitive interfaces and memorable experiences, from prototype to design system.",
         linkLabel: "View UI/UX design",
       },
-      {
-        title: "RGAA Accessibility",
-        desc: "Audits, remediation and regulatory documents to secure EAA compliance.",
-        linkLabel: "Discover Repère",
-      },
     ],
     local: {
       eyebrow: "Service area",
@@ -122,20 +98,6 @@ export const homeContent = {
         href: "/creation-site-internet-montbeliard",
       },
     },
-    repereEyebrow: "Repère · new service",
-    repereTitle: "Accessibility, compliance, proof.",
-    repereText:
-      "Accessibility is no longer a bonus: we audit your site, fix the code, then prepare the RGAA documents needed to publish clear compliance.",
-    reperePrimary: "Discover Repère",
-    repereSecondary: "Talk compliance",
-    reperePreview: "Repère preview",
-    repereRows: [
-      { label: "RGAA audit", state: "106 criteria" },
-      { label: "Remediation", state: "Coded fixes" },
-      { label: "Documentation", state: "Ready to publish" },
-    ],
-    repereNote:
-      "A complementary service for creations and redesigns: useful for e-commerce, booking platforms, applications and B2C digital services.",
     aboutEyebrow: "Proven expertise",
     aboutTitle: "Your ideas, shipped as digital products.",
     aboutText:
