@@ -39,6 +39,7 @@ export function Footer() {
         { href: p("/agence-web-montbeliard"), label: t.localAgency },
         { href: p("/creation-site-vitrine"), label: t.showcaseWebsite },
         { href: p("/refonte-site-internet-montbeliard"), label: t.redesign },
+        { href: p("/tarifs"), label: t.pricing },
       ],
     },
   ];

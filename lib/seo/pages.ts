@@ -180,6 +180,24 @@ export const seoPages = {
     changeFrequency: "monthly",
     ogLabel: "Applications métier",
   },
+  tarifs: {
+    path: "/tarifs",
+    title: "Tarifs : prix d'un site internet à Montbéliard",
+    description:
+      "Combien coûte un site internet ? Tarifs de départ WebCode Studio : site vitrine à partir de 690 €, site sur mesure à partir de 990 €, application métier sur devis. Devis gratuit sous 24h.",
+    keywords: [
+      ...sharedKeywords,
+      "prix création site internet Montbéliard",
+      "tarif site vitrine",
+      "prix site web",
+      "combien coûte un site internet",
+      "devis site internet Montbéliard",
+      "tarif création site web Doubs",
+    ],
+    priority: 0.85,
+    changeFrequency: "monthly",
+    ogLabel: "Tarifs",
+  },
 } satisfies Record<string, SeoPage>;
 
 export const seoPagesByLocale = {
@@ -342,6 +360,22 @@ export const seoPagesByLocale = {
       changeFrequency: "monthly",
       ogLabel: "Business apps",
     },
+    tarifs: {
+      path: "/tarifs",
+      title: "Pricing: how much a website costs in Montbéliard",
+      description:
+        "How much does a website cost? WebCode Studio starting prices: showcase site from €690, custom site from €990, business app on quote. Free quote within 24h.",
+      keywords: [
+        "website price",
+        "showcase website cost",
+        "how much does a website cost",
+        "website quote Montbéliard",
+        "web design pricing",
+      ],
+      priority: 0.85,
+      changeFrequency: "monthly",
+      ogLabel: "Pricing",
+    },
   },
 } satisfies Record<Locale, Record<keyof typeof seoPages, SeoPage>>;
 
@@ -363,6 +397,7 @@ export const pageLastModified: Record<SeoPageKey, string> = {
   agenceWebMontbeliard: "2026-09-03",
   creationSiteVitrine: "2026-09-03",
   applicationsMetierMontbeliard: "2026-09-04",
+  tarifs: "2026-09-08",
 };
 
 export function getSeoPage(key: SeoPageKey, locale: Locale = defaultLocale) {

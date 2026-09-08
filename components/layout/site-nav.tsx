@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import {
   Home,
   Code2,
+  Tag,
   FolderOpen,
   BookOpen,
   Mail,
@@ -27,6 +28,7 @@ function navItemsFor(locale: Locale) {
   return [
     { name: t.home, url: localizedPath("/", locale), icon: Home },
     { name: t.services, url: localizedPath("/services", locale), icon: Code2 },
+    { name: t.pricing, url: localizedPath("/tarifs", locale), icon: Tag },
     {
       name: t.projects,
       url: localizedPath("/projets", locale),

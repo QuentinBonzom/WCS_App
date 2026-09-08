@@ -800,13 +800,13 @@ const relatedReadingBySlug: Record<
   },
   "combien-coute-un-site-web-2026": {
     fr: [
+      { label: "Nos tarifs et formules", href: "/tarifs" },
       { label: "Création de site vitrine professionnel", href: "/creation-site-vitrine" },
-      { label: "Création de site internet à Montbéliard", href: "/creation-site-internet-montbeliard" },
       { label: "Demander un devis", href: "/contact" },
     ],
     en: [
+      { label: "Our pricing and plans", href: "/tarifs" },
       { label: "Professional showcase website creation", href: "/creation-site-vitrine" },
-      { label: "Website creation in Montbéliard", href: "/creation-site-internet-montbeliard" },
       { label: "Request a quote", href: "/contact" },
     ],
   },

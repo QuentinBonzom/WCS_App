@@ -63,6 +63,7 @@ export const dictionary = {
     nav: {
       home: "Accueil",
       services: "Services",
+      pricing: "Tarifs",
       projects: "Projets",
       blog: "Blog",
       contact: "Contact",
@@ -85,6 +86,7 @@ export const dictionary = {
       localAgency: "Agence web Montbéliard",
       showcaseWebsite: "Création site vitrine",
       redesign: "Refonte site internet Montbéliard",
+      pricing: "Tarifs et devis",
       internationalClients: "Clients internationaux",
       response: "Réponse sous 24h garantie",
       rights: "Tous droits réservés.",
@@ -109,6 +111,7 @@ export const dictionary = {
     nav: {
       home: "Home",
       services: "Services",
+      pricing: "Pricing",
       projects: "Projects",
       blog: "Blog",
       contact: "Contact",
@@ -131,6 +134,7 @@ export const dictionary = {
       localAgency: "Web agency in Montbéliard",
       showcaseWebsite: "Showcase website creation",
       redesign: "Website redesign in Montbéliard",
+      pricing: "Pricing & quote",
       internationalClients: "International clients",
       response: "Guaranteed reply within 24h",
       rights: "All rights reserved.",

@@ -347,3 +347,63 @@ export function blogPostingJsonLd(
     ],
   };
 }
+
+export function pricingJsonLd({
+  page,
+  serviceName,
+  lowPrice,
+  offerCount,
+  faq,
+  locale = defaultLocale,
+}: {
+  page: SeoPage;
+  serviceName: string;
+  lowPrice: number;
+  offerCount: number;
+  faq: FaqItem[];
+  locale?: Locale;
+}) {
+  const url = absoluteUrl(localizedPath(page.path, locale));
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbListJsonLd(
+        [
+          { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
+          { name: locale === "fr" ? "Tarifs" : "Pricing", path: page.path },
+        ],
+        locale,
+      ),
+      {
+        "@type": "Service",
+        "@id": absoluteUrl(localizedPath(`${page.path}#service`, locale)),
+        name: serviceName,
+        description: page.description,
+        provider: { "@id": absoluteUrl("#organization") },
+        areaServed: siteConfig.localAreas.map((name) => ({
+          "@type": "Place",
+          name,
+        })),
+        url,
+        offers: {
+          "@type": "AggregateOffer",
+          priceCurrency: "EUR",
+          lowPrice,
+          offerCount,
+          url,
+          availability: "https://schema.org/InStock",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": absoluteUrl(localizedPath(`${page.path}#faq`, locale)),
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      },
+    ],
+  };
+}
