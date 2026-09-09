@@ -74,7 +74,7 @@ export const dictionary = {
     },
     footer: {
       description:
-        "Agence digitale premium spécialisée dans la création d'expériences web exceptionnelles. Nous transformons vos ambitions en réalités numériques performantes.",
+        "Studio web à Montbéliard : sites internet, applications et outils métier sur mesure pour les entreprises et artisans du Doubs et du Nord Franche-Comté. Un seul interlocuteur, du devis à la mise en ligne.",
       expertise: "Expertises",
       searches: "Recherches",
       contact: "Contact",
@@ -122,7 +122,7 @@ export const dictionary = {
     },
     footer: {
       description:
-        "A premium digital studio specialized in exceptional web experiences. We turn your ambitions into high-performing digital products.",
+        "Web studio in Montbéliard: custom websites, applications and business tools for companies and artisans across the Doubs and Nord Franche-Comté. One point of contact, from quote to launch.",
       expertise: "Expertise",
       searches: "Searches",
       contact: "Contact",
