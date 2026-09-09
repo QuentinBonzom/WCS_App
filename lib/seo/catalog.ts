@@ -12,10 +12,10 @@ export const seoServices = [
     serviceType: "Web development",
   },
   {
-    name: "Applications mobiles",
+    name: "Applications et outils métier sur mesure",
     description:
-      "Conception et développement d'applications iOS et Android pour offrir une expérience fluide à vos utilisateurs.",
-    serviceType: "Mobile app development",
+      "Prise de rendez-vous, suivi de dossiers, devis-factures et tableaux de bord sur mesure pour automatiser vos process.",
+    serviceType: "Custom software development",
   },
   {
     name: "Design UI/UX",
@@ -41,10 +41,10 @@ export const seoServicesByLocale: Record<Locale, typeof seoServices> = {
       serviceType: "Web development",
     },
     {
-      name: "Mobile applications",
+      name: "Custom business apps & internal tools",
       description:
-        "Design and development of iOS and Android applications for smooth user experiences.",
-      serviceType: "Mobile app development",
+        "Booking, case tracking, quotes and invoicing, dashboards — custom-built to automate your processes.",
+      serviceType: "Custom software development",
     },
     {
       name: "UI/UX design",

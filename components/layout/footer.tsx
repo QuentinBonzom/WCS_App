@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Instagram } from "lucide-react";
 import { usePathname } from "next/navigation";
 import {
   getDictionary,
@@ -58,6 +59,16 @@ export function Footer() {
           <p className="my-3 max-w-[40ch] text-xs leading-relaxed text-white/80">
             {t.description}
           </p>
+          <a
+            href="https://www.instagram.com/webcode_studio/"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="WebCode Studio sur Instagram"
+            className={`${linkCls} gap-2`}
+          >
+            <Instagram className="h-4 w-4" aria-hidden="true" />
+            @webcode_studio
+          </a>
         </div>
 
         {columns.map((col) => (
