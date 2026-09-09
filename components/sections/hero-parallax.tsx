@@ -197,6 +197,7 @@ function ProjectCard({
           src={project.thumbnail}
           height={600}
           width={600}
+          loading="lazy"
           className="absolute inset-0 h-full w-full object-cover object-left-top"
           alt={
             project.tagline

@@ -54,8 +54,16 @@ export function baseJsonLd(locale: Locale = defaultLocale) {
         logo: absoluteUrl(siteConfig.logoPath),
         image: absoluteUrl(pageOgImage(seoPages.home)),
         email: siteConfig.email,
+        telephone: siteConfig.phone,
+        sameAs: siteConfig.sameAs,
         description: siteDescriptions[locale],
         priceRange: "€€",
+        openingHoursSpecification: siteConfig.openingHours.map((spec) => ({
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: spec.days,
+          opens: spec.opens,
+          closes: spec.closes,
+        })),
         // Service-area business run from a private address — locality only, no street.
         address: {
           "@type": "PostalAddress",
@@ -78,15 +86,18 @@ export function baseJsonLd(locale: Locale = defaultLocale) {
           "création de site vitrine",
           "refonte de site internet",
           "développement web",
+          "application métier sur mesure",
+          "logiciel de gestion",
+          "application de prise de rendez-vous",
           "SEO local",
           "design UI/UX",
-          "accessibilité numérique",
         ],
         contactPoint: [
           {
             "@type": "ContactPoint",
             contactType: "customer support",
             email: siteConfig.email,
+            telephone: siteConfig.phone,
             areaServed: [
               ...siteConfig.localAreas.slice(0, 3),
               ...siteConfig.areas,

@@ -85,6 +85,9 @@ export function Footer() {
           <a href="mailto:contact@webcodestudio.fr" className={linkCls}>
             contact@webcodestudio.fr
           </a>
+          <a href="tel:+33610306899" className={linkCls}>
+            06 10 30 68 99
+          </a>
           <span className="text-xs text-white/80">{t.response}</span>
         </div>
       </div>

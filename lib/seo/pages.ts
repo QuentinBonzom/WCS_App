@@ -4,9 +4,9 @@ import { sharedKeywords, type SeoPage } from "./site";
 export const seoPages = {
   home: {
     path: "/",
-    title: "Agence web à Montbéliard · Création de sites internet",
+    title: "Studio web à Montbéliard · Sites, applications & outils métier",
     description:
-      "Studio web à Montbéliard : création de sites internet, sites vitrines et applications sur mesure pour les entreprises et artisans du Doubs. Devis clair sous 24h.",
+      "WebCode Studio, studio web à Montbéliard : sites internet, applications et outils métier sur mesure pour les entreprises et artisans du Doubs et du Nord Franche-Comté. Devis sous 24h.",
     keywords: [
       "agence web Montbéliard",
       "création site internet Montbéliard",
@@ -205,9 +205,9 @@ export const seoPagesByLocale = {
   en: {
     home: {
       path: "/",
-      title: "Custom websites and apps in Montbéliard",
+      title: "Web studio in Montbéliard · Websites, apps & business tools",
       description:
-        "WebCode Studio designs fast websites, mobile applications and premium interfaces that turn visitors into customers. Based in Montbéliard, available in France and internationally.",
+        "WebCode Studio, web studio in Montbéliard: custom websites, applications and business tools for companies and artisans across the Doubs and Nord Franche-Comté. Quote within 24h.",
       keywords: [
         "website creation",
         "web development",

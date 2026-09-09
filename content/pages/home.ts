@@ -7,10 +7,10 @@ import type { Locale } from "@/lib/i18n";
 export const homeContent = {
   fr: {
     heroParallax: {
-      titleLines: ["Création de sites internet", "à Montbéliard."],
+      titleLines: ["Le studio web", "du Pays de Montbéliard."],
       highlight: "Montbéliard",
       intro:
-        "WebCode Studio est un studio web basé à Montbéliard. Nous créons des sites internet, sites vitrines et applications sur mesure pour les entreprises, artisans et commerçants du Doubs — rapides, crédibles et pensés pour convertir.",
+        "WebCode Studio conçoit des sites internet, des applications et des outils métier sur mesure pour les entreprises, artisans et commerçants du Doubs et du Nord Franche-Comté. Rapide, crédible, pensé pour convertir — et un seul interlocuteur.",
       primaryCta: { label: "Demander un devis", href: "/contact" },
       secondaryCta: { label: "Voir nos réalisations", href: "/projets" },
       visitLabel: "Visiter le site",
@@ -36,6 +36,11 @@ export const homeContent = {
         linkLabel: "Voir le design UI/UX",
       },
     ],
+    servicesCta: {
+      label: "Voir le détail des prestations et les tarifs",
+      href: "/tarifs",
+      hint: "À partir de 690 €",
+    },
     local: {
       eyebrow: "Zone d'intervention",
       heading: "Un studio web ancré à Montbéliard.",
@@ -60,10 +65,10 @@ export const homeContent = {
   },
   en: {
     heroParallax: {
-      titleLines: ["Website creation", "in Montbéliard."],
+      titleLines: ["The web studio", "for the Montbéliard area."],
       highlight: "Montbéliard",
       intro:
-        "WebCode Studio is a web studio based in Montbéliard. We build custom websites, showcase sites and apps for businesses, artisans and shops across the Doubs — fast, credible and built to convert.",
+        "WebCode Studio builds custom websites, applications and business tools for companies, artisans and shops across the Doubs and Nord Franche-Comté. Fast, credible, built to convert — with a single point of contact.",
       primaryCta: { label: "Request a quote", href: "/contact" },
       secondaryCta: { label: "See our work", href: "/projets" },
       visitLabel: "Visit website",
@@ -89,6 +94,11 @@ export const homeContent = {
         linkLabel: "View UI/UX design",
       },
     ],
+    servicesCta: {
+      label: "See the full services and pricing",
+      href: "/tarifs",
+      hint: "From €690",
+    },
     local: {
       eyebrow: "Service area",
       heading: "A web studio rooted in Montbéliard.",

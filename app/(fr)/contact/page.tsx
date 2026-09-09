@@ -49,12 +49,20 @@ export function ContactPage({ locale = "fr" }: { locale?: Locale }) {
               <p className="mb-3 text-[17px] text-graphite">
                 {t.infoText}
               </p>
-              <a
-                href="mailto:contact@webcodestudio.fr"
-                className="text-[17px] text-cobalt hover:underline"
-              >
-                contact@webcodestudio.fr
-              </a>
+              <div className="flex flex-col gap-1">
+                <a
+                  href="mailto:contact@webcodestudio.fr"
+                  className="text-[17px] text-cobalt hover:underline"
+                >
+                  contact@webcodestudio.fr
+                </a>
+                <a
+                  href="tel:+33610306899"
+                  className="text-[17px] text-cobalt hover:underline"
+                >
+                  06 10 30 68 99
+                </a>
+              </div>
             </div>
 
             <div>

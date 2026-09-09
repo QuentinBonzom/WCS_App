@@ -153,6 +153,18 @@ export function HomePage({ locale = "fr" }: { locale?: Locale }) {
               </Reveal>
             ))}
           </div>
+
+          <Reveal className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link
+              href={localizeHref(t.servicesCta.href, locale)}
+              className="inline-flex text-[17px] font-medium text-cobalt hover:underline"
+            >
+              {t.servicesCta.label} ›
+            </Link>
+            <span className="text-[15px] text-graphite">
+              {t.servicesCta.hint}
+            </span>
+          </Reveal>
         </div>
       </section>
 

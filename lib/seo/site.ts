@@ -57,7 +57,24 @@ export const siteConfig = {
   locale: "fr_FR",
   language: "fr",
   email: "contact@webcodestudio.fr",
+  /** E.164 for schema/tel: links */
+  phone: "+33610306899",
+  /** human-readable, for on-page display */
+  phoneDisplay: "06 10 30 68 99",
   logoPath: "/logo-webcode-studio.png",
+  /** Public profiles — used for Organization.sameAs (entity linking). */
+  sameAs: [
+    "https://www.instagram.com/webcode_studio/",
+    "https://share.google/DusAeXtFGhc6x0sCo",
+  ],
+  /** Business hours — ajuste selon tes horaires réels. */
+  openingHours: [
+    {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
   description:
     "Studio web à Montbéliard spécialisé dans la création de sites internet rapides, applications mobiles, design UI/UX et référencement SEO.",
   location: {
