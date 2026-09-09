@@ -395,6 +395,225 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "prise-de-rendez-vous-en-ligne",
+    title:
+      "Créer un site de prise de rendez-vous : comment ça marche",
+    description:
+      "Comment fonctionne un module de prise de rendez-vous en ligne : créneaux en temps réel, rappels automatiques, intégration à votre agenda, et quand choisir un outil sur mesure plutôt qu'une solution du marché.",
+    excerpt:
+      "Créneaux en temps réel, rappels automatiques, moins de rendez-vous manqués : comment fonctionne la prise de rendez-vous en ligne et quand un outil sur mesure devient pertinent.",
+    keywords: [
+      "prise de rendez-vous en ligne",
+      "agenda en ligne",
+      "réduire les rendez-vous manqués",
+      "logiciel de réservation",
+      "application prise de rendez-vous",
+    ],
+    category: "Guide",
+    datePublished: "2026-09-08",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "Le téléphone qui sonne pendant un rendez-vous, les allers-retours par SMS pour caler un créneau, les absences non prévenues du lundi matin : la prise de rendez-vous en ligne règle tout ça. Voici comment un tel outil fonctionne concrètement, et ce qu'il faut regarder avant de se lancer.",
+      },
+      {
+        type: "h2",
+        text: "Ce que fait un module de prise de rendez-vous",
+      },
+      {
+        type: "p",
+        text: "Votre client ouvre une page, voit vos créneaux libres en temps réel, choisit, renseigne ses coordonnées et reçoit une confirmation. De votre côté, l'agenda se met à jour, la plage est bloquée et vous recevez une notification. Personne ne réserve deux fois le même créneau, personne n'appelle pour « juste vérifier ».",
+      },
+      {
+        type: "h2",
+        text: "Les rappels automatiques, le vrai gain",
+      },
+      {
+        type: "p",
+        text: "L'essentiel de la valeur vient des rappels : un e-mail ou un SMS envoyé la veille puis une heure avant le rendez-vous. Dans beaucoup d'activités, cela réduit nettement les rendez-vous manqués — autant de créneaux qui ne partent plus en fumée.",
+      },
+      {
+        type: "h2",
+        text: "Solution du marché ou outil sur mesure ?",
+      },
+      {
+        type: "p",
+        text: "Des services comme Calendly ou Planity font le travail pour un besoin standard, avec un abonnement mensuel par utilisateur. Un outil sur mesure devient intéressant quand vous avez des règles particulières, ou quand vous voulez que la réservation vive à l'intérieur de votre propre site, à votre image. Avant de choisir, clarifiez :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Vos types de rendez-vous et leurs durées",
+          "Vos plages d'ouverture et vos exceptions (congés, jours fériés)",
+          "Faut-il un acompte ou un paiement à la réservation ?",
+          "Combien de personnes ou de ressources à gérer en parallèle ?",
+          "Quels rappels, à quels moments, par quel canal ?",
+        ],
+      },
+      {
+        type: "h2",
+        text: "L'intégration à vos outils existants",
+      },
+      {
+        type: "p",
+        text: "Un bon module se connecte à l'agenda que vous utilisez déjà (Google Agenda, Outlook) pour éviter la double saisie. Il peut aussi alimenter votre fichier client et vos statistiques : nombre de réservations, taux de présence, créneaux les plus demandés.",
+      },
+      {
+        type: "h2",
+        text: "Par où commencer",
+      },
+      {
+        type: "p",
+        text: "Listez vos prestations, vos horaires et vos règles, puis regardez si une solution du marché coche toutes les cases. Si oui, tant mieux. Sinon, un outil sur mesure — souvent livré par étapes en commençant par la réservation seule — vous évite de plier votre activité à un logiciel. Chez WebCode Studio, on construit ce type d'outil pour les entreprises du Pays de Montbéliard ; on peut regarder ensemble ce qui est le plus pertinent pour vous.",
+      },
+    ],
+  },
+  {
+    slug: "site-vitrine-ou-sur-mesure",
+    title: "Site vitrine ou site sur mesure : comment choisir",
+    description:
+      "Site vitrine ou site sur mesure ? Les différences concrètes, les questions qui tranchent vraiment, et pourquoi on peut commencer simple sans se fermer de portes.",
+    excerpt:
+      "Les différences concrètes entre un site vitrine et un site sur mesure, les trois questions qui tranchent, et comment démarrer sans se fermer de portes.",
+    keywords: [
+      "site vitrine ou sur mesure",
+      "quel type de site web",
+      "choisir son site internet",
+      "site vitrine PME",
+      "site web sur mesure",
+    ],
+    category: "Conseils",
+    datePublished: "2026-09-06",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "p",
+        text: "« Un site vitrine me suffit ou il me faut du sur mesure ? » C'est une des premières questions à trancher, parce qu'elle change le budget, le délai et ce que le site pourra faire. Voici comment décider sans se tromper.",
+      },
+      {
+        type: "h2",
+        text: "Le site vitrine : présenter et rassurer",
+      },
+      {
+        type: "p",
+        text: "Un site vitrine répond à un objectif simple : quand quelqu'un vous cherche, il trouve une présentation claire de votre activité, vos services, vos preuves de confiance et un moyen de vous contacter. Quelques pages, un formulaire, une base SEO propre. C'est le bon point de départ pour un artisan, un commerce, un cabinet ou une PME qui veut exister en ligne et générer des demandes.",
+      },
+      {
+        type: "h2",
+        text: "Le site sur mesure : quand le vitrine ne suffit plus",
+      },
+      {
+        type: "p",
+        text: "On passe au sur mesure dès que le site doit faire plus que présenter :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Beaucoup de contenus à organiser : catalogue, zones géographiques, cas clients",
+          "Des fonctionnalités : réservation, espace client, devis en ligne, paiement, multilingue",
+          "Une identité visuelle forte à traduire, au-delà d'une trame adaptée",
+          "Une stratégie SEO locale poussée, avec des pages ciblées par service et par ville",
+          "Des connexions à vos autres outils : agenda, comptabilité, fichier client",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Les questions qui tranchent",
+      },
+      {
+        type: "p",
+        text: "Trois questions suffisent le plus souvent. Que doit faire le visiteur exactement ? Le site doit-il gérer des données — réservations, comptes, commandes — ou seulement informer ? Et dans deux ans, qu'est-ce qui aura probablement changé ? Si les réponses restent dans « présenter et être contacté », le vitrine suffit. Dès qu'il y a de la donnée ou de la logique métier, c'est du sur mesure.",
+      },
+      {
+        type: "h2",
+        text: "On peut aussi commencer simple",
+      },
+      {
+        type: "p",
+        text: "Rien n'oblige à tout construire d'un coup. Un site est une base évolutive : on démarre avec un vitrine solide, et on ajoute des pages, une boutique ou un espace client quand le besoin est là — sans repartir de zéro, à condition que les fondations soient propres dès le départ.",
+      },
+      {
+        type: "p",
+        text: "Nos tarifs de départ et ce qui fait varier le prix sont détaillés sur la page Tarifs. Si vous hésitez encore, décrivez-nous votre besoin : on vous dira franchement ce qui est le plus adapté.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-artisan-montbeliard",
+    title:
+      "Site internet pour artisan à Montbéliard : par où commencer",
+    description:
+      "Guide pratique pour un artisan de Montbéliard qui veut un site internet efficace : objectif, structure en 3-4 pages, SEO local, mobile, budget et délais.",
+    excerpt:
+      "Objectif, structure en 3-4 pages, SEO local, mobile, budget : par où commencer quand on est artisan à Montbéliard et qu'on veut un site qui ramène des devis.",
+    keywords: [
+      "site internet artisan",
+      "site web artisan Montbéliard",
+      "création site artisan",
+      "artisan Doubs site internet",
+      "devis site artisan",
+    ],
+    category: "Guide",
+    datePublished: "2026-09-09",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "Plombier, électricien, menuisier, paysagiste : à Montbéliard comme ailleurs, vos futurs clients vous cherchent sur leur téléphone avant de décrocher le leur. Un site simple et bien fait suffit souvent à faire la différence. Voici par où commencer, sans y passer des semaines.",
+      },
+      {
+        type: "h2",
+        text: "1. Un objectif : générer des demandes de devis",
+      },
+      {
+        type: "p",
+        text: "Pour un artisan, le site a presque toujours le même but : qu'un particulier ou une entreprise du coin trouve vos coordonnées, comprenne ce que vous faites, et vous contacte. Tout le reste en découle. Un bouton « Demander un devis » visible partout vaut mieux qu'un beau carrousel.",
+      },
+      {
+        type: "h2",
+        text: "2. Trois ou quatre pages, pas plus",
+      },
+      {
+        type: "ul",
+        items: [
+          "Accueil : ce que vous faites, votre zone, un contact immédiat",
+          "Prestations : le détail de vos interventions, avec des exemples concrets",
+          "Réalisations : quelques photos avant/après de chantiers réels",
+          "Contact : formulaire court, téléphone cliquable, secteur d'intervention",
+        ],
+      },
+      {
+        type: "h2",
+        text: "3. Le SEO local, votre priorité",
+      },
+      {
+        type: "p",
+        text: "Un artisan se référence sur des recherches précises : « électricien Audincourt », « plombier Pays de Montbéliard », « menuisier Sochaux ». Deux leviers comptent avant tout : une fiche Google Business Profile complète et à jour, et des pages qui nomment clairement vos métiers et vos villes d'intervention. Les avis clients, demandés simplement après chaque chantier réussi, font le reste.",
+      },
+      {
+        type: "h2",
+        text: "4. Le mobile et la vitesse, non négociables",
+      },
+      {
+        type: "p",
+        text: "La quasi-totalité de vos visiteurs sont sur téléphone, souvent en déplacement, parfois avec une mauvaise connexion. Le site doit s'afficher vite, le numéro doit être cliquable, le formulaire court. Un site lourd ou illisible sur mobile vous coûte des appels.",
+      },
+      {
+        type: "h2",
+        text: "5. Combien de temps, combien ça coûte",
+      },
+      {
+        type: "p",
+        text: "Un site vitrine d'artisan bien fait se met en ligne en quelques semaines, à partir de quelques centaines d'euros. L'important n'est pas le prix le plus bas mais le retour : un seul chantier gagné grâce au site le rentabilise souvent. Nos tarifs de départ sont publics et le devis est gratuit.",
+      },
+      {
+        type: "p",
+        text: "Chez WebCode Studio, à Montbéliard, on travaille avec les artisans et TPE du Doubs et du Nord Franche-Comté. Décrivez-nous votre activité et votre zone : on vous propose une structure de site et un devis clair sous 24 h.",
+      },
+    ],
+  },
 ];
 
 const blogPostsEn: BlogPost[] = [
@@ -769,6 +988,223 @@ const blogPostsEn: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "prise-de-rendez-vous-en-ligne",
+    title: "Building an online booking site: how it works",
+    description:
+      "How an online booking module works: real-time slots, automatic reminders, calendar integration, and when a custom tool beats an off-the-shelf solution.",
+    excerpt:
+      "Real-time slots, automatic reminders, fewer no-shows: how online booking works and when a custom tool becomes worth it.",
+    keywords: [
+      "online booking",
+      "online calendar",
+      "reduce no-shows",
+      "booking software",
+      "appointment booking application",
+    ],
+    category: "Guide",
+    datePublished: "2026-09-08",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "The phone ringing during an appointment, back-and-forth texts to agree a slot, the Monday-morning no-shows: online booking solves all of it. Here is how such a tool works in practice, and what to check before getting started.",
+      },
+      {
+        type: "h2",
+        text: "What a booking module does",
+      },
+      {
+        type: "p",
+        text: "Your client opens a page, sees your free slots in real time, picks one, enters their details and gets a confirmation. On your side, the calendar updates, the slot is blocked and you get a notification. Nobody double-books, nobody calls to \"just check\".",
+      },
+      {
+        type: "h2",
+        text: "Automatic reminders, the real win",
+      },
+      {
+        type: "p",
+        text: "Most of the value comes from reminders: an email or SMS sent the day before and an hour before the appointment. In many activities this clearly reduces missed appointments — slots that no longer go to waste.",
+      },
+      {
+        type: "h2",
+        text: "Off-the-shelf or custom?",
+      },
+      {
+        type: "p",
+        text: "Services like Calendly do the job for a standard need, with a monthly per-user subscription. A custom tool becomes worthwhile when you have specific rules, or when you want booking to live inside your own website, in your brand. Before choosing, clarify:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Your appointment types and their durations",
+          "Your opening hours and exceptions (holidays, closures)",
+          "Do you need a deposit or payment at booking?",
+          "How many people or resources to manage in parallel?",
+          "Which reminders, when, through which channel?",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Integration with your existing tools",
+      },
+      {
+        type: "p",
+        text: "A good module connects to the calendar you already use (Google Calendar, Outlook) to avoid double entry. It can also feed your client records and your stats: number of bookings, attendance rate, most requested slots.",
+      },
+      {
+        type: "h2",
+        text: "Where to start",
+      },
+      {
+        type: "p",
+        text: "List your services, hours and rules, then check whether an off-the-shelf solution ticks every box. If it does, great. If not, a custom tool — often delivered in stages starting with booking alone — spares you from bending your business to a piece of software. At WebCode Studio we build this kind of tool for businesses in the Montbéliard area; we can look together at what makes the most sense for you.",
+      },
+    ],
+  },
+  {
+    slug: "site-vitrine-ou-sur-mesure",
+    title: "Showcase site or custom site: how to choose",
+    description:
+      "Showcase site or custom site? The concrete differences, the questions that actually decide it, and why you can start simple without closing doors.",
+    excerpt:
+      "The concrete differences between a showcase site and a custom site, the three questions that decide it, and how to start without closing doors.",
+    keywords: [
+      "showcase site or custom",
+      "which type of website",
+      "choose your website",
+      "small business website",
+      "custom website",
+    ],
+    category: "Advice",
+    datePublished: "2026-09-06",
+    readingMinutes: 5,
+    content: [
+      {
+        type: "p",
+        text: "\"Is a showcase site enough or do I need custom?\" It is one of the first questions to settle, because it changes the budget, the timeline and what the site will be able to do. Here is how to decide without getting it wrong.",
+      },
+      {
+        type: "h2",
+        text: "The showcase site: present and reassure",
+      },
+      {
+        type: "p",
+        text: "A showcase site serves a simple goal: when someone looks for you, they find a clear presentation of your activity, your services, your trust signals and a way to contact you. A few pages, a form, a clean SEO base. It is the right starting point for an artisan, a shop, a practice or an SME that wants to exist online and generate enquiries.",
+      },
+      {
+        type: "h2",
+        text: "The custom site: when a showcase is not enough",
+      },
+      {
+        type: "p",
+        text: "You move to custom as soon as the site has to do more than present:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A lot of content to organise: catalogue, geographic areas, case studies",
+          "Features: booking, client portal, online quotes, payment, multilingual",
+          "A strong visual identity to translate, beyond an adapted layout",
+          "Advanced local SEO, with pages targeted by service and by town",
+          "Connections to your other tools: calendar, accounting, client records",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The questions that decide it",
+      },
+      {
+        type: "p",
+        text: "Three questions are usually enough. What exactly should the visitor do? Does the site need to handle data — bookings, accounts, orders — or only inform? And in two years, what will probably have changed? If the answers stay within \"present and be contacted\", a showcase site is enough. As soon as there is data or business logic, it is custom.",
+      },
+      {
+        type: "h2",
+        text: "You can also start simple",
+      },
+      {
+        type: "p",
+        text: "Nothing forces you to build everything at once. A site is an evolutive base: you start with a solid showcase, and add pages, a store or a client portal when the need is there — without starting over, as long as the foundations are clean from the start.",
+      },
+      {
+        type: "p",
+        text: "Our starting prices and what drives the cost are detailed on the Pricing page. If you are still unsure, tell us what you need: we will tell you honestly what fits best.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-artisan-montbeliard",
+    title: "A website for a tradesperson in Montbéliard: where to start",
+    description:
+      "A practical guide for a Montbéliard tradesperson who wants an effective website: goal, a 3-4 page structure, local SEO, mobile, budget and timeline.",
+    excerpt:
+      "Goal, a 3-4 page structure, local SEO, mobile, budget: where to start as a tradesperson in Montbéliard who wants a site that brings in quote requests.",
+    keywords: [
+      "tradesperson website",
+      "artisan website Montbéliard",
+      "website for tradespeople",
+      "small trade business website",
+      "tradesperson website quote",
+    ],
+    category: "Guide",
+    datePublished: "2026-09-09",
+    readingMinutes: 6,
+    content: [
+      {
+        type: "p",
+        text: "Plumber, electrician, carpenter, landscaper: in Montbéliard as everywhere, your future clients look for you on their phone before picking up theirs. A simple, well-built site is often enough to make the difference. Here is where to start, without spending weeks on it.",
+      },
+      {
+        type: "h2",
+        text: "1. One goal: generate quote requests",
+      },
+      {
+        type: "p",
+        text: "For a tradesperson, the site almost always has the same purpose: that a local individual or business finds your contact details, understands what you do, and gets in touch. Everything else follows from that. A visible \"Request a quote\" button everywhere beats a nice carousel.",
+      },
+      {
+        type: "h2",
+        text: "2. Three or four pages, no more",
+      },
+      {
+        type: "ul",
+        items: [
+          "Home: what you do, your area, an immediate way to contact you",
+          "Services: the detail of your work, with concrete examples",
+          "Work: a few before/after photos of real jobs",
+          "Contact: a short form, a clickable phone number, your service area",
+        ],
+      },
+      {
+        type: "h2",
+        text: "3. Local SEO, your priority",
+      },
+      {
+        type: "p",
+        text: "A tradesperson ranks on precise searches: \"electrician Audincourt\", \"plumber Pays de Montbéliard\", \"carpenter Sochaux\". Two levers matter most: a complete, up-to-date Google Business Profile, and pages that clearly name your trades and the towns you cover. Customer reviews, asked for simply after each successful job, do the rest.",
+      },
+      {
+        type: "h2",
+        text: "4. Mobile and speed, non-negotiable",
+      },
+      {
+        type: "p",
+        text: "Almost all your visitors are on a phone, often on the move, sometimes on a poor connection. The site must load fast, the number must be clickable, the form short. A heavy or unreadable-on-mobile site costs you calls.",
+      },
+      {
+        type: "h2",
+        text: "5. How long, how much",
+      },
+      {
+        type: "p",
+        text: "A well-built tradesperson's showcase site goes online in a few weeks, from a few hundred euros. What matters is not the lowest price but the return: a single job won thanks to the site often pays for it. Our starting prices are public and the quote is free.",
+      },
+      {
+        type: "p",
+        text: "At WebCode Studio, in Montbéliard, we work with tradespeople and small businesses across the Doubs and Nord Franche-Comté. Tell us about your activity and your area: we will propose a site structure and a clear quote within 24h.",
+      },
+    ],
+  },
 ];
 
 const blogPostsByLocale: Record<Locale, BlogPost[]> = {
@@ -832,6 +1268,42 @@ const relatedReadingBySlug: Record<
       { label: "Website redesign in Montbéliard", href: "/refonte-site-internet-montbeliard" },
       { label: "Web agency in Montbéliard", href: "/agence-web-montbeliard" },
       { label: "Professional showcase website creation", href: "/creation-site-vitrine" },
+    ],
+  },
+  "prise-de-rendez-vous-en-ligne": {
+    fr: [
+      { label: "Applications & outils métier sur mesure", href: "/applications-metier-montbeliard" },
+      { label: "Nos tarifs et formules", href: "/tarifs" },
+      { label: "Parler de mon projet", href: "/contact" },
+    ],
+    en: [
+      { label: "Custom business apps & internal tools", href: "/applications-metier-montbeliard" },
+      { label: "Our pricing and plans", href: "/tarifs" },
+      { label: "Discuss my project", href: "/contact" },
+    ],
+  },
+  "site-vitrine-ou-sur-mesure": {
+    fr: [
+      { label: "Nos tarifs et formules", href: "/tarifs" },
+      { label: "Création de site vitrine professionnel", href: "/creation-site-vitrine" },
+      { label: "Création de site internet à Montbéliard", href: "/creation-site-internet-montbeliard" },
+    ],
+    en: [
+      { label: "Our pricing and plans", href: "/tarifs" },
+      { label: "Professional showcase website creation", href: "/creation-site-vitrine" },
+      { label: "Website creation in Montbéliard", href: "/creation-site-internet-montbeliard" },
+    ],
+  },
+  "site-internet-artisan-montbeliard": {
+    fr: [
+      { label: "Création de site internet à Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Nos tarifs et formules", href: "/tarifs" },
+      { label: "SEO local : par où commencer", href: "/blog/seo-local-par-ou-commencer" },
+    ],
+    en: [
+      { label: "Website creation in Montbéliard", href: "/creation-site-internet-montbeliard" },
+      { label: "Our pricing and plans", href: "/tarifs" },
+      { label: "Local SEO: where to start", href: "/blog/seo-local-par-ou-commencer" },
     ],
   },
 };
