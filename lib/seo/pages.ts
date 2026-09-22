@@ -54,6 +54,7 @@ export const seoPages = {
       "/projects/garage-a-la-carte.jpg",
       "/projects/barber-industrie.jpg",
       "/projects/erpi.jpg",
+      "/projects/ambul-wash.jpg",
     ],
   },
   contact: {

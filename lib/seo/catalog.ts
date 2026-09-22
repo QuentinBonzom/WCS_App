@@ -91,6 +91,13 @@ export const seoProjects = [
     url: "https://erpi-sasu.fr",
     image: "/projects/erpi.jpg",
   },
+  {
+    name: "Ambul Wash",
+    description:
+      "Site vitrine pour un service de nettoyage intérieur automobile à domicile autour de Montbéliard et Belfort.",
+    url: "https://ambulwash.fr",
+    image: "/projects/ambul-wash.jpg",
+  },
 ];
 
 export const seoProjectsByLocale: Record<Locale, typeof seoProjects> = {
@@ -123,6 +130,13 @@ export const seoProjectsByLocale: Record<Locale, typeof seoProjects> = {
         "Industrial website for an engineering office specialized in industrial processes and robotic welding.",
       url: "https://erpi-sasu.fr",
       image: "/projects/erpi.jpg",
+    },
+    {
+      name: "Ambul Wash",
+      description:
+        "Showcase website for an at-home car interior cleaning service around Montbéliard and Belfort.",
+      url: "https://ambulwash.fr",
+      image: "/projects/ambul-wash.jpg",
     },
   ],
 };

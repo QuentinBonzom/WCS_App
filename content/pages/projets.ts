@@ -67,6 +67,15 @@ const baseProjects: ProjectCard[] = [
     href: "https://erpi-sasu.fr",
     temporary: false,
   },
+  {
+    cat: "Site vitrine locale",
+    location: "Montbéliard",
+    title: "Ambul Wash",
+    desc: "Un site vitrine pour un service de nettoyage intérieur automobile à domicile, avec formules, tarifs et prise de rendez-vous autour de Montbéliard et Belfort.",
+    img: "/projects/ambul-wash.jpg",
+    href: "https://ambulwash.fr",
+    temporary: false,
+  },
 ];
 
 /** Client projects — shared by /projets and the home hero parallax. */
@@ -142,6 +151,11 @@ export const projetsContent: Localized<ProjetsContent> = {
         ...baseProjects[3],
         cat: "Industrial website",
         desc: "A technical digital presence for an engineering office specialized in industrial processes, assembly and robotic welding.",
+      },
+      {
+        ...baseProjects[4],
+        cat: "Local showcase website",
+        desc: "A showcase website for an at-home car interior cleaning service, with plans, pricing and online booking around Montbéliard and Belfort.",
       },
     ],
     ctaEyebrow: "Your project next",
