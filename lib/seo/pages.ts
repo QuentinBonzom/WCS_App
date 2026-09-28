@@ -1,4 +1,5 @@
 import { defaultLocale, type Locale } from "@/lib/i18n";
+import { projects } from "@/content/pages/projets";
 import { sharedKeywords, type SeoPage } from "./site";
 
 export const seoPages = {
@@ -49,13 +50,7 @@ export const seoPages = {
     priority: 0.8,
     changeFrequency: "monthly",
     ogLabel: "Réalisations clients",
-    images: [
-      "/projects/rscustom.jpg",
-      "/projects/garage-a-la-carte.jpg",
-      "/projects/barber-industrie.jpg",
-      "/projects/erpi.jpg",
-      "/projects/ambul-wash.jpg",
-    ],
+    images: projects.map((project) => project.img),
   },
   contact: {
     path: "/contact",

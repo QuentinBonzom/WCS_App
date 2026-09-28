@@ -1,3 +1,4 @@
+import { projetsContent, type ProjectCard } from "@/content/pages/projets";
 import type { Locale } from "@/lib/i18n";
 
 /**
@@ -61,82 +62,14 @@ export const seoServicesByLocale: Record<Locale, typeof seoServices> = {
   ],
 };
 
-/** Client projects, used to build CollectionPage structured data and the /projets grid data. */
-export const seoProjects = [
-  {
-    name: "RSCustom",
-    description:
-      "Site vitrine automobile pour présenter des installations CarPlay, caméras de recul, éclairage et detailing.",
-    url: "https://www.rscustom.fr",
-    image: "/projects/rscustom.jpg",
-  },
-  {
-    name: "Garage à la Carte",
-    description:
-      "Site premium bilingue pour un studio de transformation de garages à Orlando.",
-    url: "https://www.garagealacarte.com",
-    image: "/projects/garage-a-la-carte.jpg",
-  },
-  {
-    name: "Barber Industrie",
-    description:
-      "Écosystème web et mobile pour un salon de coiffure avec actualités et prise de rendez-vous.",
-    url: "https://barberindustrie.fr",
-    image: "/projects/barber-industrie.jpg",
-  },
-  {
-    name: "ERPI",
-    description:
-      "Site industriel pour un bureau d'études spécialisé dans les process industriels et la soudure robotisée.",
-    url: "https://erpi-sasu.fr",
-    image: "/projects/erpi.jpg",
-  },
-  {
-    name: "Ambul Wash",
-    description:
-      "Site vitrine pour un service de nettoyage intérieur automobile à domicile autour de Montbéliard et Belfort.",
-    url: "https://ambulwash.fr",
-    image: "/projects/ambul-wash.jpg",
-  },
-];
+/**
+ * Client projects for structured data. Single source of truth is the /projets
+ * content (`content/pages/projets.ts`) — this is a read-only view so a new
+ * project only has to be added in one place.
+ */
+export type SeoProject = ProjectCard;
 
-export const seoProjectsByLocale: Record<Locale, typeof seoProjects> = {
-  fr: seoProjects,
-  en: [
-    {
-      name: "RSCustom",
-      description:
-        "Automotive showcase website for CarPlay installations, rear cameras, lighting and detailing.",
-      url: "https://www.rscustom.fr",
-      image: "/projects/rscustom.jpg",
-    },
-    {
-      name: "Garage à la Carte",
-      description:
-        "Premium bilingual website for a garage transformation studio in Orlando.",
-      url: "https://www.garagealacarte.com",
-      image: "/projects/garage-a-la-carte.jpg",
-    },
-    {
-      name: "Barber Industrie",
-      description:
-        "Web and mobile ecosystem for a barber shop with news and appointment booking.",
-      url: "https://barberindustrie.fr",
-      image: "/projects/barber-industrie.jpg",
-    },
-    {
-      name: "ERPI",
-      description:
-        "Industrial website for an engineering office specialized in industrial processes and robotic welding.",
-      url: "https://erpi-sasu.fr",
-      image: "/projects/erpi.jpg",
-    },
-    {
-      name: "Ambul Wash",
-      description:
-        "Showcase website for an at-home car interior cleaning service around Montbéliard and Belfort.",
-      url: "https://ambulwash.fr",
-      image: "/projects/ambul-wash.jpg",
-    },
-  ],
+export const seoProjectsByLocale: Record<Locale, SeoProject[]> = {
+  fr: projetsContent.fr.projects,
+  en: projetsContent.en.projects,
 };

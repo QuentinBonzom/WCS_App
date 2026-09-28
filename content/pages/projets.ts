@@ -1,6 +1,16 @@
 import type { Localized } from "./types";
 
+/** A real app shipped as part of a project — emitted as SoftwareApplication. */
+export type ProjectApp = {
+  name: string;
+  operatingSystem: string;
+  applicationCategory: string;
+  downloadUrl?: string;
+};
+
 export type ProjectCard = {
+  /** stable id → JSON-LD "@id" …/projets#<slug>. Never change once published. */
+  slug: string;
   cat: string;
   location: string;
   title: string;
@@ -9,6 +19,12 @@ export type ProjectCard = {
   href: string;
   /** true → show a "temporary link" badge and label */
   temporary: boolean;
+  /** client business name, when it differs from `title` */
+  client?: string;
+  /** year delivered (ISO 8601 year) */
+  year?: string;
+  technologies?: string[];
+  app?: ProjectApp;
 };
 
 export type ProjetsContent = {
@@ -32,6 +48,9 @@ export type ProjetsContent = {
 
 const baseProjects: ProjectCard[] = [
   {
+    slug: "rscustom",
+    year: "2024",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     cat: "Site vitrine",
     location: "France",
     title: "RSCustom",
@@ -41,6 +60,9 @@ const baseProjects: ProjectCard[] = [
     temporary: false,
   },
   {
+    slug: "garage-a-la-carte",
+    year: "2024",
+    technologies: ["Next.js", "Tailwind CSS", "Next-Intl"],
     cat: "Site vitrine bilingue",
     location: "États-Unis",
     title: "Garage à la Carte",
@@ -50,6 +72,15 @@ const baseProjects: ProjectCard[] = [
     temporary: false,
   },
   {
+    slug: "barber-industrie",
+    year: "2025",
+    technologies: ["Next.js", "Tailwind CSS", "React Native", "Expo"],
+    // Private in-house app (salon & client management): no public downloadUrl.
+    app: {
+      name: "Barber Industrie",
+      operatingSystem: "iOS, Android",
+      applicationCategory: "LifestyleApplication",
+    },
     cat: "Site web & application mobile",
     location: "France",
     title: "Barber Industrie",
@@ -59,6 +90,9 @@ const baseProjects: ProjectCard[] = [
     temporary: false,
   },
   {
+    slug: "erpi",
+    year: "2025",
+    technologies: ["Next.js", "Tailwind CSS", "MDX"],
     cat: "Site industriel",
     location: "France",
     title: "ERPI",
@@ -68,6 +102,9 @@ const baseProjects: ProjectCard[] = [
     temporary: false,
   },
   {
+    slug: "ambul-wash",
+    year: "2026",
+    technologies: ["Next.js", "Tailwind CSS"],
     cat: "Site vitrine locale",
     location: "Montbéliard",
     title: "Ambul Wash",

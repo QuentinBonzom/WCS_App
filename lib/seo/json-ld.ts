@@ -12,6 +12,7 @@ import { pageOgImage, postOgImage, postPath } from "./metadata";
 import {
   seoProjectsByLocale,
   seoServicesByLocale,
+  type SeoProject,
 } from "./catalog";
 
 export function breadcrumbJsonLd(
@@ -184,19 +185,67 @@ export function projectsJsonLd(locale: Locale = defaultLocale) {
         "@id": absoluteUrl(localizedPath("/projets#portfolio", locale)),
         name: page.title,
         description: page.description,
-        hasPart: projects.map((project) => ({
-          "@type": "CreativeWork",
-          name: project.name,
-          description: project.description,
-          url: project.url,
-          image: absoluteUrl(project.image),
-          creator: {
-            "@id": absoluteUrl("#organization"),
-          },
-        })),
+        hasPart: projects.map((project) => caseStudyNode(project, locale)),
       },
     ],
   };
+}
+
+/**
+ * One portfolio project as a Schema.org node. Schema.org has no "CaseStudy"
+ * type: a CreativeWork with a case-study genre, `about` the delivered site,
+ * linked to the organization and the portfolio through persistent @ids.
+ */
+export function caseStudyNode(
+  project: SeoProject,
+  locale: Locale = defaultLocale,
+) {
+  const organization = { "@id": absoluteUrl("#organization") };
+
+  return {
+    "@type": "CreativeWork",
+    "@id": absoluteUrl(localizedPath(`/projets#${project.slug}`, locale)),
+    name: project.title,
+    genre: locale === "fr" ? "Étude de cas" : "Case study",
+    description: project.desc,
+    inLanguage: locale,
+    image: absoluteUrl(project.img),
+    creator: organization,
+    publisher: organization,
+    isPartOf: { "@id": absoluteUrl(localizedPath("/projets#portfolio", locale)) },
+    about: {
+      "@type": "WebSite",
+      name: project.client ?? project.title,
+      url: project.href,
+      creator: organization,
+    },
+    ...(project.year ? { dateCreated: project.year } : {}),
+    ...(project.technologies?.length
+      ? { keywords: project.technologies.join(", ") }
+      : {}),
+    ...(project.app
+      ? {
+          workExample: {
+            "@type": "SoftwareApplication",
+            name: project.app.name,
+            operatingSystem: project.app.operatingSystem,
+            applicationCategory: project.app.applicationCategory,
+            ...(project.app.downloadUrl
+              ? { downloadUrl: project.app.downloadUrl }
+              : {}),
+            creator: organization,
+          },
+        }
+      : {}),
+  };
+}
+
+/** Standalone case-study document, for a future dedicated project page. */
+export function caseStudyJsonLd(
+  project: SeoProject,
+  locale: Locale = defaultLocale,
+) {
+  return { "@context": "https://schema.org", ...caseStudyNode(project, locale) };
 }
 
 export function contactJsonLd(locale: Locale = defaultLocale) {
