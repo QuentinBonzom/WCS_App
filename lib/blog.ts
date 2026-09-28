@@ -1,16 +1,20 @@
 // Blog content source. Articles are authored as structured blocks so we can
-// render semantic HTML (h2 / p / ul) and derive SEO metadata + JSON-LD.
+// render semantic HTML (h2 / h3 / p / ul) and derive SEO metadata + JSON-LD.
 
 import type { Locale } from "@/lib/i18n";
 
 export type ContentBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
   | { type: "ul"; items: string[] };
 
 export type BlogPost = {
   slug: string;
+  /** on-page H1 (and JSON-LD headline) */
   title: string;
+  /** shorter <title> / social title when `title` would be truncated in SERPs */
+  seoTitle?: string;
   description: string;
   excerpt: string;
   keywords: string[];
@@ -614,6 +618,248 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "nextjs-vs-wordpress-site-entreprise-2026",
+    title:
+      "Next.js vs WordPress : le match pour le site de votre entreprise en 2026",
+    seoTitle: "Next.js vs WordPress : quel CMS choisir en 2026 ?",
+    description:
+      "Next.js ou WordPress ? Vitesse de chargement, sécurité web, référencement naturel, coûts : le comparatif pour choisir le bon site d'entreprise en 2026.",
+    excerpt:
+      "Vitesse de chargement, sécurité web, référencement naturel, coûts, autonomie : le comparatif honnête entre WordPress et Next.js pour choisir la bonne base pour le site de votre entreprise.",
+    keywords: [
+      "next.js vs wordpress",
+      "next.js ou wordpress",
+      "site internet entreprise",
+      "vitesse de chargement",
+      "sécurité web",
+      "référencement naturel",
+      "agence web Montbéliard",
+    ],
+    category: "Comparatif",
+    datePublished: "2026-09-28",
+    readingMinutes: 7,
+    content: [
+      {
+        type: "p",
+        text: "WordPress ou Next.js ? Derrière cette question technique se cache une décision très concrète pour un chef d'entreprise : combien de clients votre site va convertir, combien de temps il restera rapide et sûr, et combien il vous coûtera sur plusieurs années. Précision importante : chez WebCode Studio, nous développons en Next.js. Ce comparatif n'est pas pour autant un plaidoyer à sens unique. WordPress a de vraies qualités et reste le bon choix dans certains cas. L'objectif est de vous aider à décider en connaissance de cause.",
+      },
+      {
+        type: "h2",
+        text: "1. WordPress et Next.js, c'est quoi exactement ?",
+      },
+      {
+        type: "p",
+        text: "Les deux permettent de créer un site professionnel, mais ils ne fonctionnent pas du tout de la même façon. Comprendre cette différence, c'est comprendre tout le reste du match.",
+      },
+      {
+        type: "h3",
+        text: "WordPress : le couteau suisse",
+      },
+      {
+        type: "p",
+        text: "WordPress est un CMS (système de gestion de contenu) : un logiciel installé sur un serveur, avec une interface d'administration où l'on rédige ses pages. On choisit un thème pour l'apparence, puis on ajoute une extension (plugin) pour chaque fonctionnalité : formulaire, SEO, galerie, réservation, boutique… C'est le CMS le plus utilisé au monde, avec un immense écosystème de thèmes, d'extensions et de prestataires.",
+      },
+      {
+        type: "h3",
+        text: "Next.js : le sur-mesure taillé pour la vitesse",
+      },
+      {
+        type: "p",
+        text: "Next.js est un framework de développement web, utilisé par de nombreuses entreprises pour leurs sites et leurs applications. Plutôt que de fabriquer chaque page au moment où le visiteur la demande, un site Next.js prépare ses pages à l'avance et les sert instantanément. Pas de thème générique ni d'empilement d'extensions : le site est développé sur mesure, avec uniquement ce dont il a besoin.",
+      },
+      {
+        type: "h2",
+        text: "2. Vitesse de chargement : l'argument qui rapporte des clients",
+      },
+      {
+        type: "p",
+        text: "La vitesse de chargement n'est pas un détail technique, c'est une question de chiffre d'affaires. Un visiteur qui attend devant une page blanche repart souvent chez un concurrent, surtout sur mobile. Google mesure d'ailleurs cette expérience à travers les Core Web Vitals (temps d'affichage du contenu principal, stabilité de la page, réactivité), qui font partie de ses critères de classement.",
+      },
+      {
+        type: "h3",
+        text: "Pourquoi un WordPress ralentit souvent avec le temps",
+      },
+      {
+        type: "p",
+        text: "Un site WordPress est rarement lent le premier jour. Il le devient au fil des années, pour des raisons bien identifiées :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Des thèmes « tout-en-un » qui chargent du code pour des fonctions que vous n'utilisez pas.",
+          "Une extension ajoutée pour chaque besoin, chacune avec ses propres scripts et styles.",
+          "Des pages reconstruites à chaque visite en interrogeant une base de données.",
+          "Des images mises en ligne sans optimisation.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Des extensions de cache et un bon hébergement améliorent nettement les choses, mais ils corrigent les symptômes plus qu'ils ne suppriment les causes.",
+      },
+      {
+        type: "h3",
+        text: "Pourquoi Next.js part avec une longueur d'avance",
+      },
+      {
+        type: "p",
+        text: "Avec Next.js, la performance est intégrée à la construction du site plutôt qu'ajoutée après coup :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Les pages sont générées à l'avance : le visiteur reçoit une page prête, sans calcul côté serveur.",
+          "Les images sont redimensionnées et converties automatiquement dans des formats modernes et légers (WebP, AVIF).",
+          "Le site est distribué depuis un réseau mondial de serveurs (CDN), au plus près du visiteur.",
+          "Seul le code utile à chaque page est chargé.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "3. Sécurité web : le risque qu'on sous-estime",
+      },
+      {
+        type: "p",
+        text: "Un site piraté, c'est une image de marque abîmée, des clients inquiets, parfois un site signalé par Google le temps du nettoyage. La sécurité web mérite donc d'entrer dans la décision dès le départ.",
+      },
+      {
+        type: "h3",
+        text: "WordPress : une cible privilégiée à cause de sa popularité",
+      },
+      {
+        type: "p",
+        text: "WordPress lui-même est sérieusement maintenu et régulièrement mis à jour. Le problème vient surtout de son succès : étant le CMS le plus répandu, il est visé en permanence par des robots qui testent les failles connues. Les points faibles se trouvent le plus souvent dans les extensions non mises à jour, les thèmes abandonnés ou une page d'administration exposée avec un mot de passe trop simple. Un WordPress bien entretenu est sûr ; un WordPress oublié l'est beaucoup moins.",
+      },
+      {
+        type: "h3",
+        text: "Next.js : une surface d'attaque réduite",
+      },
+      {
+        type: "p",
+        text: "Pour un site vitrine en Next.js, il n'y a en général ni base de données ni interface d'administration accessible au public. Moins de portes d'entrée, c'est mécaniquement moins de risques. Cela ne dispense pas des bonnes pratiques, mais la liste des points à surveiller est beaucoup plus courte.",
+      },
+      {
+        type: "p",
+        text: "Quelle que soit la technologie, quelques réflexes restent indispensables :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Tenir à jour les dépendances et les extensions.",
+          "Utiliser HTTPS et des mots de passe robustes, avec double authentification quand c'est possible.",
+          "Conserver des sauvegardes régulières, et vérifier qu'elles fonctionnent.",
+          "Limiter les accès au strict nécessaire.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "4. Référencement naturel : qui aide le mieux Google ?",
+      },
+      {
+        type: "p",
+        text: "Soyons clairs : les deux technologies peuvent très bien se positionner sur Google. Le référencement naturel dépend d'abord de votre contenu, de sa pertinence et de votre présence locale. Mais la technique fait la différence sur trois points :",
+      },
+      {
+        type: "ul",
+        items: [
+          "La performance : un site rapide coche naturellement les cases des Core Web Vitals.",
+          "La propreté du code : une structure de titres claire et un HTML léger facilitent le travail de Google.",
+          "Les données structurées, qui décrivent votre activité, vos services et vos FAQ dans un format lisible par les moteurs. En Next.js, on les intègre directement au code ; sur WordPress, on passe généralement par des extensions comme Yoast ou Rank Math, efficaces mais qui ajoutent une couche de plus.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "5. Coûts et maintenance : le vrai calcul sur 3 ans",
+      },
+      {
+        type: "p",
+        text: "Comparer uniquement le prix de départ est trompeur : un site se paie aussi dans la durée. Côté WordPress, le budget se répartit souvent ainsi :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Un démarrage qui peut être peu coûteux avec un thème existant.",
+          "Des licences annuelles pour le thème premium et certaines extensions.",
+          "Un hébergement adapté pour garder des performances correctes.",
+          "Des mises à jour régulières et, en cas de conflit entre extensions, des interventions de maintenance.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Côté Next.js :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Un développement initial sur mesure, chiffré au projet.",
+          "Un hébergement moderne, souvent peu coûteux pour un site vitrine.",
+          "Peu de maintenance technique subie : pas d'extensions à mettre à jour chaque semaine.",
+        ],
+      },
+      {
+        type: "p",
+        text: "À titre d'exemple, nos sites vitrines en Next.js démarrent à 690 € et nos sites sur mesure à 990 € ; le détail est sur notre page Tarifs. Sur trois ans, l'écart avec un WordPress « bon marché » se réduit souvent, voire s'inverse, une fois la maintenance comptée.",
+      },
+      {
+        type: "h2",
+        text: "6. Modifier son site soi-même : le vrai atout de WordPress",
+      },
+      {
+        type: "p",
+        text: "Sur ce point, il faut être honnête : WordPress est le roi de l'autonomie immédiate. Son interface permet à n'importe qui de modifier un texte, d'ajouter une actualité ou de changer une photo en quelques minutes, sans passer par un prestataire. Pour une entreprise qui publie beaucoup et veut tout gérer en interne, c'est un argument de poids.",
+      },
+      {
+        type: "p",
+        text: "Chez WebCode Studio, nous avons fait un autre choix pour nos sites Next.js : privilégier la sérénité. Vous nous envoyez vos modifications, nous les intégrons proprement. Vous n'avez ni mises à jour à surveiller, ni risque de casser la mise en page, ni extension en conflit à déboguer un vendredi soir.",
+      },
+      {
+        type: "p",
+        text: "Ce choix ne vous enferme pas pour autant : Next.js est totalement évolutif. Si votre projet demande une autonomie éditoriale complète, on peut le brancher sur un CMS headless, c'est-à-dire une interface d'administration séparée du site dans laquelle vous rédigez vos contenus, tout en conservant la vitesse et la sécurité de Next.js.",
+      },
+      {
+        type: "h2",
+        text: "7. Alors, lequel choisir ?",
+      },
+      {
+        type: "h3",
+        text: "Choisissez WordPress si…",
+      },
+      {
+        type: "ul",
+        items: [
+          "Vous publiez très souvent et voulez tout modifier vous-même, sans délai.",
+          "Votre budget de départ est très serré et un thème existant vous convient.",
+          "Vous avez besoin d'une fonctionnalité très spécifique déjà disponible en extension.",
+          "Quelqu'un en interne peut assurer les mises à jour dans la durée.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Choisissez Next.js si…",
+      },
+      {
+        type: "ul",
+        items: [
+          "La vitesse de chargement et la conversion sont vos priorités.",
+          "Vous voulez limiter les risques de sécurité et la maintenance.",
+          "Vous souhaitez un design sur mesure qui vous démarque.",
+          "Votre site doit évoluer vers des fonctionnalités avancées : réservation, espace client, outil métier.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "En résumé",
+      },
+      {
+        type: "p",
+        text: "WordPress reste une excellente solution pour qui veut une autonomie totale et accepte d'en assurer l'entretien. Next.js s'impose dès que la performance, la sécurité web et le référencement naturel sont au cœur de votre stratégie, et que vous préférez vous concentrer sur votre métier plutôt que sur la maintenance de votre site.",
+      },
+      {
+        type: "p",
+        text: "Vous hésitez encore ? En tant qu'agence web à Montbéliard, nous vous aidons à choisir la solution la plus adaptée à votre activité, et nous vous dirons franchement si WordPress vous conviendrait mieux. Décrivez-nous votre projet : l'échange est gratuit et vous recevez une réponse sous 24 h.",
+      },
+    ],
+  },
 ];
 
 const blogPostsEn: BlogPost[] = [
@@ -1205,6 +1451,247 @@ const blogPostsEn: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "nextjs-vs-wordpress-site-entreprise-2026",
+    title: "Next.js vs WordPress: the showdown for your business website in 2026",
+    seoTitle: "Next.js vs WordPress: which to choose in 2026?",
+    description:
+      "Next.js or WordPress? Loading speed, web security, organic SEO and costs: a clear comparison to choose the right business website in 2026.",
+    excerpt:
+      "Loading speed, web security, organic SEO, costs and autonomy: an honest comparison of WordPress and Next.js to pick the right foundation for your business website.",
+    keywords: [
+      "next.js vs wordpress",
+      "next.js or wordpress",
+      "business website",
+      "loading speed",
+      "web security",
+      "organic SEO",
+      "web agency Montbéliard",
+    ],
+    category: "Comparison",
+    datePublished: "2026-09-28",
+    readingMinutes: 7,
+    content: [
+      {
+        type: "p",
+        text: "WordPress or Next.js? Behind this technical question lies a very concrete decision for a business owner: how many customers your website will convert, how long it will stay fast and secure, and how much it will cost you over several years. One important disclosure: at WebCode Studio, we build with Next.js. This comparison is still not a one-sided plea. WordPress has real strengths and remains the right choice in some cases. The goal is to help you decide with full knowledge of the facts.",
+      },
+      {
+        type: "h2",
+        text: "1. WordPress and Next.js: what are they exactly?",
+      },
+      {
+        type: "p",
+        text: "Both let you build a professional website, but they work in completely different ways. Understanding that difference explains the rest of the match.",
+      },
+      {
+        type: "h3",
+        text: "WordPress: the Swiss army knife",
+      },
+      {
+        type: "p",
+        text: "WordPress is a CMS (content management system): software installed on a server, with an admin interface where you write your pages. You pick a theme for the look, then add a plugin for each feature: forms, SEO, galleries, booking, online store… It is the most widely used CMS in the world, with a huge ecosystem of themes, plugins and providers.",
+      },
+      {
+        type: "h3",
+        text: "Next.js: custom-built for speed",
+      },
+      {
+        type: "p",
+        text: "Next.js is a web development framework used by many companies for their websites and applications. Instead of building each page when a visitor requests it, a Next.js site prepares its pages in advance and serves them instantly. No generic theme and no pile of plugins: the site is custom-built with only what it needs.",
+      },
+      {
+        type: "h2",
+        text: "2. Loading speed: the argument that wins customers",
+      },
+      {
+        type: "p",
+        text: "Loading speed is not a technical detail, it is a revenue question. A visitor staring at a blank page often leaves for a competitor, especially on mobile. Google measures this experience through Core Web Vitals (time to display the main content, page stability, responsiveness), which are part of its ranking signals.",
+      },
+      {
+        type: "h3",
+        text: "Why WordPress sites often slow down over time",
+      },
+      {
+        type: "p",
+        text: "A WordPress site is rarely slow on day one. It becomes slow over the years, for well-known reasons:",
+      },
+      {
+        type: "ul",
+        items: [
+          "All-in-one themes that load code for features you never use.",
+          "A plugin added for every need, each with its own scripts and styles.",
+          "Pages rebuilt on every visit by querying a database.",
+          "Images uploaded without optimisation.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Caching plugins and good hosting clearly help, but they treat the symptoms more than they remove the causes.",
+      },
+      {
+        type: "h3",
+        text: "Why Next.js starts with a head start",
+      },
+      {
+        type: "p",
+        text: "With Next.js, performance is built into how the site is made rather than bolted on afterwards:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pages are generated in advance: visitors receive a ready page, with no server-side computation.",
+          "Images are resized and converted automatically into modern, lightweight formats (WebP, AVIF).",
+          "The site is served from a global network of servers (CDN), close to each visitor.",
+          "Only the code each page needs is loaded.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "3. Web security: the underestimated risk",
+      },
+      {
+        type: "p",
+        text: "A hacked site means a damaged brand, worried customers and sometimes a site flagged by Google while it is cleaned up. Web security deserves a place in the decision from the start.",
+      },
+      {
+        type: "h3",
+        text: "WordPress: a favourite target because of its popularity",
+      },
+      {
+        type: "p",
+        text: "WordPress itself is seriously maintained and regularly updated. The problem mostly comes from its success: as the most widespread CMS, it is constantly probed by bots testing known vulnerabilities. The weak points are usually outdated plugins, abandoned themes or an exposed admin page with a weak password. A well-maintained WordPress is secure; a neglected one much less so.",
+      },
+      {
+        type: "h3",
+        text: "Next.js: a smaller attack surface",
+      },
+      {
+        type: "p",
+        text: "For a Next.js showcase site, there is usually no database and no publicly reachable admin interface. Fewer entry points mechanically means fewer risks. Good practices still apply, but the list of things to watch is much shorter.",
+      },
+      {
+        type: "p",
+        text: "Whatever the technology, a few habits remain essential:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Keep dependencies and plugins up to date.",
+          "Use HTTPS and strong passwords, with two-factor authentication where possible.",
+          "Keep regular backups, and check that they actually restore.",
+          "Limit access to what is strictly necessary.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "4. Organic SEO: which one helps Google more?",
+      },
+      {
+        type: "p",
+        text: "Let's be clear: both technologies can rank very well on Google. Organic SEO depends first on your content, its relevance and your local presence. But the technical side makes a difference on three points:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Performance: a fast site naturally ticks the Core Web Vitals boxes.",
+          "Clean code: a clear heading structure and lightweight HTML make Google's job easier.",
+          "Structured data, which describes your business, services and FAQs in a format search engines can read. In Next.js it is built straight into the code; on WordPress it usually goes through plugins such as Yoast or Rank Math, which work well but add another layer.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "5. Costs and maintenance: the real 3-year calculation",
+      },
+      {
+        type: "p",
+        text: "Comparing only the starting price is misleading: a website is also paid for over time. On the WordPress side, the budget often looks like this:",
+      },
+      {
+        type: "ul",
+        items: [
+          "A launch that can be cheap with an existing theme.",
+          "Yearly licences for the premium theme and some plugins.",
+          "Suitable hosting to keep performance acceptable.",
+          "Regular updates and, when plugins conflict, maintenance work.",
+        ],
+      },
+      {
+        type: "p",
+        text: "On the Next.js side:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Custom initial development, quoted per project.",
+          "Modern hosting, often inexpensive for a showcase site.",
+          "Little imposed technical maintenance: no plugins to update every week.",
+        ],
+      },
+      {
+        type: "p",
+        text: "As an example, our Next.js showcase sites start at €690 and our custom sites at €990; the details are on our Pricing page. Over three years, the gap with a \"cheap\" WordPress often narrows, or even reverses, once maintenance is counted.",
+      },
+      {
+        type: "h2",
+        text: "6. Editing your site yourself: WordPress's real strength",
+      },
+      {
+        type: "p",
+        text: "On this point, honesty is required: WordPress is the king of immediate autonomy. Its interface lets anyone edit a text, add a news item or change a photo in minutes, without going through a provider. For a business that publishes a lot and wants to manage everything in-house, that is a strong argument.",
+      },
+      {
+        type: "p",
+        text: "At WebCode Studio, we made a different choice for our Next.js sites: peace of mind. You send us your changes, we integrate them cleanly. No updates to monitor, no risk of breaking the layout, no conflicting plugin to debug on a Friday evening.",
+      },
+      {
+        type: "p",
+        text: "That choice does not lock you in: Next.js is fully scalable. If your project needs complete editorial autonomy, it can be connected to a headless CMS, meaning an admin interface separate from the site where you write your content, while keeping the speed and security of Next.js.",
+      },
+      {
+        type: "h2",
+        text: "7. So, which one should you choose?",
+      },
+      {
+        type: "h3",
+        text: "Choose WordPress if…",
+      },
+      {
+        type: "ul",
+        items: [
+          "You publish very often and want to edit everything yourself, instantly.",
+          "Your starting budget is very tight and an existing theme suits you.",
+          "You need a very specific feature already available as a plugin.",
+          "Someone in-house can handle updates over time.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Choose Next.js if…",
+      },
+      {
+        type: "ul",
+        items: [
+          "Loading speed and conversion are your priorities.",
+          "You want to limit security risks and maintenance.",
+          "You want a custom design that sets you apart.",
+          "Your site needs to grow into advanced features: booking, client portal, business tools.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "In short",
+      },
+      {
+        type: "p",
+        text: "WordPress remains an excellent solution for anyone who wants full autonomy and accepts to maintain it. Next.js wins as soon as performance, web security and organic SEO are central to your strategy, and you would rather focus on your business than on maintaining your website.",
+      },
+      {
+        type: "p",
+        text: "Still unsure? As a web agency in Montbéliard, we help you choose the solution that best fits your business, and we will tell you honestly if WordPress would suit you better. Describe your project: the conversation is free and you get a reply within 24h.",
+      },
+    ],
+  },
 ];
 
 const blogPostsByLocale: Record<Locale, BlogPost[]> = {
@@ -1304,6 +1791,18 @@ const relatedReadingBySlug: Record<
       { label: "Website creation in Montbéliard", href: "/creation-site-internet-montbeliard" },
       { label: "Our pricing and plans", href: "/tarifs" },
       { label: "Local SEO: where to start", href: "/blog/seo-local-par-ou-commencer" },
+    ],
+  },
+  "nextjs-vs-wordpress-site-entreprise-2026": {
+    fr: [
+      { label: "Nos tarifs et formules", href: "/tarifs" },
+      { label: "Refonte de site internet à Montbéliard", href: "/refonte-site-internet-montbeliard" },
+      { label: "Combien coûte un site web en 2026 ?", href: "/blog/combien-coute-un-site-web-2026" },
+    ],
+    en: [
+      { label: "Our pricing and plans", href: "/tarifs" },
+      { label: "Website redesign in Montbéliard", href: "/refonte-site-internet-montbeliard" },
+      { label: "How much does a website cost in 2026?", href: "/blog/combien-coute-un-site-web-2026" },
     ],
   },
 };

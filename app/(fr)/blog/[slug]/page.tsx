@@ -43,6 +43,12 @@ function Block({ block, lead = false }: { block: ContentBlock; lead?: boolean })
           {block.text}
         </h2>
       );
+    case "h3":
+      return (
+        <h3 className="mt-9 text-[clamp(20px,2.6vw,23px)] font-semibold leading-[1.3] tracking-[-0.01em] text-ink text-balance">
+          {block.text}
+        </h3>
+      );
     case "p":
       if (lead) {
         return (

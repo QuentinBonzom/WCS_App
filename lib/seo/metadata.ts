@@ -79,9 +79,11 @@ export function buildPostMetadata(post: BlogPost, locale: Locale = defaultLocale
   const path = postPath(post);
   const ogImage = postOgImage(post);
   const canonicalPath = localizedPath(path, locale);
+  // Short SERP/social title; the page H1 keeps the full `post.title`.
+  const metaTitle = post.seoTitle ?? post.title;
 
   return {
-    title: post.title,
+    title: metaTitle,
     description: post.description,
     keywords: post.keywords,
     alternates: {
@@ -93,7 +95,7 @@ export function buildPostMetadata(post: BlogPost, locale: Locale = defaultLocale
       },
     },
     openGraph: {
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       url: canonical(canonicalPath),
       siteName: siteConfig.name,
@@ -113,7 +115,7 @@ export function buildPostMetadata(post: BlogPost, locale: Locale = defaultLocale
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       images: [absoluteUrl(ogImage)],
     },
