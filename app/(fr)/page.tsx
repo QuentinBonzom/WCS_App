@@ -233,7 +233,7 @@ export function HomePage({ locale = "fr" }: { locale?: Locale }) {
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {t.bullets.map((r) => (
                 <li key={r} className="flex items-center gap-3 text-[17px] text-slate">
-                  <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 shrink-0" aria-hidden="true">
                     <path d="M5 12.5 L10 17.5 L19 7" stroke="#0071e3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {r}
