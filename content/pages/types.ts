@@ -83,6 +83,8 @@ export type LocalLandingContent = {
     items: { title: string; text: string }[];
   };
   area: { eyebrow: string; heading: string; text: string; note: string };
+  /** Communes shown as chips + schema areaServed. Falls back to siteConfig.localAreas. */
+  towns?: string[];
   pricing: {
     eyebrow: string;
     heading: string;

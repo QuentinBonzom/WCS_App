@@ -181,6 +181,24 @@ export const seoPages = {
     changeFrequency: "monthly",
     ogLabel: "Applications métier",
   },
+  creationSiteInternetBelfort: {
+    path: "/creation-site-internet-belfort",
+    title: "Création de site internet à Belfort",
+    description:
+      "Création de site internet à Belfort : sites vitrines, applications et design UI/UX pour PME, artisans et commerçants du Territoire de Belfort. Devis sous 24h.",
+    keywords: [
+      ...sharedKeywords,
+      "création site internet Belfort",
+      "agence web Belfort",
+      "développeur web Belfort",
+      "site vitrine Belfort",
+      "création site web Territoire de Belfort",
+      "application métier Belfort",
+    ],
+    priority: 0.9,
+    changeFrequency: "monthly",
+    ogLabel: "Site internet à Belfort",
+  },
   tarifs: {
     path: "/tarifs",
     title: "Tarifs : prix d'un site internet à Montbéliard",
@@ -361,6 +379,21 @@ export const seoPagesByLocale = {
       changeFrequency: "monthly",
       ogLabel: "Business apps",
     },
+    creationSiteInternetBelfort: {
+      path: "/creation-site-internet-belfort",
+      title: "Web design & development in Belfort",
+      description:
+        "Web design and development in Belfort: showcase sites, business apps and UI/UX for SMEs, trades and shops across the Territoire de Belfort. Quote within 24h.",
+      keywords: [
+        "web design Belfort",
+        "website creation Belfort",
+        "web developer Belfort",
+        "web agency Belfort",
+      ],
+      priority: 0.9,
+      changeFrequency: "monthly",
+      ogLabel: "Website in Belfort",
+    },
     tarifs: {
       path: "/tarifs",
       title: "Pricing: how much a website costs in Montbéliard",
@@ -399,6 +432,7 @@ export const pageLastModified: Record<SeoPageKey, string> = {
   creationSiteVitrine: "2026-09-03",
   applicationsMetierMontbeliard: "2026-09-04",
   tarifs: "2026-09-08",
+  creationSiteInternetBelfort: "2026-09-28",
 };
 
 export function getSeoPage(key: SeoPageKey, locale: Locale = defaultLocale) {

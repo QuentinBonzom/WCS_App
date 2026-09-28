@@ -45,6 +45,7 @@ export function LocalLandingPage({
 }) {
   const page = getSeoPage(pageKey, locale);
   const c = localLandingContent[pageKey][locale];
+  const towns = c.towns ?? siteConfig.localAreas;
   const projects = projetsContent[locale].projects.slice(0, 3);
   const contact = localizeHref("/contact", locale);
   const projectsHref = localizeHref("/projets", locale);
@@ -57,7 +58,7 @@ export function LocalLandingPage({
           serviceName: c.serviceName,
           serviceType: c.serviceType,
           faq: c.faq,
-          areaServed: siteConfig.localAreas,
+          areaServed: towns,
           locale,
         })}
       />
@@ -329,7 +330,7 @@ export function LocalLandingPage({
           <Reveal dir="zoom">
             <div className="rounded-[28px] bg-fog p-8">
               <ul className="flex flex-wrap gap-2">
-                {siteConfig.localAreas.map((town) => (
+                {towns.map((town) => (
                   <li
                     key={town}
                     className="rounded-full border border-silver bg-snow px-4 py-2 text-sm text-slate"

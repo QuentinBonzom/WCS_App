@@ -1,3 +1,4 @@
+import { creationSiteInternetBelfortContent } from "./creation-site-internet-belfort";
 import { creationSiteInternetMontbeliardContent } from "./creation-site-internet-montbeliard";
 import { refonteSiteInternetMontbeliardContent } from "./refonte-site-internet-montbeliard";
 
@@ -8,6 +9,7 @@ import { refonteSiteInternetMontbeliardContent } from "./refonte-site-internet-m
 export const localLandingContent = {
   creationSiteInternetMontbeliard: creationSiteInternetMontbeliardContent,
   refonteSiteInternetMontbeliard: refonteSiteInternetMontbeliardContent,
+  creationSiteInternetBelfort: creationSiteInternetBelfortContent,
 } as const;
 
 export type LocalLandingKey = keyof typeof localLandingContent;
