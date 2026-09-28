@@ -63,6 +63,12 @@ const services = [
   },
 ];
 
+/** Towns in the service-area list that have their own local landing page. */
+const townPages: Record<string, string> = {
+  Montbéliard: "/creation-site-internet-montbeliard",
+  Belfort: "/creation-site-internet-belfort",
+};
+
 const counters = [
   { target: 2, suffix: "+", l: { fr: "Pays", en: "Countries" } },
 ];
@@ -202,14 +208,25 @@ export function HomePage({ locale = "fr" }: { locale?: Locale }) {
                   "Héricourt",
                   "Belfort",
                   "Doubs",
-                ].map((town) => (
-                  <li
-                    key={town}
-                    className="rounded-full border border-silver bg-fog px-4 py-2 text-sm text-slate"
-                  >
-                    {town}
-                  </li>
-                ))}
+                ].map((town) => {
+                  const href = townPages[town];
+                  return (
+                    <li key={town}>
+                      {href ? (
+                        <Link
+                          href={localizeHref(href, locale)}
+                          className="inline-flex rounded-full border border-cobalt/30 bg-fog px-4 py-2 text-sm text-cobalt transition-colors hover:border-cobalt hover:bg-snow"
+                        >
+                          {town}
+                        </Link>
+                      ) : (
+                        <span className="inline-flex rounded-full border border-silver bg-fog px-4 py-2 text-sm text-slate">
+                          {town}
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </Reveal>

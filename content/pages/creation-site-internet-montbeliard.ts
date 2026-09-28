@@ -156,8 +156,13 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         "MONTBÉLIARD · DOUBS",
       ],
       related: {
-        heading: "Vous avez déjà un site ?",
+        heading: "Pour aller plus loin",
+        text: "Découvrez également nos services de création de sites internet à Belfort et dans le Territoire de Belfort. Vous avez déjà un site ? La refonte permet de le moderniser sans repartir de zéro.",
         links: [
+          {
+            label: "Création de site internet à Belfort",
+            href: "/creation-site-internet-belfort",
+          },
           {
             label: "Refonte de site internet à Montbéliard",
             href: "/refonte-site-internet-montbeliard",
@@ -361,8 +366,13 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         "MONTBÉLIARD · DOUBS",
       ],
       related: {
-        heading: "Already have a website?",
+        heading: "Go further",
+        text: "We also build websites in Belfort and across the Territoire de Belfort. Already have a site? A redesign modernises it without starting from scratch.",
         links: [
+          {
+            label: "Website creation in Belfort",
+            href: "/creation-site-internet-belfort",
+          },
           {
             label: "Website redesign in Montbéliard",
             href: "/refonte-site-internet-montbeliard",

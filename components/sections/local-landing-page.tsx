@@ -389,6 +389,11 @@ export function LocalLandingPage({
               <h2 className="text-[clamp(24px,3.5vw,36px)] font-bold leading-[1.15] tracking-[-0.015em]">
                 {c.related.heading}
               </h2>
+              {c.related.text && (
+                <p className="mt-3 max-w-2xl text-[17px] leading-relaxed text-graphite">
+                  {c.related.text}
+                </p>
+              )}
               <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[17px]">
                 {c.related.links.map((link) => (
                   <Link

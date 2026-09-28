@@ -37,6 +37,10 @@ export function Footer() {
           href: p("/creation-site-internet-montbeliard"),
           label: t.localWebCreation,
         },
+        {
+          href: p("/creation-site-internet-belfort"),
+          label: t.localWebCreationBelfort,
+        },
         { href: p("/agence-web-montbeliard"), label: t.localAgency },
         { href: p("/creation-site-vitrine"), label: t.showcaseWebsite },
         { href: p("/refonte-site-internet-montbeliard"), label: t.redesign },

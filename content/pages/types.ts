@@ -95,7 +95,12 @@ export type LocalLandingContent = {
   /** marquee words */
   marquee: string[];
   /** cross-links to sibling local pages */
-  related?: { heading: string; links: { label: string; href: string }[] };
+  related?: {
+    heading: string;
+    /** optional lead sentence shown above the links */
+    text?: string;
+    links: { label: string; href: string }[];
+  };
   faqEyebrow: string;
   faqHeading: string;
   faq: FaqItem[];
