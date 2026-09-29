@@ -100,7 +100,7 @@ export const tarifsContent: Localized<PricingContent> = {
       },
     ],
     priceNote:
-      "Tarifs indicatifs 2026, en euros. Le périmètre exact et le prix final sont fixés dans le devis — gratuit, sans engagement, réponse sous 24 h.",
+      "Tarifs indicatifs 2026, en euros. Le périmètre exact et le prix final sont fixés dans le devis. Le devis est gratuit, sans engagement, avec une réponse sous 24 h.",
     includedEyebrow: "Toujours inclus",
     includedHeading: "Ce que vous obtenez quel que soit le budget.",
     included: [
@@ -142,12 +142,12 @@ export const tarifsContent: Localized<PricingContent> = {
       {
         question: "Les prix affichés sont-ils fermes ?",
         answer:
-          "Ce sont des tarifs de départ. Le prix final dépend du périmètre — nombre de pages, fonctionnalités, contenus à produire — et figure noir sur blanc dans le devis, gratuit et sans engagement.",
+          "Ce sont des tarifs de départ. Le prix final dépend du périmètre, comme le nombre de pages, les fonctionnalités et les contenus à produire, et figure noir sur blanc dans le devis, gratuit et sans engagement.",
       },
       {
         question: "Le nom de domaine et l'hébergement sont-ils compris ?",
         answer:
-          "Ils sont abordés dans le devis : on vous conseille, on met tout en place, et le coût annuel de ces services — souvent quelques dizaines d'euros — est indiqué clairement à part.",
+          "Ils sont abordés dans le devis : on vous conseille, on met tout en place, et le coût annuel de ces services, souvent quelques dizaines d'euros, est indiqué clairement à part.",
       },
       {
         question: "En combien de temps mon site est-il en ligne ?",
@@ -162,7 +162,7 @@ export const tarifsContent: Localized<PricingContent> = {
       {
         question: "La maintenance est-elle incluse ?",
         answer:
-          "La mise en ligne et la prise en main sont incluses. Pour la suite — mises à jour, sauvegardes, évolutions, support — un suivi mensuel ou à la demande est proposé et chiffré séparément.",
+          "La mise en ligne et la prise en main sont incluses. Pour la suite, un suivi mensuel ou à la demande est proposé pour les mises à jour, les sauvegardes, les évolutions et le support, puis chiffré séparément.",
       },
       {
         question: "Et si mon besoin évolue plus tard ?",
@@ -236,7 +236,7 @@ export const tarifsContent: Localized<PricingContent> = {
       },
     ],
     priceNote:
-      "Indicative 2026 prices, in euros. The exact scope and final price are set in the quote — free, no commitment, reply within 24h.",
+      "Indicative 2026 prices, in euros. The exact scope and final price are set in the quote. It is free, with no commitment and a reply within 24h.",
     includedEyebrow: "Always included",
     includedHeading: "What you get whatever the budget.",
     included: [
@@ -278,12 +278,12 @@ export const tarifsContent: Localized<PricingContent> = {
       {
         question: "Are the displayed prices fixed?",
         answer:
-          "They are starting prices. The final price depends on the scope — number of pages, features, content to produce — and is stated in writing in the quote, free and with no commitment.",
+          "They are starting prices. The final price depends on the scope, including the number of pages, features and content to produce, and is stated in writing in the quote, free and with no commitment.",
       },
       {
         question: "Are the domain name and hosting included?",
         answer:
-          "They are covered in the quote: we advise you, set everything up, and the annual cost of these services — often a few dozen euros — is listed clearly and separately.",
+          "They are covered in the quote: we advise you, set everything up, and the annual cost of these services, often a few dozen euros, is listed clearly and separately.",
       },
       {
         question: "How long until my site is online?",
@@ -298,7 +298,7 @@ export const tarifsContent: Localized<PricingContent> = {
       {
         question: "Is maintenance included?",
         answer:
-          "Launch and handover are included. After that — updates, backups, improvements, support — a monthly or on-demand plan is offered and priced separately.",
+          "Launch and handover are included. After that, a monthly or on-demand plan is offered for updates, backups, improvements and support, then priced separately.",
       },
       {
         question: "What if my needs change later?",

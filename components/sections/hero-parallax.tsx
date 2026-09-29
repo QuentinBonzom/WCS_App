@@ -33,7 +33,7 @@ export type HeroParallaxCopy = {
 };
 
 /**
- * 3D parallax hero — three rows of project cards drift in opposite directions
+ * 3D parallax hero with three rows of project cards drifting in opposite directions
  * as the page scrolls. Adapted from the Aceternity "Hero Parallax" block to the
  * WebCode Studio light palette. Needs ~15 projects (duplicate to fill).
  */
@@ -86,7 +86,7 @@ export function HeroParallax({
       className="relative flex h-[135vh] flex-col self-auto overflow-hidden bg-fog py-20 antialiased [perspective:1000px] [transform-style:preserve-3d] sm:h-[150vh] sm:py-28"
     >
       <Header copy={copy} />
-      {/* Decorative project montage — real projects live on /projets (hero CTA). */}
+      {/* Decorative project montage. Real projects live on /projets (hero CTA). */}
       <motion.div
         aria-hidden="true"
         style={{ rotateX, rotateZ, translateY, opacity }}
@@ -201,7 +201,7 @@ function ProjectCard({
           className="absolute inset-0 h-full w-full object-cover object-left-top"
           alt={
             project.tagline
-              ? `Site réalisé pour ${project.title} — ${project.tagline}`
+              ? `Site réalisé pour ${project.title}, ${project.tagline}`
               : `Site réalisé pour ${project.title}`
           }
           sizes="(max-width: 640px) 22rem, 30rem"

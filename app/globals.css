@@ -20,7 +20,7 @@
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Product finish gradients — full-bleed backdrops only */
+/* Product finish gradients, full-bleed backdrops only */
 :root {
   --grad-citrus: linear-gradient(184deg, rgb(29, 29, 31) 0%, rgb(223, 231, 79) 33%, rgb(94, 156, 42) 66%, rgb(10, 134, 26) 95%);
   --grad-indigo: linear-gradient(184deg, rgb(29, 29, 31) 20%, rgb(168, 211, 251) 43%, rgb(0, 18, 249) 76%, rgb(37, 53, 224) 95%);

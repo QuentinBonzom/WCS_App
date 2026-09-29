@@ -30,7 +30,7 @@ const nextConfig = {
         destination: "/en/creation-site-internet-montbeliard",
         permanent: true,
       },
-      // Repère (accessibility-audit service) was discontinued — send its old
+      // Repère (accessibility-audit service) was discontinued. Send its old
       // URLs to the services hub.
       {
         source: "/repere-audit",

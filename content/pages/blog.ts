@@ -11,12 +11,12 @@ export const blogListingContent: Localized<BlogListingContent> = {
     eyebrow: "Blog",
     title: "Conseils & guides.",
     intro:
-      "Nos articles sur la création de sites web, le référencement SEO local, la performance et le design — pour les entreprises de Montbéliard et d'ailleurs.",
+      "Nos articles sur la création de sites web, le référencement SEO local, la performance et le design, pour les entreprises de Montbéliard et d'ailleurs.",
   },
   en: {
     eyebrow: "Blog",
     title: "Advice & guides.",
     intro:
-      "Our articles on website creation, local SEO, performance and design - for businesses in Montbéliard and beyond.",
+      "Our articles on website creation, local SEO, performance and design, for businesses in Montbéliard and beyond.",
   },
 };

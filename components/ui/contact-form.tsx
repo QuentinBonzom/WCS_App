@@ -19,8 +19,8 @@ const copy = {
     budget: "Budget estimé",
     budgetPlaceholder: "Sélectionnez votre budget",
     budget1: "Moins de 1 000 €",
-    budget2: "1 000 € - 5 000 €",
-    budget3: "5 000 € - 10 000 €",
+    budget2: "1 000 € à 5 000 €",
+    budget3: "5 000 € à 10 000 €",
     budget4: "Plus de 10 000 €",
     message: "Décrivez votre projet",
     messagePlaceholder:
@@ -44,8 +44,8 @@ const copy = {
     budget: "Estimated budget",
     budgetPlaceholder: "Select your budget",
     budget1: "Less than €1,000",
-    budget2: "€1,000 - €5,000",
-    budget3: "€5,000 - €10,000",
+    budget2: "€1,000 to €5,000",
+    budget3: "€5,000 to €10,000",
     budget4: "More than €10,000",
     message: "Describe your project",
     messagePlaceholder:

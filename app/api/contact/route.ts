@@ -7,8 +7,8 @@ const allowedBudgets = new Set(["", "<1k", "1-5k", "5-10k", "10k+"]);
 const budgetLabels: Record<string, string> = {
   "": "Non précisé",
   "<1k": "Moins de 1 000 €",
-  "1-5k": "1 000 € – 5 000 €",
-  "5-10k": "5 000 € – 10 000 €",
+  "1-5k": "1 000 € à 5 000 €",
+  "5-10k": "5 000 € à 10 000 €",
   "10k+": "Plus de 10 000 €",
 };
 
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
       "WebCode Studio <contact@webcodestudio.fr>",
     to: [contactToEmail],
     replyTo: email,
-    subject: `Nouveau projet — ${name}${company ? ` · ${company}` : ""}`,
+    subject: `Nouveau projet : ${name}${company ? ` · ${company}` : ""}`,
     text: [
       `Nom : ${name}`,
       `Email : ${email}`,

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import type { Locale } from "@/lib/i18n";
 
-/** Shape of every entry in {@link seoPages} — one route's SEO/metadata config. */
+/** Shape of every entry in {@link seoPages}, one route's SEO/metadata config. */
 export type SeoPage = {
   path: string;
   title: string;
@@ -13,7 +13,7 @@ export type SeoPage = {
   >;
   ogLabel?: string;
   images?: string[];
-  /** ISO date of the last meaningful content change — keeps sitemap
+  /** ISO date of the last meaningful content change, keeps sitemap
    *  `lastmod` stable across deploys instead of "now" on every build. */
   lastModified?: string;
 };
@@ -62,12 +62,12 @@ export const siteConfig = {
   /** human-readable, for on-page display */
   phoneDisplay: "06 10 30 68 99",
   logoPath: "/logo-webcode-studio.png",
-  /** Public profiles — used for Organization.sameAs (entity linking). */
+  /** Public profiles used for Organization.sameAs (entity linking). */
   sameAs: [
     "https://www.instagram.com/webcode_studio/",
     "https://share.google/DusAeXtFGhc6x0sCo",
   ],
-  /** Business hours — ajuste selon tes horaires réels. */
+  /** Business hours, ajuste selon tes horaires réels. */
   openingHours: [
     {
       days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -82,12 +82,12 @@ export const siteConfig = {
     department: "Doubs",
     region: "Bourgogne-Franche-Comté",
     country: "FR",
-    /** Approximate coordinates of Montbéliard — no personal address is exposed. */
+    /** Approximate coordinates of Montbéliard. No personal address is exposed. */
     geo: { latitude: 47.5108, longitude: 6.7985 },
   },
-  /** Broad served areas (international remote work) — used for Organization schema. */
+  /** Broad served areas (international remote work) used for Organization schema. */
   areas: ["France", "Suisse", "États-Unis"],
-  /** Primary local service area around Montbéliard — used for local pages & schema. */
+  /** Primary local service area around Montbéliard used for local pages & schema. */
   localAreas: [
     "Montbéliard",
     "Pays de Montbéliard",

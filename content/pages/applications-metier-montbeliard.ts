@@ -185,7 +185,7 @@ export const applicationsMetierMontbeliardContent: Localized<ServiceLandingConte
         {
           question: "How long does a first tool take to set up?",
           answer:
-            "We always start with a useful first version focused on one precise need — booking, case tracking or invoicing — delivered in a few weeks. The tool then grows in stages, based on the team's feedback.",
+            "We always start with a useful first version focused on one precise need, such as booking, case tracking or invoicing, delivered in a few weeks. The tool then grows in stages, based on the team's feedback.",
         },
         {
           question: "Is my data hosted in Europe?",

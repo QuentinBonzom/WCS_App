@@ -6,7 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 /**
- * Light Apple-style 2-column feature split — matches the rest of the site.
+ * Light Apple-style 2-column feature split matching the rest of the site.
  * Text on one side, device mock on a lifted card on the other, alternating.
  */
 export function FeatureShowcase({

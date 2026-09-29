@@ -44,7 +44,7 @@ export const seoServicesByLocale: Record<Locale, typeof seoServices> = {
     {
       name: "Custom business apps & internal tools",
       description:
-        "Booking, case tracking, quotes and invoicing, dashboards — custom-built to automate your processes.",
+        "Booking, case tracking, quotes and invoicing, dashboards built around your processes.",
       serviceType: "Custom software development",
     },
     {
@@ -64,7 +64,7 @@ export const seoServicesByLocale: Record<Locale, typeof seoServices> = {
 
 /**
  * Client projects for structured data. Single source of truth is the /projets
- * content (`content/pages/projets.ts`) — this is a read-only view so a new
+ * content (`content/pages/projets.ts`). This is a read-only view so a new
  * project only has to be added in one place.
  */
 export type SeoProject = ProjectCard;

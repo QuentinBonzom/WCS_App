@@ -7,7 +7,7 @@ import {
   type ServiceLandingKey,
 } from "@/content/pages/service-landings";
 
-/** Metadata for a service-landing route — call from the route's `metadata` export. */
+/** Metadata for a service-landing route; call from the route's `metadata` export. */
 export function serviceLandingMetadata(
   pageKey: ServiceLandingKey,
   locale: Locale = defaultLocale,

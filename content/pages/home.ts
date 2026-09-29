@@ -10,7 +10,7 @@ export const homeContent = {
       titleLines: ["Le studio web", "du Pays de Montbéliard."],
       highlight: "Montbéliard",
       intro:
-        "WebCode Studio conçoit des sites internet, des applications et des outils métier sur mesure pour les entreprises, artisans et commerçants du Doubs et du Nord Franche-Comté. Rapide, crédible, pensé pour convertir — et un seul interlocuteur.",
+        "WebCode Studio conçoit des sites internet, des applications et des outils métier sur mesure pour les entreprises, artisans et commerçants du Doubs et du Nord Franche-Comté. Rapide, crédible, pensé pour convertir, avec un seul interlocuteur.",
       primaryCta: { label: "Demander un devis", href: "/contact" },
       secondaryCta: { label: "Voir nos réalisations", href: "/projets" },
       visitLabel: "Visiter le site",
@@ -44,7 +44,7 @@ export const homeContent = {
     local: {
       eyebrow: "Zone d'intervention",
       heading: "Un studio web ancré à Montbéliard.",
-      text: "Basés dans le Pays de Montbéliard, nous accompagnons les entreprises, artisans, commerçants et indépendants du Doubs et du Nord Franche-Comté — Audincourt, Sochaux, Valentigney, Héricourt, Belfort — dans la création, la refonte et le référencement de leur site internet. Le reste de la France et l'international sont pris en charge à distance.",
+      text: "Basés dans le Pays de Montbéliard, nous accompagnons les entreprises, artisans, commerçants et indépendants du Doubs et du Nord Franche-Comté, notamment à Audincourt, Sochaux, Valentigney, Héricourt et Belfort, dans la création, la refonte et le référencement de leur site internet. Le reste de la France et l'international sont pris en charge à distance.",
       cta: {
         label: "Création de site internet à Montbéliard",
         href: "/creation-site-internet-montbeliard",
@@ -68,7 +68,7 @@ export const homeContent = {
       titleLines: ["The web studio", "for the Montbéliard area."],
       highlight: "Montbéliard",
       intro:
-        "WebCode Studio builds custom websites, applications and business tools for companies, artisans and shops across the Doubs and Nord Franche-Comté. Fast, credible, built to convert — with a single point of contact.",
+        "WebCode Studio builds custom websites, applications and business tools for companies, artisans and shops across the Doubs and Nord Franche-Comté. Fast, credible, built to convert, with a single point of contact.",
       primaryCta: { label: "Request a quote", href: "/contact" },
       secondaryCta: { label: "See our work", href: "/projets" },
       visitLabel: "Visit website",
@@ -102,7 +102,7 @@ export const homeContent = {
     local: {
       eyebrow: "Service area",
       heading: "A web studio rooted in Montbéliard.",
-      text: "Based in the Montbéliard area, we support businesses, artisans and shops across the Doubs and the Nord Franche-Comté — Audincourt, Sochaux, Valentigney, Héricourt, Belfort — with the creation, redesign and SEO of their website. The rest of France and international work is handled remotely.",
+      text: "Based in the Montbéliard area, we support businesses, artisans and shops across the Doubs and the Nord Franche-Comté, including Audincourt, Sochaux, Valentigney, Héricourt and Belfort, with the creation, redesign and SEO of their website. The rest of France and international work is handled remotely.",
       cta: {
         label: "Website creation in Montbéliard",
         href: "/creation-site-internet-montbeliard",

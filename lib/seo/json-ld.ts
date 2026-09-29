@@ -65,7 +65,7 @@ export function baseJsonLd(locale: Locale = defaultLocale) {
           opens: spec.opens,
           closes: spec.closes,
         })),
-        // Service-area business run from a private address — locality only, no street.
+        // Service-area business run from a private address, locality only, no street.
         address: {
           "@type": "PostalAddress",
           addressLocality: siteConfig.location.city,

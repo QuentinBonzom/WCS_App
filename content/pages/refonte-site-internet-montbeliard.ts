@@ -9,7 +9,7 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
         eyebrow: "Studio web · Montbéliard (Doubs)",
         titleLines: ["Refonte de site internet", "à Montbéliard."],
         intro:
-          "Votre site actuel est lent, daté, mal affiché sur mobile ou invisible sur Google ? WebCode Studio reprend votre site existant, conserve ce qui fonctionne et modernise le reste — sans casser votre référencement.",
+          "Votre site actuel est lent, daté, mal affiché sur mobile ou invisible sur Google ? WebCode Studio reprend votre site existant, conserve ce qui fonctionne et modernise le reste sans casser votre référencement.",
         primaryCta: { label: "Auditer mon site", href: "/contact" },
         secondaryCta: { label: "Voir nos réalisations", href: "/projets" },
       },
@@ -100,7 +100,7 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
       work: {
         eyebrow: "Réalisations",
         heading: "Des sites repris, livrés, suivis.",
-        text: "Sites vitrines, écosystèmes web et mobile et présences digitales techniques — dont des refontes de sites existants, pour des clients en France et à l'étranger.",
+        text: "Sites vitrines, écosystèmes web et mobile et présences digitales techniques, dont des refontes de sites existants, pour des clients en France et à l'étranger.",
         ctaLabel: "Voir toutes les réalisations",
       },
       why: {
@@ -124,8 +124,8 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
       area: {
         eyebrow: "Zone d'intervention",
         heading: "Refonte à Montbéliard et dans le Doubs.",
-        text: "Nous reprenons les sites d'entreprises de Montbéliard et de sa région — Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Héricourt, Belfort et le Nord Franche-Comté — avec des points d'étape sur place. Les refontes à distance sont possibles partout en France.",
-        note: "Activité exercée depuis un bureau privé — les rendez-vous se font sur site client, en visio ou dans un lieu tiers.",
+        text: "Nous reprenons les sites d'entreprises de Montbéliard et de sa région, du Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Héricourt et Belfort au Nord Franche-Comté, avec des points d'étape sur place. Les refontes à distance sont possibles partout en France.",
+        note: "Activité exercée depuis un bureau privé. Les rendez-vous se font sur site client, en visio ou dans un lieu tiers.",
       },
       pricing: {
         eyebrow: "Approche tarifaire",
@@ -207,7 +207,7 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
         eyebrow: "Web studio · Montbéliard (Doubs, France)",
         titleLines: ["Website redesign", "in Montbéliard."],
         intro:
-          "Is your current site slow, dated, broken on mobile or invisible on Google? WebCode Studio takes over your existing site, keeps what works and modernizes the rest — without breaking your SEO.",
+          "Is your current site slow, dated, broken on mobile or invisible on Google? WebCode Studio takes over your existing site, keeps what works and modernizes the rest without breaking your SEO.",
         primaryCta: { label: "Audit my site", href: "/contact" },
         secondaryCta: { label: "See our work", href: "/projets" },
       },
@@ -229,7 +229,7 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
           },
           {
             title: "SEO preserved",
-            text: "Redirect plan, metadata and internal linking kept: the redesign is built to lose no traffic — and ideally gain some.",
+            text: "Redirect plan, metadata and internal linking kept: the redesign is built to avoid traffic loss and ideally gain some.",
           },
         ],
       },
@@ -298,7 +298,7 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
       work: {
         eyebrow: "Work",
         heading: "Sites taken over, delivered, followed up.",
-        text: "Showcase sites, web and mobile ecosystems and technical digital presences — including redesigns of existing sites, for clients in France and abroad.",
+        text: "Showcase sites, web and mobile ecosystems and technical digital presences, including redesigns of existing sites, for clients in France and abroad.",
         ctaLabel: "See all projects",
       },
       why: {
@@ -322,8 +322,8 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
       area: {
         eyebrow: "Service area",
         heading: "Redesign in Montbéliard and the Doubs.",
-        text: "We take over the sites of businesses in Montbéliard and its region — Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Héricourt, Belfort and the Nord Franche-Comté — with in-person checkpoints. Remote redesigns are possible anywhere in France.",
-        note: "Run from a private office — meetings happen at the client's site, by video call or in a third-party location.",
+        text: "We take over the sites of businesses in Montbéliard and its region, from Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Héricourt and Belfort to the Nord Franche-Comté, with in-person checkpoints. Remote redesigns are possible anywhere in France.",
+        note: "Run from a private office. Meetings happen at the client's site, by video call or in a third-party location.",
       },
       pricing: {
         eyebrow: "Pricing approach",
@@ -371,7 +371,7 @@ export const refonteSiteInternetMontbeliardContent: Localized<LocalLandingConten
             "Yes, in almost every case. Keeping your domain is recommended: it concentrates your history and reputation. We rebuild the site behind the same domain.",
         },
         {
-          question: "My site is on WordPress / Wix / an old CMS — is that a problem?",
+          question: "Is it a problem if my site is on WordPress / Wix / an old CMS?",
           answer:
             "No. We recover the content and existing URLs whatever the starting technology, then rebuild on a modern, fast, easy-to-maintain base.",
         },

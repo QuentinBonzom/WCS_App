@@ -22,7 +22,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         points: [
           {
             title: "Sur mesure, pas un modèle",
-            text: "Chaque site est conçu à partir de votre activité, vos objectifs et vos clients — pas d'un thème générique adapté à la va-vite.",
+            text: "Chaque site est conçu à partir de votre activité, vos objectifs et vos clients, pas d'un thème générique adapté à la va-vite.",
           },
           {
             title: "Rapide et responsive",
@@ -54,7 +54,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
           },
           {
             title: "Refonte de site",
-            text: "Moderniser un site vieillissant : nouveau design, performances, mobile, clarté de l'offre et bases SEO — en conservant ce qui fonctionne déjà.",
+            text: "Moderniser un site vieillissant : nouveau design, performances, mobile, clarté de l'offre et bases SEO, tout en conservant ce qui fonctionne déjà.",
           },
           {
             title: "E-commerce",
@@ -106,7 +106,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
       work: {
         eyebrow: "Réalisations",
         heading: "Des sites déjà livrés.",
-        text: "Sites vitrines, écosystèmes web et mobile, présences digitales techniques — pour des clients en France et à l'étranger.",
+        text: "Sites vitrines, écosystèmes web et mobile, présences digitales techniques pour des clients en France et à l'étranger.",
         ctaLabel: "Voir toutes les réalisations",
       },
       why: {
@@ -119,7 +119,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
           },
           {
             title: "Un niveau d'exécution premium",
-            text: "Design, développement, animations, performance et SEO sont traités ensemble, avec le même soin qu'une agence parisienne — sans les tarifs parisiens.",
+            text: "Design, développement, animations, performance et SEO sont traités ensemble, avec le même soin qu'une agence parisienne, sans les tarifs parisiens.",
           },
           {
             title: "Un partenaire dans la durée",
@@ -131,7 +131,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         eyebrow: "Zone d'intervention",
         heading: "Montbéliard, le Doubs et le Nord Franche-Comté.",
         text: "WebCode Studio accompagne les entreprises de Montbéliard et de sa région : Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Bethoncourt, Grand-Charmont, Bavans, Voujeaucourt, ainsi que Héricourt et Belfort. Le reste de la France et l'international sont pris en charge à distance.",
-        note: "Activité exercée depuis un bureau privé — les rendez-vous se font sur site client, en visio ou dans un lieu tiers.",
+        note: "Activité exercée depuis un bureau privé. Les rendez-vous se font sur site client, en visio ou dans un lieu tiers.",
       },
       pricing: {
         eyebrow: "Approche tarifaire",
@@ -200,7 +200,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         {
           question: "Qui écrit les textes du site ?",
           answer:
-            "Vous pouvez fournir vos contenus, ou nous les rédigeons à partir d'un brief et d'un échange. Dans tous les cas, les textes sont relus pour être clairs, utiles et cohérents avec vos mots-clés — jamais écrits uniquement pour les moteurs.",
+            "Vous pouvez fournir vos contenus, ou nous les rédigeons à partir d'un brief et d'un échange. Dans tous les cas, les textes sont relus pour être clairs, utiles et cohérents avec vos mots-clés. Ils ne sont jamais écrits uniquement pour les moteurs.",
         },
         {
           question: "Que se passe-t-il après la mise en ligne ?",
@@ -232,7 +232,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         points: [
           {
             title: "Custom, not a template",
-            text: "Every site is built from your activity, goals and customers — not a generic theme rushed into shape.",
+            text: "Every site is built from your activity, goals and customers, not a generic theme rushed into shape.",
           },
           {
             title: "Fast and responsive",
@@ -264,7 +264,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
           },
           {
             title: "Website redesign",
-            text: "Modernize an ageing site: new design, performance, mobile, clarity of offer and SEO foundations — keeping what already works.",
+            text: "Modernize an ageing site: new design, performance, mobile, clarity of offer and SEO foundations, while keeping what already works.",
           },
           {
             title: "E-commerce",
@@ -316,7 +316,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
       work: {
         eyebrow: "Work",
         heading: "Sites already delivered.",
-        text: "Showcase sites, web and mobile ecosystems, technical digital presences — for clients in France and abroad.",
+        text: "Showcase sites, web and mobile ecosystems, technical digital presences for clients in France and abroad.",
         ctaLabel: "See all projects",
       },
       why: {
@@ -329,7 +329,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
           },
           {
             title: "Premium execution",
-            text: "Design, development, animation, performance and SEO handled together, with the same care as a Paris agency — without the Paris rates.",
+            text: "Design, development, animation, performance and SEO handled together, with the same care as a Paris agency, without the Paris rates.",
           },
           {
             title: "A long-term partner",
@@ -341,7 +341,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         eyebrow: "Service area",
         heading: "Montbéliard, the Doubs and the Nord Franche-Comté.",
         text: "WebCode Studio supports businesses in Montbéliard and its region: Pays de Montbéliard, Audincourt, Sochaux, Valentigney, Bethoncourt, Grand-Charmont, Bavans, Voujeaucourt, as well as Héricourt and Belfort. The rest of France and international work is handled remotely.",
-        note: "Run from a private office — meetings happen at the client's site, by video call or in a third-party location.",
+        note: "Run from a private office. Meetings happen at the client's site, by video call or in a third-party location.",
       },
       pricing: {
         eyebrow: "Pricing approach",
@@ -406,7 +406,7 @@ export const creationSiteInternetMontbeliardContent: Localized<LocalLandingConte
         {
           question: "Who writes the site content?",
           answer:
-            "You can provide your content, or we write it from a brief and a conversation. Either way, text is edited to be clear, useful and consistent with your keywords — never written for machines alone.",
+            "You can provide your content, or we write it from a brief and a conversation. Either way, text is edited to be clear, useful and consistent with your keywords. It is never written for machines alone.",
         },
         {
           question: "What happens after launch?",

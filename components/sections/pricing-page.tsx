@@ -7,7 +7,7 @@ import { buildPageMetadata, getSeoPage, pricingJsonLd } from "@/lib/seo";
 import { getDictionary, localizeHref, type Locale } from "@/lib/i18n";
 import { tarifsContent } from "@/content/pages/tarifs";
 
-/** Metadata for the /tarifs route — call from the route's `metadata` export. */
+/** Metadata for the /tarifs route; call from the route's `metadata` export. */
 export function pricingMetadata(locale: Locale = "fr") {
   return buildPageMetadata(getSeoPage("tarifs", locale), locale);
 }

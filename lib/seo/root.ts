@@ -19,7 +19,7 @@ export function buildRootMetadata(locale: Locale = defaultLocale): Metadata {
   return {
     metadataBase: new URL(siteConfig.url),
     title: {
-      default: `${siteConfig.name} — ${home.title}`,
+      default: `${siteConfig.name} | ${home.title}`,
       template: `%s | ${siteConfig.name}`,
     },
     description: siteDescriptions[locale],

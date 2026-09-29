@@ -315,7 +315,7 @@ export const seoPagesByLocale = {
       path: "/refonte-site-internet-montbeliard",
       title: "Website redesign in Montbéliard",
       description:
-        "Website redesign in Montbéliard: new design, performance, mobile and SEO for your existing site — keeping what already works. Audit and quote within 24h.",
+        "Website redesign in Montbéliard: new design, performance, mobile and SEO for your existing site, while keeping what already works. Audit and quote within 24h.",
       keywords: [
         "website redesign Montbéliard",
         "website revamp Montbéliard",

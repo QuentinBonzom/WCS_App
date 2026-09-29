@@ -106,7 +106,7 @@ export function HomePage({ locale = "fr" }: { locale?: Locale }) {
         )}
       />
 
-      {/* HERO — 3D parallax of client projects */}
+      {/* HERO: 3D parallax of client projects */}
       <HeroParallax
         projects={buildParallaxProjects(locale)}
         copy={{

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-// Next.js already emits <meta name="robots" content="noindex"> for not-found —
+// Next.js already emits <meta name="robots" content="noindex"> for not-found.
 // no need to add a second robots tag here.
 export const metadata: Metadata = {
   title: "Page introuvable",

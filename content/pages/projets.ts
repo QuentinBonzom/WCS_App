@@ -1,11 +1,13 @@
 import type { Localized } from "./types";
 
-/** A real app shipped as part of a project — emitted as SoftwareApplication. */
+/** A real app shipped as part of a project, emitted as SoftwareApplication. */
 export type ProjectApp = {
   name: string;
   operatingSystem: string;
   applicationCategory: string;
   downloadUrl?: string;
+  /** square app icon shown on the project card */
+  icon?: string;
 };
 
 export type ProjectCard = {
@@ -16,6 +18,8 @@ export type ProjectCard = {
   title: string;
   desc: string;
   img: string;
+  /** phone-size screenshot (390pt wide viewport) shown in an iPhone frame */
+  mobileImg?: string;
   href: string;
   /** true → show a "temporary link" badge and label */
   temporary: boolean;
@@ -35,6 +39,12 @@ export type ProjetsContent = {
   temporaryButton: string;
   visitButton: string;
   imageAlt: string;
+  /** 3D ring: scroll hint, card button prefix, dialog close label */
+  ringHint: string;
+  openProject: string;
+  close: string;
+  appBadge: string;
+  appStoreButton: string;
   projects: ProjectCard[];
   similar: {
     heading: string;
@@ -68,6 +78,7 @@ const baseProjects: ProjectCard[] = [
     title: "Garage à la Carte",
     desc: "Un site premium pour un studio de transformation de garages à Orlando, avec services, réalisations et demande de devis.",
     img: "/projects/garage-a-la-carte.jpg",
+    mobileImg: "/projects/mobile/garage-a-la-carte.jpg",
     href: "https://www.garagealacarte.com",
     temporary: false,
   },
@@ -75,17 +86,20 @@ const baseProjects: ProjectCard[] = [
     slug: "barber-industrie",
     year: "2025",
     technologies: ["Next.js", "Tailwind CSS", "React Native", "Expo"],
-    // Private in-house app (salon & client management): no public downloadUrl.
+    // Live on the App Store; Android is announced as "coming soon" on the site.
     app: {
       name: "Barber Industrie",
-      operatingSystem: "iOS, Android",
+      operatingSystem: "iOS",
       applicationCategory: "LifestyleApplication",
+      downloadUrl: "https://apps.apple.com/fr/app/barber-industrie/id6784750563",
+      icon: "/projects/barber-industrie-icon.png",
     },
     cat: "Site web & application mobile",
     location: "France",
     title: "Barber Industrie",
     desc: "Un écosystème web et mobile pour présenter l'équipe, partager les actualités du salon et simplifier la prise de rendez-vous.",
     img: "/projects/barber-industrie.jpg",
+    mobileImg: "/projects/mobile/barber-industrie.jpg",
     href: "https://barberindustrie.fr",
     temporary: false,
   },
@@ -98,6 +112,7 @@ const baseProjects: ProjectCard[] = [
     title: "ERPI",
     desc: "Une présence digitale technique pour un bureau d'études spécialisé dans les process industriels, l'assemblage et la soudure robotisée.",
     img: "/projects/erpi.jpg",
+    mobileImg: "/projects/mobile/erpi.jpg",
     href: "https://erpi-sasu.fr",
     temporary: false,
   },
@@ -110,12 +125,13 @@ const baseProjects: ProjectCard[] = [
     title: "Ambul Wash",
     desc: "Un site vitrine pour un service de nettoyage intérieur automobile à domicile, avec formules, tarifs et prise de rendez-vous autour de Montbéliard et Belfort.",
     img: "/projects/ambul-wash.jpg",
+    mobileImg: "/projects/mobile/ambul-wash.jpg",
     href: "https://ambulwash.fr",
     temporary: false,
   },
 ];
 
-/** Client projects — shared by /projets and the home hero parallax. */
+/** Client projects shared by /projets and the home hero parallax. */
 export const projects = baseProjects;
 
 export const projetsContent: Localized<ProjetsContent> = {
@@ -123,11 +139,16 @@ export const projetsContent: Localized<ProjetsContent> = {
     headerEyebrow: "Nos réalisations",
     titleLines: ["Sites internet", "sur mesure."],
     headerText:
-      "Une sélection de réalisations WebCode Studio — sites vitrines, écosystèmes web et mobile et présences digitales techniques, conçus pour des clients en France et à l'étranger.",
+      "Une sélection de réalisations WebCode Studio : sites vitrines, écosystèmes web et mobile et présences digitales techniques, conçus pour des clients en France et à l'étranger.",
     temporary: "Lien provisoire",
     temporaryButton: "Voir la version provisoire",
     visitButton: "Visiter le site",
     imageAlt: "Page d'accueil du site",
+    ringHint: "Faites défiler · cliquez sur un projet",
+    openProject: "Voir le projet",
+    close: "Fermer",
+    appBadge: "Application iOS",
+    appStoreButton: "Télécharger sur l'App Store",
     projects: baseProjects,
     similar: {
       heading: "Un projet similaire ?",
@@ -141,20 +162,25 @@ export const projetsContent: Localized<ProjetsContent> = {
         { label: "Demander un devis", href: "/contact" },
       ],
     },
-    ctaEyebrow: "Votre projet, ensuite",
-    ctaTitle: "À vous de jouer.",
+    ctaEyebrow: "Et votre projet ?",
+    ctaTitle: "Le prochain, c'est le vôtre.",
     ctaText:
-      "Parlons de votre prochaine réalisation. Consultation gratuite, réponse sous 24h.",
+      "Racontez-nous ce que vous voulez construire : premier échange gratuit, réponse sous 24h.",
   },
   en: {
     headerEyebrow: "Our work",
     titleLines: ["Custom", "websites."],
     headerText:
-      "A selection of WebCode Studio work - showcase websites, web and mobile ecosystems and technical digital presences, created for clients in France and abroad.",
+      "A selection of WebCode Studio work: showcase websites, web and mobile ecosystems and technical digital presences, created for clients in France and abroad.",
     temporary: "Temporary link",
     temporaryButton: "View temporary version",
     visitButton: "Visit website",
     imageAlt: "Homepage preview for",
+    ringHint: "Scroll · click a project",
+    openProject: "View project",
+    close: "Close",
+    appBadge: "iOS app",
+    appStoreButton: "Download on the App Store",
     similar: {
       heading: "A similar project?",
       text: "Whether you're in Montbéliard, the Doubs or elsewhere, we scope your project and reply within 24h.",
@@ -195,9 +221,9 @@ export const projetsContent: Localized<ProjetsContent> = {
         desc: "A showcase website for an at-home car interior cleaning service, with plans, pricing and online booking around Montbéliard and Belfort.",
       },
     ],
-    ctaEyebrow: "Your project next",
-    ctaTitle: "Your turn.",
+    ctaEyebrow: "What about yours?",
+    ctaTitle: "Yours could be next.",
     ctaText:
-      "Let's talk about your next launch. Free consultation, reply within 24h.",
+      "Tell us what you want to build: free first call, reply within 24h.",
   },
 };

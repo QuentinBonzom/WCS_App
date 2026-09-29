@@ -39,7 +39,7 @@ export const creationSiteInternetBelfortContent: Localized<LocalLandingContent> 
         eyebrow: "Nos prestations",
         heading: "Du site vitrine à l'outil métier.",
         intro:
-          "On part de votre besoin réel — être trouvé, rassurer, prendre des rendez-vous ou gagner du temps en interne — et on choisit le format qui y répond, sans surdimensionner le projet.",
+          "On part de votre besoin réel : être trouvé, rassurer, prendre des rendez-vous ou gagner du temps en interne. Puis on choisit le format qui y répond, sans surdimensionner le projet.",
         items: [
           {
             title: "Site vitrine",
@@ -247,7 +247,7 @@ export const creationSiteInternetBelfortContent: Localized<LocalLandingContent> 
         eyebrow: "What we build",
         heading: "From showcase site to business tool.",
         intro:
-          "We start from what you actually need — being found, reassuring, taking bookings or saving time internally — and pick the format that delivers it, without over-building.",
+          "We start from what you actually need: being found, reassuring, taking bookings or saving time internally. Then we pick the format that delivers it, without over-building.",
         items: [
           {
             title: "Showcase website",

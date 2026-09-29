@@ -25,7 +25,7 @@ export const contactContent: Localized<ContactContent> = {
       "Nous travaillons avec des clients du monde entier et garantissons une réponse rapide.",
     locationTitle: "Localisation & expertise",
     locationTextBefore:
-      "Basé à Montbéliard, France - au cœur du territoire de Belfort-Montbéliard, avec une expertise dédiée à la",
+      "Basé à Montbéliard, France, au cœur du territoire de Belfort-Montbéliard, avec une expertise dédiée à la",
     locationLink: "création de site internet à Montbéliard",
     areasTitle: "Zones d'intervention",
     areasText:
@@ -40,7 +40,7 @@ export const contactContent: Localized<ContactContent> = {
     infoText: "We work with clients worldwide and guarantee a fast response.",
     locationTitle: "Location & expertise",
     locationTextBefore:
-      "Based in Montbéliard, France - in the Belfort-Montbéliard area, with dedicated expertise in",
+      "Based in Montbéliard, France, in the Belfort-Montbéliard area, with dedicated expertise in",
     locationLink: "website creation in Montbéliard",
     areasTitle: "Service areas",
     areasText:

@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Tout le reste — structure des pages, contenus, appels à l'action — découle de cet objectif. Un site « joli » qui ne convertit pas est un site raté.",
+        text: "La structure des pages, les contenus et les appels à l'action découlent de cet objectif. Un site « joli » qui ne convertit pas est un site raté.",
       },
       {
         type: "h2",
@@ -199,7 +199,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Un site très bon marché peut coûter cher au final : invisible sur Google, lent, difficile à modifier, sans accompagnement. Vous payez alors deux fois — une fois pour le site initial, une fois pour le refaire. Comparez ce qui est réellement inclus plutôt que le seul prix affiché.",
+        text: "Un site très bon marché peut coûter cher au final : invisible sur Google, lent, difficile à modifier, sans accompagnement. Vous payez alors deux fois : une fois pour le site initial, une fois pour le refaire. Comparez ce qui est réellement inclus plutôt que le seul prix affiché.",
       },
       {
         type: "h2",
@@ -301,7 +301,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "Refonte de site internet : 7 signes qu'il est temps de refaire votre site",
     description:
-      "Site lent, non responsive, design daté, invisible sur Google : les 7 signaux qui indiquent qu'une refonte de votre site internet est devenue rentable — et comment la mener sans perdre de trafic.",
+      "Site lent, non responsive, design daté, invisible sur Google : les 7 signaux qui indiquent qu'une refonte de votre site internet est devenue rentable, et comment la mener sans perdre de trafic.",
     excerpt:
       "Site lent, non responsive, design daté, difficile à mettre à jour, invisible sur Google : les signes qu'une refonte s'impose, et comment la faire sans casser votre référencement.",
     keywords: [
@@ -436,7 +436,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "L'essentiel de la valeur vient des rappels : un e-mail ou un SMS envoyé la veille puis une heure avant le rendez-vous. Dans beaucoup d'activités, cela réduit nettement les rendez-vous manqués — autant de créneaux qui ne partent plus en fumée.",
+        text: "L'essentiel de la valeur vient des rappels : un e-mail ou un SMS envoyé la veille puis une heure avant le rendez-vous. Dans beaucoup d'activités, cela réduit nettement les rendez-vous manqués. Ce sont autant de créneaux qui ne partent plus en fumée.",
       },
       {
         type: "h2",
@@ -470,7 +470,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Listez vos prestations, vos horaires et vos règles, puis regardez si une solution du marché coche toutes les cases. Si oui, tant mieux. Sinon, un outil sur mesure — souvent livré par étapes en commençant par la réservation seule — vous évite de plier votre activité à un logiciel. Chez WebCode Studio, on construit ce type d'outil pour les entreprises du Pays de Montbéliard ; on peut regarder ensemble ce qui est le plus pertinent pour vous.",
+        text: "Listez vos prestations, vos horaires et vos règles, puis regardez si une solution du marché coche toutes les cases. Si oui, tant mieux. Sinon, un outil sur mesure, souvent livré par étapes en commençant par la réservation seule, vous évite de plier votre activité à un logiciel. Chez WebCode Studio, on construit ce type d'outil pour les entreprises du Pays de Montbéliard ; on peut regarder ensemble ce qui est le plus pertinent pour vous.",
       },
     ],
   },
@@ -528,7 +528,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Trois questions suffisent le plus souvent. Que doit faire le visiteur exactement ? Le site doit-il gérer des données — réservations, comptes, commandes — ou seulement informer ? Et dans deux ans, qu'est-ce qui aura probablement changé ? Si les réponses restent dans « présenter et être contacté », le vitrine suffit. Dès qu'il y a de la donnée ou de la logique métier, c'est du sur mesure.",
+        text: "Trois questions suffisent le plus souvent. Que doit faire le visiteur exactement ? Le site doit-il gérer des données comme des réservations, des comptes ou des commandes, ou seulement informer ? Et dans deux ans, qu'est-ce qui aura probablement changé ? Si les réponses restent dans « présenter et être contacté », le vitrine suffit. Dès qu'il y a de la donnée ou de la logique métier, c'est du sur mesure.",
       },
       {
         type: "h2",
@@ -536,7 +536,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Rien n'oblige à tout construire d'un coup. Un site est une base évolutive : on démarre avec un vitrine solide, et on ajoute des pages, une boutique ou un espace client quand le besoin est là — sans repartir de zéro, à condition que les fondations soient propres dès le départ.",
+        text: "Rien n'oblige à tout construire d'un coup. Un site est une base évolutive : on démarre avec un site vitrine solide, et on ajoute des pages, une boutique ou un espace client quand le besoin est là, sans repartir de zéro, à condition que les fondations soient propres dès le départ.",
       },
       {
         type: "p",
@@ -904,7 +904,7 @@ const blogPostsEn: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Everything else - page structure, content and calls to action - comes from that goal. A beautiful website that does not convert is a failed website.",
+        text: "Page structure, content and calls to action come from that goal. A beautiful website that does not convert is a failed website.",
       },
       {
         type: "h2",
@@ -1035,7 +1035,7 @@ const blogPostsEn: BlogPost[] = [
       },
       {
         type: "p",
-        text: "A very cheap website can become expensive later: invisible on Google, slow, hard to update and unsupported. You pay twice - once for the initial site, then again to rebuild it. Compare what is actually included instead of focusing only on the displayed price.",
+        text: "A very cheap website can become expensive later: invisible on Google, slow, hard to update and unsupported. You pay twice: once for the initial site, then again to rebuild it. Compare what is actually included instead of focusing only on the displayed price.",
       },
       {
         type: "h2",
@@ -1136,7 +1136,7 @@ const blogPostsEn: BlogPost[] = [
     slug: "refonte-site-internet-7-signes",
     title: "Website redesign: 7 signs it's time to rebuild your site",
     description:
-      "Slow, not responsive, dated design, invisible on Google: the 7 signals that a website redesign has become worth it — and how to run it without losing traffic.",
+      "Slow, not responsive, dated design, invisible on Google: the 7 signals that a website redesign has become worth it, and how to run it without losing traffic.",
     excerpt:
       "Slow, not responsive, dated design, hard to update, invisible on Google: the signs a redesign is due, and how to do it without breaking your SEO.",
     keywords: [
@@ -1270,7 +1270,7 @@ const blogPostsEn: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Most of the value comes from reminders: an email or SMS sent the day before and an hour before the appointment. In many activities this clearly reduces missed appointments — slots that no longer go to waste.",
+        text: "Most of the value comes from reminders: an email or SMS sent the day before and an hour before the appointment. In many activities this clearly reduces missed appointments. Those slots no longer go to waste.",
       },
       {
         type: "h2",
@@ -1304,7 +1304,7 @@ const blogPostsEn: BlogPost[] = [
       },
       {
         type: "p",
-        text: "List your services, hours and rules, then check whether an off-the-shelf solution ticks every box. If it does, great. If not, a custom tool — often delivered in stages starting with booking alone — spares you from bending your business to a piece of software. At WebCode Studio we build this kind of tool for businesses in the Montbéliard area; we can look together at what makes the most sense for you.",
+        text: "List your services, hours and rules, then check whether an off-the-shelf solution ticks every box. If it does, great. If not, a custom tool, often delivered in stages starting with booking alone, spares you from bending your business to a piece of software. At WebCode Studio we build this kind of tool for businesses in the Montbéliard area; we can look together at what makes the most sense for you.",
       },
     ],
   },
@@ -1362,7 +1362,7 @@ const blogPostsEn: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Three questions are usually enough. What exactly should the visitor do? Does the site need to handle data — bookings, accounts, orders — or only inform? And in two years, what will probably have changed? If the answers stay within \"present and be contacted\", a showcase site is enough. As soon as there is data or business logic, it is custom.",
+        text: "Three questions are usually enough. What exactly should the visitor do? Does the site need to handle data like bookings, accounts or orders, or only inform? And in two years, what will probably have changed? If the answers stay within \"present and be contacted\", a showcase site is enough. As soon as there is data or business logic, it is custom.",
       },
       {
         type: "h2",
@@ -1370,7 +1370,7 @@ const blogPostsEn: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Nothing forces you to build everything at once. A site is an evolutive base: you start with a solid showcase, and add pages, a store or a client portal when the need is there — without starting over, as long as the foundations are clean from the start.",
+        text: "Nothing forces you to build everything at once. A site is an evolutive base: you start with a solid showcase, and add pages, a store or a client portal when the need is there, without starting over, as long as the foundations are clean from the start.",
       },
       {
         type: "p",

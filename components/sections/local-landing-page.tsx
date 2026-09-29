@@ -248,7 +248,7 @@ export function LocalLandingPage({
                   <div className="relative aspect-[16/10] overflow-hidden bg-silver">
                     <Image
                       src={p.img}
-                      alt={`Site réalisé pour ${p.title} — ${p.cat}`}
+                      alt={`Site réalisé pour ${p.title}, ${p.cat}`}
                       fill
                       sizes="(max-width: 768px) 100vw, 400px"
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
