@@ -74,7 +74,7 @@ export function ProjectsRing({
         ref={sectionRef}
         className="relative h-[320vh] bg-fog text-ink"
       >
-        <div className="sticky top-0 flex h-svh flex-col items-center overflow-hidden">
+        <div className="sticky top-0 flex h-svh flex-col items-center overflow-clip">
           <header className="relative z-10 px-6 pt-24 text-center">
             <span className="mb-2 block text-xl font-semibold tracking-tight text-azure sm:text-2xl">
               {labels.eyebrow}
@@ -120,7 +120,7 @@ export function ProjectsRing({
             </motion.ul>
           </div>
 
-          <p className="relative z-10 mb-8 inline-flex items-center gap-2.5 rounded-full bg-snow/90 px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] ring-1 ring-black/5 backdrop-blur sm:text-[15px]">
+          <p className="relative z-10 mb-8 inline-flex items-center gap-2.5 rounded-full bg-snow px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] ring-1 ring-black/5 sm:text-[15px]">
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -253,7 +253,8 @@ function RingCard({
 
   return (
     <li
-      className="absolute inset-0"
+      // Phones: skip the far side of the ring, it halves the layers iOS has to keep.
+      className="absolute inset-0 max-md:[backface-visibility:hidden]"
       style={{ transform: `rotateY(${angle}deg) translateZ(var(--r))` }}
       aria-hidden={primary ? undefined : true}
     >
@@ -273,6 +274,8 @@ function RingCard({
               alt=""
               fill
               sizes="(max-width: 768px) 250px, 30vw"
+              // Lazy loading never fires for cards parked behind the ring.
+              loading="eager"
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
           </span>
@@ -280,6 +283,7 @@ function RingCard({
             <PhoneFrame
               src={project.mobileImg}
               sizes="120px"
+              eager
               className="absolute -bottom-[7%] right-[5%] w-[23%] transition-transform duration-500 group-hover:-translate-y-2"
             />
           ) : null}
@@ -296,10 +300,12 @@ function RingCard({
 function PhoneFrame({
   src,
   sizes,
+  eager = false,
   className,
 }: {
   src: string;
   sizes: string;
+  eager?: boolean;
   className?: string;
 }) {
   return (
@@ -311,7 +317,14 @@ function PhoneFrame({
     >
       {/* insets in % of the phone itself (padding % would follow the parent's width) */}
       <span className="absolute inset-x-[4.5%] inset-y-[2.8%] overflow-hidden rounded-[14%/8.5%] bg-snow">
-        <Image src={src} alt="" fill sizes={sizes} className="object-cover object-top" />
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes={sizes}
+          loading={eager ? "eager" : "lazy"}
+          className="object-cover object-top"
+        />
         <span className="absolute left-1/2 top-[2.2%] h-[4.2%] w-[30%] -translate-x-1/2 rounded-full bg-[#1d1d1f]" />
       </span>
     </span>
@@ -331,12 +344,19 @@ function AppBadge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 rounded-full bg-ink/90 py-1 pl-1 pr-3 text-[11px] font-semibold text-white shadow-lg backdrop-blur sm:text-xs",
+        "inline-flex items-center gap-2 rounded-full bg-ink py-1 pl-1 pr-3 text-[11px] font-semibold text-white shadow-lg sm:text-xs",
         className,
       )}
     >
       {app.icon ? (
-        <Image src={app.icon} alt="" width={24} height={24} className="h-6 w-6 rounded-[7px] bg-white" />
+        <Image
+          src={app.icon}
+          alt=""
+          width={24}
+          height={24}
+          loading="eager"
+          className="h-6 w-6 rounded-[7px] bg-white"
+        />
       ) : null}
       <AppleGlyph className="h-3 w-3" />
       {label}
